@@ -1,0 +1,201 @@
+.head {
+  font-family: roboto;
+  font-weight: 100;
+  line-height: 1.5;
+  padding: 20px 50px;
+  background-color: antiquewhite;
+}
+
+.form {
+  margin-top: 80px;
+  width: 400px;
+  text-align: end;
+}
+
+.form-group {
+  margin: 18px 0 18px;
+  font-size: 16px;
+  font-family: roboto;
+}
+
+.form-group > input {
+  padding: 5px 20px;
+  font-size: 16px;
+  outline: none;
+}
+
+.submit {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: aquamarine;
+}
+
+.errors {
+  color: red;
+  font-size: 16px;
+  background-color: beige;
+  width: 500px;
+  margin: 30px;
+  padding: 10px;
+}
+
+.tags {
+  display: flex;
+  display: none;
+}
+
+.tags > li {
+  border: 1px solid grey;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 20px 7px;
+  list-style-type: none;
+}
+
+table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  border-collapse: collapse;
+  color: #686461;
+  margin: 40px;
+}
+
+caption {
+  padding: 10px;
+  color: white;
+  background: #8fd4c1;
+  font-size: 18px;
+  text-align: left;
+  font-weight: bold;
+}
+
+th {
+  border-bottom: 1px solid #b9b29f;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+}
+
+tr:nth-child(odd) {
+  background: white;
+}
+
+tr:nth-child(even) {
+  background: #e8e6d1;
+}
+
+td > a {
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  background: #ebeaea;
+  padding: 4px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.my_modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.my_modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+.my_modal-content {
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  outline: 0;
+}
+
+.my_modal-header {
+  display: block;
+  padding: 14px 14px 4px;
+}
+
+.my_modal-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-bottom: 1px solid #d4d4d4;
+  text-align: center;
+}
+
+.my_modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 15px;
+  overflow: auto;
+  text-align: center;
+}
+
+.modal-buttons {
+  margin: 20px auto;
+}
+
+#title {
+  width: 90%;
+}
+
+textarea {
+  font-size: 18px;
+  width: 90%;
+  padding: 5px 20px;
+}
+
+.post-form {
+  display: flex;
+}
+
+.post-form > div {
+  margin: 20px;
+}
+
+ul {
+  padding: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.img-loader {
+  display: flex;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.img-loader-block {
+  width: 300px;
+  font-size: 14px;
+}
+
+.img-loader-block > input {
+  margin-top: 10px;
+}
+

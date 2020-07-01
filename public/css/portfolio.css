@@ -1,0 +1,69 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic);* {
+  font-family: "Roboto", sans-serif;
+}
+
+.head-brand {
+  font-size: 70px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.block-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.block {
+  width: 300px;
+  margin: 10px 30px;
+}
+
+.img-block {
+  width: 100%;
+  height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.link {
+  text-align: center;
+  margin-top: 10px;
+  color: black;
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px;
+}
+
+.tag {
+  border: 1px solid grey;
+  padding: 7px 15px;
+  border-radius: 7px;
+  margin: 5px 10px;
+  cursor: default;
+  font-size: 12px;
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  background-color: lightgray;
+}
+
+.edit-block {
+  margin-top: 10px;
+  text-align: center;
+}
+
