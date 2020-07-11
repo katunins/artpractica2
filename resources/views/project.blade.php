@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,37 +10,41 @@
 </head>
 
 <header>
-    
+
 </header>
+
 <body>
     <div class="container">
-    <div class="title">
-        {{ $data->title }}
-    </div>
-    
-    <div class="img">
-        <img src="{{ Storage::url($data->title_image) }}" alt="">
-    </div>
-    
-    <div class="description">
-        {{ $data->description }}
-    </div>
-    <?php
+        <div class="title">
+            {{ $data->title }}
+        </div>
+
+        <div class="img">
+            <img src="{{ Storage::url($data->title_image) }}" alt="">
+        </div>
+
+        <div class="description">
+            {{ $data->description }}
+        </div>
+        <?php
     $images = json_decode ($data->images);
     // print_r ($images);
     ?>
-    @foreach ($images as $item)
+        @if (count ($images) > 0)
+        @foreach ($images as $item)
         <div class="img">
-        <img src="{{ Storage::url($item) }}" alt="">
+            <img src="{{ Storage::url($item) }}" alt="">
         </div>
-    @endforeach
+        @endforeach
+        @endif
 
-    {{-- <div class="back-link">
+        {{-- <div class="back-link">
     <a href="{{}}">Назад</a>
     </div> --}}
 
-</div>
+    </div>
 </body>
+
 </html>
 
 

@@ -8,9 +8,17 @@
 </head>
 <header>
     
-    <div class="head-text">
+    {{-- <div class="head-text">
         <div class="head-brand">Artpractica</div>
         {{-- <div class="head-utp wow bounceInLeft">Дизайн / графика</div>             --}}
+    {{-- </div> --}}
+
+    <div class="head-logo">
+        <img
+            src="https://scontent-frx5-1.cdninstagram.com/v/t51.2885-19/s150x150/74935176_410323286556802_3244117119406702592_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_ohc=WKiEgv2b8PMAX9FJpyR&oh=a4356e30ea36be38278ddf6ade500bdc&oe=5F3242A1"
+            alt="">
+        {{-- <div class="head-brand">Artpractica</div>
+        <div class="head-utp wow bounceInLeft">Дизайн / графика</div>             --}}
     </div>
 
     <div class="head-arrow-block">

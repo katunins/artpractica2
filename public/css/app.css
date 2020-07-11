@@ -1,5 +1,43 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic);body {
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic);* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+.header-contact {
+  opacity: 0.8;
+  margin: 25px;
+  position: absolute;
+  right: 0;
+}
+
+.header-contact > div {
+  color: white;
+}
+
+body {
   margin: 0px;
+}
+
+.black-back {
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+}
+
+.mini-portfolio {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.mini-portfolio a {
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  padding: 8px 20px;
 }
 
 .head-block {
@@ -11,6 +49,21 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.inst {
+  opacity: 0.4;
+}
+
+.inst img {
+  width: 50px;
+}
+
+.title-text {
+  text-align: center;
+  max-width: 600px;
+  font-size: 20px;
+  margin: 0 auto;
 }
 
 .head-text {
@@ -155,7 +208,7 @@
 .title-container {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 100;
-  font-size: 23px;
+  font-size: 18 px;
   padding-top: 10px;
   text-align: center;
 }
@@ -176,11 +229,12 @@
 .ceo-text {
   font-family: roboto;
   font-weight: 100;
-  margin: auto 20px;
+  margin: auto 40px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .ceo-portrait {
-  margin: 10px;
+  margin: 30px 0;
 }
 
 .ceo-text h2 {
@@ -237,16 +291,16 @@
 }
 
 .portfolio > a {
-  margin: 40px auto;
+  margin: 0 auto;
   font-family: roboto;
   font-weight: 100;
-  font-size: 33px;
+  font-size: 18px;
   line-height: 40px;
-  letter-spacing: -1px;
+  letter-spacing: 0px;
   text-decoration: none;
   text-align: center;
   display: block;
-  width: 350px;
+  width: 220px;
   color: #888888;
   position: relative;
   -webkit-transition: color 0.2s;
@@ -254,7 +308,7 @@
   -o-transition: color 0.2s;
   background-color: indigo;
   color: rgba(255, 255, 255, 0.8);
-  padding: 13px;
+  padding: 5px;
   border-radius: 50px;
 }
 
@@ -301,7 +355,6 @@
 }
 
 .form {
-  border: 1px solid #cccccc;
   padding: 50px 70px 70px 70px;
   width: 500px;
   margin: 0 auto;
@@ -321,20 +374,20 @@ input {
   padding: 10px;
   width: 90%;
   font-family: roboto;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
   outline: none;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 textarea {
   margin-top: 40px;
   border: 1px solid grey;
   font-family: roboto;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
   padding: 10px;
-  width: 100%;
+  width: 90%;
 }
 
 input,
@@ -347,11 +400,13 @@ label {
 }
 
 .submit {
+  font-size: 18px;
   margin-top: 50px;
   border-radius: 50px;
   background-color: indigo;
   color: white;
-  width: 250px;
+  width: 160px;
+  font-size: 16px;
 }
 
 .submit:hover {

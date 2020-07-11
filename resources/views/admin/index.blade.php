@@ -11,12 +11,14 @@
     <div class="head">
         <h1>Админ панель</h1>
 <ul>
-<li><a href="{{ route('newtag') }}">Создать новый тег</a></li>
-<li><a href="{{ route('taglist') }}">Редактировать теги</a></li>
-</ul>
-<ul>
-    <li><a href="{{ route('newproject') }}">Добавить новый проект</a></li>
-    <li><a href="{{ route('editportfolio') }}">Редактировать проекты</a></li>
+{{-- <li><a href="{{ route('newtag') }}">Создать новый тег</a></li> --}}
+{{-- <li><a href="{{ route('taglist') }}">Редактировать теги</a></li> --}}
+<li><a href="{{ route('taglist') }}">Теги</a></li>
+{{-- </ul>
+<ul> --}}
+    {{-- <li><a href="{{ route('newproject') }}">Добавить новый проект</a></li> --}}
+    {{-- <li><a href="{{ route('editportfolio') }}">Редактировать проекты</a></li> --}}
+    <li><a href="{{ route('editportfolio') }}">Проекты</a></li>
 </ul>
     </div>
 
@@ -48,7 +50,7 @@
             <div class="modal-buttons">
                 {{-- <a href="">Удалить</a> --}}
                 <button id="delete-button" onclick="">Удалить</button>
-                <button onclick="document.getElementById('modal_open').style.display='none'">Закрыть</button>
+                <button onclick="document.getElementById('modal_open').style.display='none'">Отменить</button>
             </div>
           </div>
         </div>

@@ -43,6 +43,7 @@ Route::post('/admin/newtag/submit', 'SqlController@newtag')->name('newtag-submit
 Route::post('/submit', 'FormController@submit')->name('form');
 
 Route::post('admin/newprojectupload', 'UploadController@newprojectupload')->name('newprojectupload');
+Route::post('admin/updateprojectupload', 'UploadController@updateproject')->name('updateproject');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -60,3 +61,10 @@ Route::get('/admin/editportfolio', function () {
 })->name('editportfolio');
 
 Route::get('portfolio/{id}', 'UploadController@getonePortfolio')->name('get-portfolio');
+
+Route::get('/admin/removeportfolio/{id}', 'UploadController@deleteportfolio')->name('deteteportfolio');
+Route::get('/admin/editoneproject/{id}', function ($id) {
+    return view('admin/editoneproject', ['id'=>$id]);
+})->name('editoneproject');
+
+Route::get('admin/changepicture', 'UploadController@changepicture')->name('changepicture');

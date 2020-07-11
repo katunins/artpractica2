@@ -1,3 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic);* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .head {
   font-family: roboto;
   font-weight: 100;
@@ -16,6 +26,7 @@
   margin: 18px 0 18px;
   font-size: 16px;
   font-family: roboto;
+  min-width: 500px;
 }
 
 .form-group > input {
@@ -56,7 +67,7 @@ table {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   border-collapse: collapse;
   color: #686461;
-  margin: 40px;
+  margin: 40px auto;
 }
 
 caption {
@@ -162,7 +173,7 @@ td > a {
 }
 
 textarea {
-  font-size: 18px;
+  font-size: 16px;
   width: 90%;
   padding: 5px 20px;
 }
@@ -177,6 +188,7 @@ textarea {
 
 ul {
   padding: 10px;
+  font-size: 14px;
 }
 
 li {
@@ -197,5 +209,38 @@ li {
 
 .img-loader-block > input {
   margin-top: 10px;
+}
+
+.editproject-img {
+  margin-bottom: 40px;
+}
+
+.editproject-img img {
+  width: 500px;
+  margin: 45px 0 10px;
+}
+
+.edit_picture a {
+  font-size: 14px;
+  border: 1px solid grey;
+  padding: 3px 10px;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+
+.remove_picture {
+  background-color: red;
+  color: white;
+}
+
+.plus_tag {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid grey;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  border-radius: 30px;
 }
 
