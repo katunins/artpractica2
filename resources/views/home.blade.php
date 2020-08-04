@@ -11,173 +11,144 @@
 </head>
 
 <body>
-
-    <div class="head-block" style="background-color: black; opacity: 0.8">
-        <div class="header-contact">
-            <div style="font-size: 13px">г. Воронеж, ул. Орджаникидзе 20</div>
-            <div style="font-size: 29px">8 800 100 0797</div>
-        </div>
-        <div class="head-text">
-            <img style="width: 250px"
-                src="https://scontent-frx5-1.cdninstagram.com/v/t51.2885-19/s150x150/74935176_410323286556802_3244117119406702592_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_ohc=WKiEgv2b8PMAX9FJpyR&oh=a4356e30ea36be38278ddf6ade500bdc&oe=5F3242A1"
-                alt="">
-            {{-- <div class="head-brand">Artpractica</div>
-            <div class="head-utp wow bounceInLeft">Дизайн / графика</div>             --}}
-            <div class="inst">
-                <a href="https://www.instagram.com/art_practica/" target="top">
-                    <img src="/images/inst.png" alt="">
-                </a>
-            </div>
-        </div>
-
+    <div class="head">
         <div class="head-arrow-block">
+
             <div class="head-arrow">
-                <svg style="fill: white" width="38.417px" height="18.592px">
+                <svg style="fill: white " width="38.417px" height="18.592px">
                     <path
                         d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z">
                     </path>
                 </svg>
             </div>
+
+        </div>
+        <div class="utp">
+            Студия дизайна интерьера полного цикла в Воронеже:<br>
+            разрабатываем дизайн-проекты и воплощаем их в жизнь
         </div>
     </div>
-    <!-- --- -->
-    <div class="separator-150"></div>
-    <div class="title-text">Студия дизайна интерьера полного цикла в Воронеже:
-        разрабатываем дизайн-проекты и воплощаем их в жизнь</div>
-    <div class="separator-150"></div>
-    <!-- --- -->
-    <div class="block-tmp">
-        <a href="">
-            <div class="one-group wow fadeIn">
-                <div class="img-container">
-                    <img src="/images/group_1.jpg" alt="">
-                </div>
-                <div class="title-container">Квартиры до 50кв.м</div>
-            </div>
-        </a>
-        <a href="">
-            <div class="one-group wow fadeIn" data-wow-delay="150ms">
-                <div class="img-container">
-                    <img src="/images/group_2.jpg" alt="">
-                </div>
-                <div class="title-container">Проекты коттеджей</div>
-            </div>
-        </a>
-        <a href="">
-            <div class="one-group wow fadeIn" data-wow-delay="300ms">
-                <div class="img-container">
-                    <img src="/images/group_3.jpg" alt="">
-                </div>
-                <div class="title-container">Коммерческие интерьеры</div>
-            </div>
-        </a>
-    </div>
-    <!-- --- -->
-    <div class="separator-70"></div>
-    <!-- --- -->
-    <div class="portfolio">
-        <a class="wow pulse" data-wow-iteration="10" href="/portfolio">Все проекты</a>
-    </div>
-    <!-- --- -->
-    <div class="separator-150"></div>
-    <!-- --- -->
-    <div class="black-back">
-        <div class="block-tmp">
-            <div class="ceo-text one-group">
-                <h2>Людмила</h2>
-                <h4>Старший дизайнер</h4>
-                <hr class="hr">
-                <p>Благодаря нашей слаженной работе, мы создаем проекты практически любой сложности в сфере дизайна
-                    частного и общественного интерьера. Мы предлагаем широкий спектр услуг в сфере разработки
-                    интерьерных концепций и последующей их реализации. С каждым из клиентов мы выстраиваем долгосрочные
-                    дружеские и деловые отношения.
-                </p>
-            </div>
-            <div class="ceo-portrait wow fadeIn" data-wow-delay="150ms"><img src="/images/portrait.png" alt=""></div>
+    <div class="container">
+
+
+        <div class="title-text">
+            491 завершенный проект с 2003 года
         </div>
-    </div>
-    <!-- --- -->
-    <div class="separator-150"></div>
-    <div class="separator-150"></div>
-    <div class="title">191 завершенный проект с 2003 года</div>
-    <div class="mini-portfolio">
-        <div style="margin-bottom: 30px">
-            <svg style="fill: black" width="38.417px" height="18.592px">
+
+        <div class="" style="text-align: center; margin-bottom: 20px;">
+            <svg style="fill: grey;" width="38.417px" height="18.592px">
                 <path
                     d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z">
                 </path>
             </svg>
         </div>
-        <a class="wow pulse" data-wow-iteration="10" href="/portfolio">Посмотреть работы</a>
-    </div>
-    {{-- <div class="portfolio">
-    <a class="wow pulse" data-wow-iteration="10" href="/portfolio">Portfolio</a>
-</div> --}}
-    {{-- <div class="title-text">
-        Мы собрали все наши работы, отсортировали по фильтрам
-    </div> --}}
-    {{-- <a href="" class="fciA navItem wow pulse" data-wow-iteration="10"><span class="fciSpan">перейти в Portfolio</span></a> --}}
-    <div class="separator-150"></div>
-    <div class="separator-150"></div>
-    <!-- --- -->
-    {{-- <div class="black-back"> --}}
-    <div class="block-tmp">
-        <div class="pics3">
-            <div class="vertical wow fadeIn" data-wow-delay="150ms">
-                <img src="images/3-pics/vert.jpg" alt="">
+
+        <div style="text-align: center">
+            <a href="" class="black-button">Посмотреть работы</a>
+        </div>
+
+        <div class="gallery-grid">
+            <figure class="gallery-item-1">
+                <div style="background-image: url(/images/sec_vers/image_1.jpg)">
+                    <a href="" class="black-mini-button">Подробнее</a>
+                </div>
+
+            </figure>
+
+            <figure class="gallery-item-2">
+                <div style="background-image: url(/images/sec_vers/image_2.jpg)">
+                    <a href="" class="black-mini-button">Подробнее</a>
+                </div>
+            </figure>
+
+            <figure class="gallery-item-3">
+                <div style="background-image: url(/images/sec_vers/image_4.jpg)">
+                    <a href="" class="black-mini-button">Подробнее</a>
+                </div>
+            </figure>
+
+            <figure class="gallery-item-4">
+                <div style="background-image: url(/images/sec_vers/image_3.jpg)">
+                    <a href="" class="black-mini-button">Подробнее</a>
+                </div>
+            </figure>
+        </div>
+
+        <div class="title-text">
+            Проектируем и воплощаем в жизнь
+        </div>
+
+        <div class="direction">
+            <div>
+                <h3>Реализация проекта под ключ</h3>
+                <a href="">подробнее</a>
             </div>
-            <div class="wow fadeIn" data-wow-delay="300ms">
-                <img src="images/3-pics/goriz1.jpg" alt="">
+            <div>
+                <h3>Полная комплектация проекта</h3>
+                <a href="">подробнее</a>
             </div>
-            <div class="wow fadeIn" data-wow-delay="450ms">
-                <img src="images/3-pics/goriz2.jpg" alt="">
+            <div>
+                <h3>Собственное мебельное производтсво</h3>
+                <a href="">подробнее</a>
             </div>
         </div>
-        {{-- </div> --}}
-    </div>
-    <!-- --- -->
-    <div class="separator-150"></div>
-    {{-- <div class="tilda">
-        <img src="/images/tilda.png" alt="">
-    </div> --}}
-    
-    <div class="title">
-        Команда исполнителей
-    </div>
-    
-    <div class="title-text">
-        <br>За 15 лет мы познакомились и постоянно работаем с проверенными сантехниками, электриками и малярами
-    </div>
-    <div class="separator-150"></div>
-    {{-- <div class="separator-70"></div> --}}
-    <!-- --- -->
 
-    <div class="black-back">
-        <div class="block-tmp wow fadeIn" data-wow-delay="150ms">
-            <div class="image-block">
-                <img src="images/team.jpg" alt="">
-                <div>А это наш офис, где работает 12 дизанеров, инженеров, конструкторов. Именно поэтому мы пунктуальные
-                    и надежные</div>
+        <div class="ceo">
+            <div class="ceo-text">
+                <h3>Балашова Людмила</h3>
+                <h5>руководитель студии</h5>
+                <p>"Сколько себя помню, я - дизайнер интерьера!
+                    </br></br>
+                    По-началу это было вольное плавание, потом появились
+                    единомышленники и наша "ARTPRACTICA". Ответственный подход ,
+                    неравнодушие и целеустремленность двигали нас вперед.
+                    И теперь ARTPRACTCICA - большая команда профессионалов, э
+                    то целый комплекс услуг по созданию интерьеров, это огромный
+                    опыт работы с объектами разной величины и направленности.
+                </p>
+            </div>
+            <div class="ceo-portrait">
             </div>
         </div>
-    </div>
 
+        <div class="team-text">
+            <h3>Команда исполнителей</h3>
+            <p>17 лет своей плодотворной работы мы сформировали надежную бригаду профессионалов:
+                6 дизайнеров-архитекторов, 3 менеджера по продажам и закупкам,
+                3 конструктора мебели, бригада работников мебельного производства и многочисленная строительная бригада.
+            </p>
+        </div>
 
-    </div>
+        <div class="team-grid">
+            <figure class="team-item-1">
+                <div style="background-image: url(/images/sec_vers/image_5.jpg)">
+                </div>
 
+            </figure>
 
-    <!-- --- -->
-    {{-- <div class="separator-150"> --}}
-    {{-- <div class="tilda">
-        <img src="/images/tilda.png" alt="">
-    </div> --}}
+            <figure class="team-item-2">
 
-    <!-- --- -->
+                <div style="background-image: url(/images/sec_vers/image_6.jpg)">
 
-    </div>
+                </div>
+            </figure>
 
+            <figure class="team-item-3">
+                <div style="background-image: url(/images/sec_vers/image_9.jpg)">
+                </div>
+            </figure>
 
-    <div class="block-tmp">
+            <figure class="team-item-4">
+                <div style="background-image: url(/images/sec_vers/image_7.jpg)">
+                </div>
+            </figure>
+
+            <figure class="team-item-5">
+                <div style="background-image: url(/images/sec_vers/image_8.jpg)">
+                </div>
+            </figure>
+        </div>
+
         <div class="form">
             {{-- <h3>Расскажите нам про вашу задачу, оставьте контакты. Мы свяжемся с вами в ближайшее время</h3> --}}
             <h3>Остались вопросы?</h3>
@@ -190,26 +161,6 @@
                 <input class="submit" type="submit" name="submit" value="Отправить">
             </form>
         </div>
-
-    </div>
-    <!-- --- -->
-    <div class="separator-150">
-        <!-- --- -->
-
-        <script src="wow-animation/wow.min.js"></script>
-        <script>
-            wow = new WOW(
-        {
-        boxClass:     'wow',      // default
-        animateClass: 'animated', // default
-        offset:       0,          // default
-        mobile:       false,       // default
-        live:         true        // default
-    }
-    )
-    new WOW().init();
-        </script>
-        @include('footer')
 </body>
 
 </html>

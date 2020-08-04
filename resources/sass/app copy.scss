@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic");
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+}
+
+.header-contact{
+    opacity: 0.8;
+    margin: 25px;
+    position: absolute;
+    right: 0;
+    // position: absolute;
+    // right: 0;
+
+}
+
+.header-contact > div {
+    color: white;
+}
+
+body {
+    margin: 0px;
+}
+
+.black-back {
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+}
+.mini-portfolio {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.mini-portfolio a{
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    padding: 8px 20px;
+    
+}
+
+.head-block {
+    background: url(/images/main.jpg), rgba(0, 0, 0, 0.7);
+    background-blend-mode: color;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.inst {
+    // position: absolute;
+    opacity: 0.4;
+}
+
+.inst img {
+    width: 50px;
+}
+
+.title-text {
+    
+    text-align: center;
+    max-width: 600px;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.head-text {
+    margin: auto;
+    color: white;
+    text-align: center;
+}
+
+.head-brand {
+    font-size: 70px; //104 от 1024 // 34 от 640
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+}
+.head-utp {
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.head-arrow-block {
+    position: relative;
+    margin-bottom: 6%;
+}
+.head-arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: hear-arrow-move;
+    animation-timing-function: ease;
+
+    animation-duration: 1.7s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hear-arrow-move {
+    10% {
+        top: 0px;
+    }
+
+    50% {
+        top: 10px;
+    }
+    60% {
+        top: 10px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .head-brand {
+        font-size: 34px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .head-brand {
+        font-size: 104px;
+    }
+}
+// ---
+
+.separator-70 {
+    height: 70px;
+}
+.separator-150 {
+    height: 150px;
+}
+
+.block-tmp {
+    width: 940px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.block-tmp >a{
+    text-decoration: none;
+    display: contents;
+}
+
+
+@media screen and (max-width: 960px) {
+    .block-tmp {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .block-tmp {
+        width: 1160px;
+    }
+}
+
+.one-group {
+    width: 100%;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-container {
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 100;
+    font-size: 18   px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+    .one-group {
+        margin: 7px 0 20px;
+        width: 500px;
+    }
+    .img-container {
+        overflow: hidden;
+        object-fit: cover;
+    }
+}
+
+// ---
+
+.ceo-text {
+    font-family: roboto;
+    font-weight: 100;
+    margin: auto 40px;
+    color: rgba(255,255,255,0.7);
+    // width: 500px;
+}
+
+.ceo-portrait {
+    margin: 30px 0;
+}
+
+.ceo-text h2 {
+    font-weight: 500;
+    margin: 0;
+}
+
+.ceo-text h4 {
+    font-weight: 100;
+    color: gray;
+    margin: 10px 0;
+}
+
+.hr {
+    width: 60px;
+    margin: 30px 0;
+}
+
+.ceo-text p {
+    line-height: 1.5;
+}
+
+// -----
+.pics3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    height: 50vw;
+    margin: 10px;
+    max-width: 95vw;
+    height: 100%;
+}
+.pics3 > div{
+display: flex;
+}
+.pics3 > div img {
+    // max-height: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+.vertical {
+    grid-row: 1/3;
+}
+
+// -----
+.text{
+    font-family: roboto;
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.portfolio > a{
+    margin: 0 auto;
+    font-family:roboto;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-decoration: none;
+    text-align:center;
+    display:block;
+    width:220px;
+    color: #888888;
+    position: relative;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    background-color:indigo;// aliceblue;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.portfolio a:hover{
+    background-color: rgb(103, 65, 133);
+}
+
+// -------
+.image-block{
+    margin: 10px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.image-block >img{
+    width: 100%;
+}
+.image-block>div{
+    position: absolute;
+    bottom: 50px;
+    font-family: roboto;
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    background-color: white;
+    color: black;
+    margin: 0 auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 15px;
+    text-align: center;
+    left: 20%;
+}
+
+// -----
+.tilda {
+    width: 70px;
+    margin: 70px auto;
+    opacity: 0.5;
+}
+.tilda > img {
+    width: 100%;
+}
+
+
+// ---
+.form {
+    // border: 1px solid rgb(204, 204, 204);
+    padding: 50px 70px 70px 70px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.form h3{
+    font-family: roboto;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+// form{
+//     margin: 0 auto;
+// }
+
+input {
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 10px;
+    width: 90%;
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: 100;
+    outline: none;
+    margin: 10px auto;
+}
+    
+textarea{
+    margin-top: 40px;
+    border: 1px solid grey;
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 10px;
+    width: 90%;
+}
+input,label{
+    display: block;
+}
+
+.form-group{
+    display: inline-block;
+}
+
+.submit{
+    font-size: 18px;
+    margin-top: 50px;
+    border-radius: 50px;
+    background-color: indigo;
+    color: white;
+    width: 160px;
+    font-size: 16px;
+}
+.submit:hover{
+    background-color: rgb(103, 65, 133);
+}
+
+
