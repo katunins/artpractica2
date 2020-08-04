@@ -133,7 +133,7 @@
                 </div>
             </figure>
 
-            <figure class="team-item-3">
+            <figure class="team-item-3 myBtn" href="/images/sec_vers/oil.mp4">
                 <div style="background-image: url(/images/sec_vers/image_9.jpg)">
                 </div>
             </figure>
@@ -143,7 +143,7 @@
                 </div>
             </figure>
 
-            <figure class="team-item-5">
+            <figure class="team-item-5 myBtn" href="/images/sec_vers/factory.mp4">
                 <div style="background-image: url(/images/sec_vers/image_8.jpg)">
                 </div>
             </figure>
@@ -161,8 +161,40 @@
                 <input class="submit" type="submit" name="submit" value="Отправить">
             </form>
         </div>
+        {{-- <button id="myBtn">Open Modal</button> --}}
+
 
         @include('footer')
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                {{-- <iframe id='modalFrame' width="100%" height="300px" src="https://www.youtube.com/embed/AHzm7PFiIsU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
+                <video src="" id='modalFrame' controls="controls" autoplay></video>
+            </div>
+        </div>
 </body>
 
 </html>
+<script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    document.querySelectorAll('.myBtn').forEach((elem)=>{
+        elem.onclick = function (data) {
+        document.getElementById('modalFrame').src = this.getAttribute('href')
+        modal.style.display = "block";
+    }
+})
+
+document.getElementsByClassName("close")[0].onclick = function() {
+  modal.style.display = "none";
+  document.getElementsByTagName('video')[0].pause()
+}
+
+window.onclick = function(event) {
+    if (event.target == modal ) {
+    modal.style.display = "none";
+    document.getElementsByTagName('video')[0].pause()
+  }
+}
+</script>
