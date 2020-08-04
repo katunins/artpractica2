@@ -81,15 +81,31 @@
         <div class="direction">
             <div>
                 <h3>Реализация проекта под ключ</h3>
-                <a href="">подробнее</a>
+                <button>подробнее</button>
+                <div class="details hide">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deserunt similique, excepturi in vero
+                        harum quis perspiciatis, sit soluta quasi numquam laboriosam autem libero at. Dicta praesentium
+                        perferendis ullam amet?</p>
+                        <img src="/images/team.jpg" alt="">
+                </div>
             </div>
             <div>
                 <h3>Полная комплектация проекта</h3>
-                <a href="">подробнее</a>
+                <button>подробнее</button>
+                <div class="details hide">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deserunt similique, excepturi in vero
+                    harum quis perspiciatis, sit soluta quasi numquam laboriosam autem libero at. Dicta praesentium
+                    perferendis ullam amet?
+                </div>
             </div>
             <div>
                 <h3>Собственное мебельное производтсво</h3>
-                <a href="">подробнее</a>
+                <button>подробнее</button>
+                <div class="details hide">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deserunt similique, excepturi in vero
+                    harum quis perspiciatis, sit soluta quasi numquam laboriosam autem libero at. Dicta praesentium
+                    perferendis ullam amet?
+                </div>
             </div>
         </div>
 
@@ -177,24 +193,40 @@
 
 </html>
 <script>
-    var modal = document.getElementById("myModal");
-    var btn = document.getElementById("myBtn");
-    document.querySelectorAll('.myBtn').forEach((elem)=>{
-        elem.onclick = function (data) {
-        document.getElementById('modalFrame').src = this.getAttribute('href')
-        modal.style.display = "block";
+    document.addEventListener("DOMContentLoaded", ()=>{
+        document.querySelectorAll('.direction button').forEach((butt)=>{
+            butt.onclick = function (){
+                let details = this.nextSibling.nextSibling
+                if (details) {
+                    if (details.classList.contains('hide')) {
+                        details.classList.remove ('hide')
+                    } else {
+                        details.classList.add ('hide')
+                    }
+                }
+            }
+        })
+
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        document.querySelectorAll('.myBtn').forEach((elem)=>{
+            elem.onclick = function (data) {
+            document.getElementById('modalFrame').src = this.getAttribute('href')
+            modal.style.display = "block";
+        }
+    })
+
+        document.getElementsByClassName("close")[0].onclick = function() {
+        modal.style.display = "none";
+        document.getElementsByTagName('video')[0].pause()
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal ) {
+            modal.style.display = "none";
+        document.getElementsByTagName('video')[0].pause()
     }
-})
-
-document.getElementsByClassName("close")[0].onclick = function() {
-  modal.style.display = "none";
-  document.getElementsByTagName('video')[0].pause()
-}
-
-window.onclick = function(event) {
-    if (event.target == modal ) {
-    modal.style.display = "none";
-    document.getElementsByTagName('video')[0].pause()
-  }
-}
+    }
+    });
+    
 </script>

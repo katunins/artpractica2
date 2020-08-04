@@ -64,7 +64,7 @@
   margin: 7vw 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 30vw);
+  grid-template-rows: repeat(2, 26vw);
   grid-gap: 20px;
 }
 
@@ -126,6 +126,28 @@ figure > div {
 
 .direction > div > a {
   color: grey;
+}
+
+.direction button {
+  background: none;
+  color: grey;
+  text-decoration: underline;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.hide {
+  display: none;
+}
+
+.details {
+  margin: 25px 90px;
+}
+
+.details > img {
+  width: 80%;
+  margin: 20px;
 }
 
 .ceo {
