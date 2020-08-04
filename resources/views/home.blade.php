@@ -161,6 +161,8 @@
                 <input class="submit" type="submit" name="submit" value="Отправить">
             </form>
         </div>
+
+        @include('footer')
 </body>
 
 </html>
