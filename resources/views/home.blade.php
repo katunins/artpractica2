@@ -12,6 +12,14 @@
 
 <body>
     <div class="head">
+        <div class="headlogo">
+            <img src="/images/sec_vers/logo.png" alt="">
+        </div>
+        <div class="headinst">
+            <a href="https://www.instagram.com/art_practica/">
+                <img src="/images/sec_vers/inst.png" alt="">
+            </a>
+        </div>
         <div class="head-arrow-block">
 
             <div class="head-arrow">
@@ -29,23 +37,25 @@
         </div>
     </div>
     <div class="container">
+        <div class="block">
+            <div class="title-text">
+                491 завершенный проект с 2003 года
+            </div>
 
+            <div class="arrow">
+                <svg style="fill: grey;" width="38.417px" height="18.592px">
+                    <path
+                        d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z">
+                    </path>
+                </svg>
+            </div>
 
-        <div class="title-text">
-            491 завершенный проект с 2003 года
+            <div style="text-align: center">
+                <a href="" class="black-button">Посмотреть работы</a>
+            </div>
         </div>
 
-        <div class="" style="text-align: center; margin-bottom: 20px;">
-            <svg style="fill: grey;" width="38.417px" height="18.592px">
-                <path
-                    d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z">
-                </path>
-            </svg>
-        </div>
 
-        <div style="text-align: center">
-            <a href="" class="black-button">Посмотреть работы</a>
-        </div>
 
         <div class="gallery-grid">
             <figure class="gallery-item-1">
@@ -74,7 +84,7 @@
             </figure>
         </div>
 
-        <div class="title-text">
+        <div class="title-text mobile-space">
             Проектируем и воплощаем в жизнь
         </div>
 
@@ -83,10 +93,11 @@
                 <h3>Реализация проекта под ключ</h3>
                 <button>подробнее</button>
                 <div class="details hide">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deserunt similique, excepturi in vero
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deserunt similique, excepturi in
+                        vero
                         harum quis perspiciatis, sit soluta quasi numquam laboriosam autem libero at. Dicta praesentium
                         perferendis ullam amet?</p>
-                        <img src="/images/team.jpg" alt="">
+                    <img src="/images/team.jpg" alt="">
                 </div>
             </div>
             <div>
@@ -127,13 +138,7 @@
             </div>
         </div>
 
-        <div class="team-text">
-            <h3>Команда исполнителей</h3>
-            <p>17 лет своей плодотворной работы мы сформировали надежную бригаду профессионалов:
-                6 дизайнеров-архитекторов, 3 менеджера по продажам и закупкам,
-                3 конструктора мебели, бригада работников мебельного производства и многочисленная строительная бригада.
-            </p>
-        </div>
+
 
         <div class="team-grid">
             <figure class="team-item-1">
@@ -150,7 +155,12 @@
             </figure>
 
             <figure class="team-item-3 myBtn" href="/images/sec_vers/oil.mp4">
-                <div style="background-image: url(/images/sec_vers/image_9.jpg)">
+                {{-- <div style="background-image: url(/images/sec_vers/image_9.jpg)">
+                </div> --}}
+                <div>
+                    <video width="100%" height="100%" preload="auto" autoplay="true" loop="true" muted="muted">
+                        <source src="/images/sec_vers/factory.mp4" type="video/mp4">
+                    </video>
                 </div>
             </figure>
 
@@ -164,7 +174,20 @@
                 </div>
             </figure>
         </div>
-
+        <div class="team-text">
+            <h3>Команда исполнителей</h3>
+            <p>17 лет своей плодотворной работы мы сформировали надежную бригаду профессионалов:
+                6 дизайнеров-архитекторов, 3 менеджера по продажам и закупкам,
+                3 конструктора мебели, бригада работников мебельного производства и многочисленная строительная бригада.
+            </p>
+        </div>
+        <div class="arrow">
+            <svg style="fill: grey;" width="38.417px" height="18.592px">
+                <path
+                    d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z">
+                </path>
+            </svg>
+        </div>
         <div class="form">
             {{-- <h3>Расскажите нам про вашу задачу, оставьте контакты. Мы свяжемся с вами в ближайшее время</h3> --}}
             <h3>Остались вопросы?</h3>
