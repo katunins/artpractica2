@@ -53,9 +53,13 @@ $title_size: 33px;
 .utp {
     text-align: center;
     width: 450px;
-    // max-width: 40vw;
+    display: block;
     margin: 0 auto;
     color: white;
+}
+
+.utp-mobile {
+    display: none;
 }
 
 .arrow {
@@ -80,7 +84,7 @@ $title_size: 33px;
 }
 
 .title-text {
-    margin-bottom: 7vw;
+    // margin-bottom: 7vw;
     text-align: center;
     font-size: $title_size;
 }
@@ -106,7 +110,7 @@ figure {
     margin: 0;
 }
 
-figure>div {
+figure > div {
     height: 100%;
     background-blend-mode: color;
     background-position: center center;
@@ -142,7 +146,7 @@ figure>div {
     grid-row-end: 2;
 }
 
-.direction>div {
+.direction > div {
     text-align: center;
     background-color: $background-color;
     color: white;
@@ -152,13 +156,13 @@ figure>div {
     margin: 28px auto;
 }
 
-.direction>div>h3 {
+.direction > div > h3 {
     font-size: 23px;
     font-weight: 400;
     line-height: 0;
 }
 
-.direction>div>a {
+.direction > div > a {
     color: grey;
 }
 
@@ -180,7 +184,7 @@ figure>div {
     // display: none;
 }
 
-.details>img {
+.details > img {
     width: 80%;
     margin: 20px;
 }
@@ -233,11 +237,11 @@ figure>div {
     margin: 0 auto;
 }
 
-.team-text>h3 {
+.team-text > h3 {
     font-size: 29px;
 }
 
-.team-text>p {
+.team-text > p {
     margin-top: 30px;
     font-size: 16px;
 }
@@ -324,7 +328,8 @@ textarea {
     padding: 10px;
     width: 90%;
 }
-input,label {
+input,
+label {
     display: block;
 }
 
@@ -361,12 +366,12 @@ input,label {
     align-items: center;
 }
 
-.inst>img {
+.inst > img {
     width: 2vw;
     height: auto;
 }
 
-.inst>p {
+.inst > p {
     margin-left: 15px;
     font-size: 14px;
 }
@@ -419,7 +424,7 @@ input,label {
     background-color: $background-color;
 }
 
-.header>img {
+.header > img {
     width: 20vw;
     max-width: 300px;
 }
@@ -428,6 +433,7 @@ input,label {
     body {
         margin: 0;
     }
+
     .head {
         // width: 100vw;
         height: 100vh;
@@ -445,16 +451,21 @@ input,label {
     }
 
     .headinst {
-        margin: 17% auto;
+        margin: 20% auto;
     }
 
-    .utp {
+    .utp-mobile {
         text-align: center;
         width: 80%;
         margin: 0 auto;
         // margin: 29vw auto;
         color: white;
-        font-size: 19px;
+        font-size: 16px;
+        display: block;
+    }
+
+    .utp {
+        display: none;
     }
 
     .head-arrow-block {

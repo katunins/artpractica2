@@ -52,8 +52,13 @@
 .utp {
   text-align: center;
   width: 450px;
+  display: block;
   margin: 0 auto;
   color: white;
+}
+
+.utp-mobile {
+  display: none;
 }
 
 .arrow {
@@ -83,7 +88,6 @@
 }
 
 .title-text {
-  margin-bottom: 7vw;
   text-align: center;
   font-size: 33px;
 }
@@ -412,7 +416,6 @@ label {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 .header {
   background-color: #3b3b3b;
 }
@@ -420,7 +423,8 @@ label {
 .header > img {
   width: 20vw;
   max-width: 300px;
-=======
+}
+
 @media screen and (max-width: 768px) {
   body {
     margin: 0;
@@ -442,15 +446,20 @@ label {
   }
 
   .headinst {
-    margin: 17% auto;
+    margin: 20% auto;
   }
 
-  .utp {
+  .utp-mobile {
     text-align: center;
     width: 80%;
     margin: 0 auto;
     color: white;
-    font-size: 19px;
+    font-size: 16px;
+    display: block;
+  }
+
+  .utp {
+    display: none;
   }
 
   .head-arrow-block {
@@ -641,6 +650,5 @@ label {
   .contacts > h3 {
     font-size: 13px;
   }
->>>>>>> 67e0737bb728349d1b8f6beb818c08b194e4aeec
 }
 
