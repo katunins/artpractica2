@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic");
-
 * {
     font-family: "Roboto", sans-serif;
+    font-weight: 100;
 }
 
-img {width: 100%;}
+img {
+    width: 100%;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .title {
-    font-size: 50px; //104 от 1024 // 34 от 640
+    font-size: 30px; //104 от 1024 // 34 от 640
     font-weight: 100;
     text-align: center;
     margin: 40px;
@@ -22,5 +25,5 @@ img {width: 100%;}
 }
 
 .img {
-margin-bottom: 30px;
+    margin-bottom: 30px;
 }

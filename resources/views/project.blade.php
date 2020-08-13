@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="/css/one-portfolio.css">
 </head>
 
-<header>
-
-</header>
+@include ('header')
 
 <body>
     <div class="container">

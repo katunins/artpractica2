@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic);* {
   font-family: "Roboto", sans-serif;
+  font-weight: 100;
 }
 
 img {
@@ -12,7 +13,7 @@ img {
 }
 
 .title {
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 100;
   text-align: center;
   margin: 40px;

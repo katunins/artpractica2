@@ -377,3 +377,12 @@ label {
   cursor: pointer;
 }
 
+.header {
+  background-color: #3b3b3b;
+}
+
+.header > img {
+  width: 20vw;
+  max-width: 300px;
+}
+
