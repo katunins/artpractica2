@@ -55,7 +55,7 @@
             </div>
 
             <div style="text-align: center">
-                <a href="" class="black-button">Посмотреть работы</a>
+                <a href="{{ route('portfolio') }}" class="black-button">Посмотреть работы</a>
             </div>
         </div>
 
