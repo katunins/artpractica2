@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic);* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  margin: 0;
+}
+
+.header {
+  background-color: #3b3b3b;
+  display: flex;
+  padding: 40px;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.logo > img {
+  width: 25vw;
+}
+
+.contact {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: end;
+  line-height: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.contact a {
+  text-decoration: none;
+  color: white;
+}
+
+.tel {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.inst {
+  margin-left: 30px;
+}
+
+.inst img {
+  width: 40px;
+}
+
+.adress > p {
+  margin-bottom: 3px;
+}
+
+.adress > a {
+  opacity: 0.7;
+  font-size: 15px;
+  text-decoration: underline;
+}
+

@@ -1,13 +1,32 @@
+<link rel="stylesheet" href="{{asset ('css/portfolio-block.css')}}">
 <?php
-use App\Http\Controllers\UploadController; 
-use App\Http\Controllers\SqlController; 
 
-$portfolios = UploadController::getPortfolios();
-$tags = SqlController::gettag();   
-// dd($_GET);
+    use App\Http\Controllers\UploadController; 
+    use App\Http\Controllers\SqlController; 
+    // use Illuminate\Support\Facades\Storage;
+
+
+    $portfolios = UploadController::getPortfolios();
+    $tags = SqlController::gettag();   
+
+    // определяет тип загруженной титульной фотографии
+    function GetImgType ($url) {
+        $metadata = getimagesize('storage/'.$url);
+        $result = $metadata[0]/$metadata[1];
+
+        // if ($result > 1.4) return 'pano';
+        // if ($result < 1) return 'vert';
+        // if ($result == 1) return 'square';
+        // if ($result < 1.1) return 'land';
+        // return 'land';
+
+    $result = $metadata[0]/$metadata[1];
+    // $result = round($metadata[0]/$metadata[1], 2);
+    if ($result >2) $result = 2;//защита от слишком длинных изображений
+    if ($result <1) $result = 1;//сделаем вертикальную фотографию квадратной
+            return $result; 
+        }
 ?>
-
-
 
 <link rel="stylesheet" href="/css/portfolio.css">
 
@@ -19,117 +38,45 @@ $tags = SqlController::gettag();
         </div>
         @endforeach
     </div>
-    <div class="block-group">
-        @foreach ($portfolios as $item)
+    <div class="portfolio-block-group">
+        @for ($i = 0; $i < $portfolios->count(); $i++)
 
-        <div class="block" tags=<?=$item->tags?>>
-            <a href="{{ route('get-portfolio', $item->id) }}">
-                <?php $url = Storage::url($item->title_image)?>
-                <div class="img-block" style="background-image: url(<?=$url?>)"></div>
-                <div class="link">
-                    <?=$item->title ?>
-                </div>
+
+            <div class="portfolio-block" tags=<?=$portfolios[$i]->tags?>
+                
+                landWidth=<?=GetImgType ($portfolios[$i]->title_image)?>>
+                <a href="{{ route('get-portfolio', $portfolios[$i]->id) }}">
+                    <div class="portfolio-img-block"
+                        style="background-image: url({{asset('storage/'.$portfolios[$i]->title_image)}})"></div>
+                    {{-- <div class="link">
+                        {{$portfolios[$i]->title }}
+            </div> --}}
 
             </a>
             @if ($_SERVER['REQUEST_URI'] == "/admin/editportfolio")
             <div class="edit-block">
-                <a href="{{ route('editoneproject', $item->id) }}" class="button-edit">Редактировать</a>
-                <a href="{{ route('deteteportfolio', $item->id) }}" class="button-del"
-                    message="<?=$item->title ?>">Удалить</a>
+                <a href="{{ route('editoneproject', $portfolios[$i]->id) }}" class="button-edit">Редактировать</a>
+                <a href="{{ route('deteteportfolio', $portfolios[$i]->id) }}" class="button-del"
+                    message="<?=$portfolios[$i]->title ?>">Удалить</a>
             </div>
             @endif
-        </div>
-
-
-        @endforeach
-
-        @if ($_SERVER['REQUEST_URI'] == "/admin/editportfolio")
-        <div class="block" tags="">
-            <a href="{{ route('newproject') }}">
-                <div class="img-block plus">+</div>
-            </a>
-
-        </div>
-        @endif
     </div>
+
+
+
+    @endfor
+
+
+
+    @if ($_SERVER['REQUEST_URI'] == "/admin/editportfolio")
+    <div class="block" tags="">
+        <a href="{{ route('newproject') }}">
+            <div class="img-block plus">+</div>
+        </a>
+
+    </div>
+    @endif
+</div>
 </div>
 
-<script>
-    function refreshTags () {
-        let activeTags = []
-        document.querySelectorAll('.tag').forEach (el=>{
-            if (el.classList.contains('active')) {activeTags.push(el.getAttribute('value'))}
-        })
-
-        if (activeTags.length==0) {
-            document.querySelectorAll('.block').forEach(block=>{
-            block.classList.remove('hide')
-        })
-        } else {
-            document.querySelectorAll('.block').forEach(block=>{
-            // let general_hide = true
-            
-            block_tags = block.getAttribute('tags').split("||")
-            let general_result = 1
-            activeTags.forEach(acttag=>{
-                let result = 0                
-                block_tags.forEach(tag=>{
-                    if (tag == acttag) result = 1
-                })
-                general_result *= result
-            })
-            if (general_result == 0) {
-                block.classList.add('hide')
-            } else {block.classList.remove('hide')}
-        })
-        }
-    }
-
-    function hrefTOtags() {
-        var tags = window.location.search;
-        // var b = new Object();
-        tags = tags.substring(1).split("&");
-        return tags;
-    }
-
-    function tagsTOhref () {
-        let href = '?'
-        document.querySelectorAll('.tag').forEach(element => {
-            if (element.classList.contains('active')) {
-                if (href.toString().slice(-1) !='?') href +='&'
-                href += element.getAttribute('value')
-            }
-        })
-        if (href =='?') {
-            let link = window.location.href
-            window.location.href = link.split('?')[0]
-        } else { window.location.search = href }
-    }
-    
-    document.addEventListener('DOMContentLoaded', function(){
-    activeHREFtags = hrefTOtags()
-    // console.log (activeHREFtags)
-
-    document.querySelectorAll('.tag').forEach(element => {
-        // console.log (element.getAttribute('value'), activeHREFtags.indexOf(element.getAttribute('value'))>=0)
-        if (activeHREFtags.indexOf(element.getAttribute('value'))>=0) {
-            element.classList.add('active')    
-        }
-    
-       element.addEventListener ('click', function (event) {
-        
-            if (event.target.classList.contains('active')) {
-                event.target.classList.remove ('active')
-            } else {
-                event.target.classList.add ('active')
-                
-            }
-        
-        refreshTags ()
-        tagsTOhref()
-
-       })
-    })
-    refreshTags()
-})
-</script>
+<script src="{{asset ('js/portfolio-block.js')}}"></script>

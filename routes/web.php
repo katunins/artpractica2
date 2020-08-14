@@ -40,13 +40,13 @@ Route::get('/admin/tagremove/{id}', 'SqlController@tagremove')->name('tagremove'
 
 Route::post('/admin/newtag/submit', 'SqlController@newtag')->name('newtag-submit');
 
-Route::post('/submit', 'FormController@submit')->name('form');
+// Route::post('/submit', 'FormController@submit')->name('form');
 
 Route::post('admin/newprojectupload', 'UploadController@newprojectupload')->name('newprojectupload');
 Route::post('admin/updateprojectupload', 'UploadController@updateproject')->name('updateproject');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/admin/portfolios/{id}', function (){
 //     return view('admin/portfolios');

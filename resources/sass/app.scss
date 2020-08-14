@@ -2,7 +2,6 @@
 $background-color: #3b3b3b;
 $max-paragraph-width: 600px;
 $title_size: 33px;
-
 * {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
@@ -19,6 +18,7 @@ $title_size: 33px;
     flex-direction: column;
     justify-content: center;
 }
+
 .head {
     margin: 0;
     background: url(/images/sec_vers/main.jpg);
@@ -30,11 +30,13 @@ $title_size: 33px;
     display: flex;
     flex-direction: column;
 }
+
 .headlogo {
     width: 37%;
     margin: 15% auto 0;
     padding-right: 5%;
 }
+
 .headlogo img {
     width: 100%;
 }
@@ -44,12 +46,29 @@ $title_size: 33px;
 }
 
 .headinst img {
-    width: 30px;
+    width: 40px;
+    margin: 0 5px;
 }
 
 .head-arrow-block {
     display: none;
 }
+
+.arrow-anim {
+    // transform: translate3d(0, - 50%, 0);
+    animation: spin 1.3s infinite linear;
+}
+
+@keyframes spin {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+}
+
 .utp {
     text-align: center;
     width: 450px;
@@ -66,6 +85,7 @@ $title_size: 33px;
     text-align: center;
     margin: 10vh auto;
 }
+
 .head-arrow-block {
     position: relative;
     margin-bottom: 6%;
@@ -110,7 +130,7 @@ figure {
     margin: 0;
 }
 
-figure > div {
+figure>div {
     height: 100%;
     background-blend-mode: color;
     background-position: center center;
@@ -146,7 +166,7 @@ figure > div {
     grid-row-end: 2;
 }
 
-.direction > div {
+.direction>div {
     text-align: center;
     background-color: $background-color;
     color: white;
@@ -156,13 +176,13 @@ figure > div {
     margin: 28px auto;
 }
 
-.direction > div > h3 {
+.direction>div>h3 {
     font-size: 23px;
     font-weight: 400;
     line-height: 0;
 }
 
-.direction > div > a {
+.direction>div>a {
     color: grey;
 }
 
@@ -184,7 +204,7 @@ figure > div {
     // display: none;
 }
 
-.details > img {
+.details>img {
     width: 80%;
     margin: 20px;
 }
@@ -200,8 +220,8 @@ figure > div {
 }
 
 .ceo-portrait {
-    height: 25vw;
-    width: 25vw;
+    height: 100%;
+    width: 30%;
     background-image: url(/images/portrait.png);
     background-position: center center;
     background-size: cover;
@@ -211,48 +231,62 @@ figure > div {
 .ceo-text {
     width: 40vw;
     max-width: $max-paragraph-width;
-    margin-right: 4vw;
+    margin-right: 6vw;
 }
 
-.ceo-text > h3 {
+.ceo-text>h3 {
     font-size: 23px;
     line-height: 0;
 }
 
-.ceo-text > h5 {
-    font-style: italic;
-    font-size: 16px;
+.ceo-text>h5 {
+    // font-style: italic;
+    font-size: 14px;
     line-height: 0;
+    opacity: 0.6;
+    margin-bottom: 70px;
 }
 
-.ceo-text > p {
-    margin-top: 30px;
+.ceo-about {
     font-size: 14px;
-    text-align: justify;
+    text-align: end;
+    opacity: 0.8;
+}
+
+.ceo-quote {
+    font-size: 18px;
+    text-align: end;
 }
 
 .team-text {
     max-width: $max-paragraph-width;
     text-align: center;
-    margin: 0 auto;
+    margin: 70px auto;
+    background: $background-color;
+    color: white;
+    padding: 30px 150px;
 }
 
-.team-text > h3 {
+.team-text>h3 {
     font-size: 29px;
 }
 
-.team-text > p {
+.team-text>p {
     margin-top: 30px;
     font-size: 16px;
 }
 
 .team-grid {
     margin: 7vw 20px;
-    margin-top: 7vw;
+    margin-top: 120px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 10vw);
+    grid-template-rows: repeat(4, 10vw);
     grid-gap: 10px;
+}
+
+.team-grid video {
+    object-fit: cover;
 }
 
 .team-item-1 {
@@ -266,28 +300,38 @@ figure > div {
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 1;
-    grid-row-end: 4;
+    grid-row-end: 5;
 }
 
 .team-item-3 {
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 3;
     grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-end: 5;
 }
 
 .team-item-4 {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
-}
-
-.team-item-5 {
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-end: 5;
+}
+
+.team-item-5 {
+    display: none;
+    // grid-column-start: 3;
+    // grid-column-end: 4;
+    // grid-row-start: 3;
+    // grid-row-end: 4;
+}
+
+.team-text li {
+    font-size: 16px;
+    text-align: start;
+    width: 60%;
+    margin: 0 auto;
+    list-style-type: none;
+    padding-top: 5px;
 }
 
 .form {
@@ -297,12 +341,14 @@ figure > div {
     margin: 0 auto;
     text-align: center;
 }
+
 .form h3 {
     font-family: roboto;
     font-weight: 400;
     font-size: 23px;
     margin-bottom: 50px;
 }
+
 form {
     margin: 0 auto;
 }
@@ -328,6 +374,7 @@ textarea {
     padding: 10px;
     width: 90%;
 }
+
 input,
 label {
     display: block;
@@ -357,8 +404,8 @@ label {
     color: white;
 }
 
-.logo > img {
-    height: 3.5vw;
+.logo>img {
+    height: 4.5vw;
 }
 
 .inst {
@@ -366,12 +413,12 @@ label {
     align-items: center;
 }
 
-.inst > img {
+.inst>img {
     width: 2vw;
     height: auto;
 }
 
-.inst > p {
+.inst>p {
     margin-left: 15px;
     font-size: 14px;
 }
@@ -380,6 +427,12 @@ label {
     text-align: end;
     max-width: 250px;
     line-height: 0;
+    transform: scale(1.1);
+}
+
+.contacts a {
+    text-decoration: none;
+    color: white;
 }
 
 // ------------------
@@ -419,41 +472,40 @@ label {
     text-decoration: none;
     cursor: pointer;
 }
+
 // ------------------
 .header {
     background-color: $background-color;
 }
 
-.header > img {
+.header>img {
     width: 20vw;
     max-width: 300px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (orientation: portrait) {
     body {
         margin: 0;
     }
-
     .head {
         // width: 100vw;
         height: 100vh;
         background: url(/images/sec_vers/main-mobile.jpg);
         background-blend-mode: color;
-        background-position: center center;
+        // background-position: center center;
+        background-position: center -37px;
         background-size: cover;
         display: flex;
         flex-direction: column;
     }
-
     .headlogo {
         width: 65%;
-        margin: 65% auto 0;
+        // margin: 65% auto 0;
+        margin: 60% auto 0;
     }
-
     .headinst {
         margin: 20% auto;
     }
-
     .utp-mobile {
         text-align: center;
         width: 80%;
@@ -463,32 +515,26 @@ label {
         font-size: 16px;
         display: block;
     }
-
     .utp {
         display: none;
     }
-
     .head-arrow-block {
         display: block;
         margin: 0;
         order: 1;
         height: auto;
     }
-
     .head-arrow {
         bottom: -15vw;
     }
-
     .block {
         height: 50vh;
     }
-
     .title-text {
         font-size: 23px;
         max-width: 70%;
         margin: 0 auto 7vw;
     }
-
     .gallery-grid {
         grid-gap: 2px;
         grid-template-columns: repeat(2, 1fr);
@@ -522,93 +568,101 @@ label {
         font-size: 0.7em;
         padding: 4px 22px;
         margin-right: 0;
+        color: $background-color;
+        background-color: rgba(255, 255, 255, 0.7);
     }
-
     .mobile-space {
         margin: 13vw auto;
     }
-
-    .direction > div {
+    .direction>div {
         padding: 1em;
         margin: 10px auto;
         width: 80vw;
     }
-    .direction > div > h3 {
+    .direction>div>h3 {
         font-size: 17px;
     }
     .direction button {
         font-size: 14px;
     }
-
     .details {
         margin: 0;
     }
-    .details > p {
+    .details>p {
         font-size: 14px;
     }
-
     .ceo {
         height: 100%;
         flex-direction: column;
     }
-
     .ceo-text {
         order: 2;
         width: 80%;
         max-width: none;
         margin: 5% auto;
     }
-
-    .ceo-text > p {
-        font-size: 12px;
+    .ceo-text>h5 {
+        margin-bottom: 45px;
     }
-
+    .ceo-about {
+        font-size: 12px;
+        text-align: end;
+        opacity: 0.8;
+    }
+    .ceo-quote {
+        display: none;
+        font-size: 15px;
+        text-align: end;
+    }
     .ceo-portrait {
         order: 1;
         height: 100vw;
         width: 100vw;
     }
-
     .team-text {
-        font-size: $title_size;
+        // font-size: $title_size;
         width: 80%;
+        margin: 40px auto;
+        padding: 20px 40px;
     }
-
+    .team-text>h3 {
+        font-size: 19px;
+    }
+    .team-text li {
+        font-size: 14px;
+        width: 70%;
+    }
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 35vw);
         grid-gap: 3px;
+        margin-top: 60px;
     }
-
     .team-item-1 {
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row-start: 1;
-        grid-row-end: 4;
+        grid-row-end: 2;
     }
-
     .team-item-2 {
         grid-column-start: 1;
         grid-column-end: 2;
-        grid-row-start: 4;
-        grid-row-end: 6;
+        grid-row-start: 2;
+        grid-row-end: 3;
     }
-
-    .team-item-3 {
+    .team-item-4 {
         grid-column-start: 2;
         grid-column-end: 3;
-        grid-row-start: 4;
-        grid-row-end: 6;
+        grid-row-start: 2;
+        grid-row-end: 3;
     }
-
-    .team-item-4, .team-item-5 {
+    .team-item-3,
+    .team-item-5 {
         display: none;
     }
-
     .arrow {
         margin: 6vh auto;
     }
-
     .form {
         // display: none;
         width: 80%;
@@ -618,33 +672,28 @@ label {
     .footer {
         height: 10vh;
     }
-    .logo > img {
-        height: 5.5vw;
+    .logo>img {
+        height: 7.5vw;
     }
-
     .inst {
         display: none;
     }
-    .inst > img {
+    .inst>img {
         width: 3vw;
     }
-
-    .inst > p {
+    .inst>p {
         // margin-left: 15px;
         display: none;
         font-size: 9px;
     }
-
     .contacts {
         max-width: none;
         width: 35%;
     }
-
-    .contacts > h5 {
+    .contacts>h5 {
         font-size: 8px;
     }
-
-    .contacts > h3 {
+    .contacts>h3 {
         font-size: 13px;
     }
 }

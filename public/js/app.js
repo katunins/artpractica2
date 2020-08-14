@@ -49832,6 +49832,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/alt-header.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/alt-header.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49843,10 +49854,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/footer.scss":
-/*!************************************!*\
-  !*** ./resources/sass/footer.scss ***!
-  \************************************/
+/***/ "./resources/sass/one-portfolio.scss":
+/*!*******************************************!*\
+  !*** ./resources/sass/one-portfolio.scss ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49854,10 +49865,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/one-portfolio.scss":
-/*!*******************************************!*\
-  !*** ./resources/sass/one-portfolio.scss ***!
-  \*******************************************/
+/***/ "./resources/sass/portfolio-block.scss":
+/*!*********************************************!*\
+  !*** ./resources/sass/portfolio-block.scss ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49877,18 +49888,19 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/portfolio.scss ./resources/sass/one-portfolio.scss ./resources/sass/footer.scss ./resources/sass/admin.scss ***!
-  \******************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/portfolio-block.scss ./resources/sass/app.scss ./resources/sass/portfolio.scss ./resources/sass/alt-header.scss ./resources/sass/one-portfolio.scss ./resources/sass/admin.scss ***!
+  \************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/pavelkatuninhome/Documents/artpractica2/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/pavelkatuninhome/Documents/artpractica2/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /Users/pavelkatuninhome/Documents/artpractica2/resources/sass/portfolio.scss */"./resources/sass/portfolio.scss");
-__webpack_require__(/*! /Users/pavelkatuninhome/Documents/artpractica2/resources/sass/one-portfolio.scss */"./resources/sass/one-portfolio.scss");
-__webpack_require__(/*! /Users/pavelkatuninhome/Documents/artpractica2/resources/sass/footer.scss */"./resources/sass/footer.scss");
-module.exports = __webpack_require__(/*! /Users/pavelkatuninhome/Documents/artpractica2/resources/sass/admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica2/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica2/resources/sass/portfolio-block.scss */"./resources/sass/portfolio-block.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica2/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica2/resources/sass/portfolio.scss */"./resources/sass/portfolio.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica2/resources/sass/alt-header.scss */"./resources/sass/alt-header.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica2/resources/sass/one-portfolio.scss */"./resources/sass/one-portfolio.scss");
+module.exports = __webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica2/resources/sass/admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

@@ -1,56 +1,25 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic);* {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
+  margin: 0;
 }
 
-.head-brand {
-  font-size: 70px;
-  text-align: center;
-}
-
-.head-logo {
-  width: 100px;
-  margin: 0 auto;
-}
-
-.block-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.block {
-  width: 400px;
-  margin: 10px 30px;
-}
-
-.img-block {
-  width: 100%;
-  height: 270px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.link {
-  text-align: center;
-  margin-top: 10px;
-  color: black;
-  font-weight: 100;
+.content {
+  max-width: 1200px;
+  width: 80%;
+  margin: 30px auto;
 }
 
 .tag-group {
   display: flex;
   flex-wrap: wrap;
+  font-size: 14px;
   justify-content: center;
-  margin: 40px;
 }
 
 .tag {
-  padding-bottom: 7px;
-  margin: 5px 17px;
-  cursor: default;
-  font-size: 14px;
+  margin: 10px 20px;
+  cursor: pointer;
 }
 
 .hide {
@@ -61,9 +30,12 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.edit-block {
-  margin-top: 10px;
-  text-align: center;
+.img-block {
+  width: 100%;
+  height: 270px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a.button-del {
