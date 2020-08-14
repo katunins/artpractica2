@@ -60,14 +60,6 @@ function blocksReformat() {
     var maxOfBlocksInLine = 3 // максимум квадратных карточек в строке
     var margin = 3 // расстояние между кадрами
 
-    // стандартные размеры для этого экрана
-    let types = {
-        pano: Math.round(screenWidth * 0.66),
-        square: Math.round(screenWidth * 0.25),
-        vert: Math.round(screenWidth * 0.25),
-        land: Math.round(screenWidth * 0.33),
-    }
-
 
     while (i < blocks.length) {
 
@@ -93,7 +85,22 @@ function blocksReformat() {
 
         for (let index = 0; index < countOfBlocksInLine; index++) {
             // console.log(blocks[i+index])
-            blockWidth = Math.round(blocks[i + index].getAttribute('landWidth') / scale * screenWidth / countOfBlocksInLine) - margin * 2
+            
+            // если изображение осталось одно и оно не панорамное
+            if (countOfBlocksInLine == 1) {
+                // countOfBlocksInLine = maxOfBlocksInLine
+                blockHeight = Math.round(screenWidth / maxOfBlocksInLine/blocks[i + index].getAttribute('landWidth')) - margin * 2
+                blockWidth = Math.round(blocks[i + index].getAttribute('landWidth') / scale * screenWidth / maxOfBlocksInLine) - margin * 2
+                // console.log ('loop')
+                // break
+            } else {
+                console.log (index+i)
+                blockWidth = Math.round(blocks[i + index].getAttribute('landWidth') / scale * screenWidth / countOfBlocksInLine) - margin * 2
+            }
+            
+            
+            
+            
             // console.log('Width', blockWidth)
             blocks[i + index].setAttribute("style", "width: " + blockWidth + "px; height: " + blockHeight + "px; margin: " + margin + "px");
 
