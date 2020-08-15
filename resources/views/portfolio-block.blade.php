@@ -4,7 +4,7 @@
 
     use App\Http\Controllers\UploadController; 
     use App\Http\Controllers\SqlController; 
-    // use Illuminate\Support\Facades\Storage;
+    use Illuminate\Support\Facades\Storage;
 
 
     $portfolios = UploadController::getPortfolios();
