@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/admin', function () {
+Route::get('/artadmin', function () {
     return view('admin/index');
 })->name('admin');
 
