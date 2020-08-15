@@ -46,7 +46,7 @@
                 <a href="{{ route('get-portfolio', $portfolios[$i]->id) }}">
                     <div class="portfolio-img-block"
                         {{-- style="background-image: url({{asset('storage/'.$portfolios[$i]->title_image)}})"> --}}
-                        style="background-image: url({{Storage::url(asset('storage/'.$portfolios[$i]->title_image))}})">
+                        style="background-image: url({{Storage::url($portfolios[$i]->title_image)}})">
                         <div class="label">
                             <p>{{$portfolios[$i]->title }}</p>
                         </div>
