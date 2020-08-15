@@ -35,10 +35,12 @@ class UploadController extends Controller
         }
 
         $newImage->sharpen(3);
-        Storage::disk('local')->makeDirectory('public/uploads/'.$folder);            
-        $newImage->save('storage/uploads/' . $folder . '/' . $original_file->getClientOriginalName());
+        Storage::disk('local')->makeDirectory('public/uploads/'.$folder);
         
-        return ('uploads/' . $folder . '/' . $original_file->getClientOriginalName());
+        $filename = preg_replace('/\s+/', ' ', $original_file->getClientOriginalName());
+        $newImage->save('storage/uploads/' . $folder . '/' . $filename);
+        
+        return ('uploads/' . $folder . '/' . $filename);
     }
 
     public function newprojectupload(ProjectValidateRequest $request)
