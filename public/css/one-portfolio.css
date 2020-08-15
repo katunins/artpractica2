@@ -27,3 +27,15 @@ img {
   margin-bottom: 30px;
 }
 
+.black-button {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.black-button > a {
+  text-decoration: none;
+  color: white;
+  background-color: #3b3b3b;
+  padding: 7px 12px;
+}
+

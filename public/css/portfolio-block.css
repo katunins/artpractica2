@@ -15,8 +15,7 @@
 }
 
 .edit-block {
-  margin: 10px auto;
-  text-align: center;
-  transform: translateY(-2.5em);
+  text-align: end;
+  transform: translate(-10px, -30px);
 }
 

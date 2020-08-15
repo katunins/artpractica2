@@ -17,7 +17,7 @@ class CreatePortfoliosTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('title');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('code');
             $table->string('tags');
             $table->text('title_image');

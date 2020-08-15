@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic");
+$background-color: #3b3b3b;
+$max-paragraph-width: 600px;
+$title_size: 33px;
 * {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
@@ -26,4 +29,17 @@ img {
 
 .img {
     margin-bottom: 30px;
+}
+
+.black-button {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.black-button > a{
+    text-decoration: none;
+    color: white;
+    background-color: $background-color;
+    padding: 7px 12px;
+    
 }

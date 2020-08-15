@@ -94,7 +94,6 @@
 /***/ (function(module, exports) {
 
 function refreshTags() {
-  console.log(66);
   var activeTags = [];
   document.querySelectorAll('.tag').forEach(function (el) {
     if (el.classList.contains('active')) {
@@ -126,6 +125,8 @@ function refreshTags() {
       }
     });
   }
+
+  blocksReformat();
 }
 
 function hrefTOtags() {
@@ -156,14 +157,22 @@ function blocksReformat() {
   // отформатируем блоки
   var blocks = document.querySelectorAll('.portfolio-block:not(.hide)');
   var i = 0;
-  var screenWidth = document.querySelector('.portfolio-block-group').offsetWidth; //ширина экрана
+  var screenWidth = document.querySelector('.portfolio-block-group').offsetWidth - 4; //ширина экрана
 
-  var maxOfBlocksInLine = 3; // максимум квадратных карточек в строке
+  if (screenWidth > 768) {
+    var margin = 2; // расстояние между кадрами px
 
-  var margin = 3; // расстояние между кадрами
+    var maxOfBlocksInLine = 3;
+  } else {
+    var margin = 1; // расстояние между кадрами px
+
+    var maxOfBlocksInLine = 2;
+  } // console.log('screenWidth', screenWidth)
+
+
+  var lastHeight = 0;
 
   while (i < blocks.length) {
-    // console.log('цикл')
     // высчитаем сколько карточек помещается в строке
     var countOfBlocksInLine = 0;
     var pixelSumm = 0;
@@ -171,39 +180,38 @@ function blocksReformat() {
     do {
       pixelSumm += Number(blocks[i + countOfBlocksInLine].getAttribute('landWidth'));
       countOfBlocksInLine++;
-    } while (countOfBlocksInLine + i < blocks.length && countOfBlocksInLine < maxOfBlocksInLine); // в строке помещается countOfBlocksInLine блоков
-    // общей шириной pixelSumm пикселей
-    // let blockHeight = Math.round(screenWidth / countOfBlocksInLine)
-
+    } while (countOfBlocksInLine + i < blocks.length && countOfBlocksInLine < maxOfBlocksInLine);
 
     var blockHeight = Math.round(screenWidth / pixelSumm) - margin * 2;
+    if (blockHeight > screenWidth / 2.2) blockHeight = Math.round(screenWidth / 3);
     var scale = pixelSumm / countOfBlocksInLine;
-    console.log('блоков', countOfBlocksInLine, pixelSumm);
-    console.log('высота', blockHeight);
-    console.log('scale', scale);
 
     for (var index = 0; index < countOfBlocksInLine; index++) {
-      // console.log(blocks[i+index])
       // если изображение осталось одно и оно не панорамное
       if (countOfBlocksInLine == 1) {
-        // countOfBlocksInLine = maxOfBlocksInLine
-        blockHeight = Math.round(screenWidth / maxOfBlocksInLine / blocks[i + index].getAttribute('landWidth')) - margin * 2;
-        blockWidth = Math.round(blocks[i + index].getAttribute('landWidth') / scale * screenWidth / maxOfBlocksInLine) - margin * 2; // console.log ('loop')
+        if (lastHeight != 0) blockHeight = lastHeight; // blockHeight = lastHeight == 0 ? (Math.round(screenWidth / maxOfBlocksInLine / blocks[i + index].getAttribute('landWidth')) - margin * 2) : lastHeight
+
+        blockWidth = Math.round(blockHeight * blocks[i + index].getAttribute('landWidth')); // blockWidth = Math.round(blocks[i + index].getAttribute('landWidth') / scale * screenWidth / maxOfBlocksInLine) - margin * 2
+        // console.log ('loop')
         // break
       } else {
-        console.log(index + i);
         blockWidth = Math.round(blocks[i + index].getAttribute('landWidth') / scale * screenWidth / countOfBlocksInLine) - margin * 2;
       } // console.log('Width', blockWidth)
 
 
-      blocks[i + index].setAttribute("style", "width: " + blockWidth + "px; height: " + blockHeight + "px; margin: " + margin + "px");
+      blocks[i + index].setAttribute("style", "width: " + blockWidth + "px; height: " + blockHeight + "px; margin: " + margin + "px " + margin + "px");
     }
 
-    i += countOfBlocksInLine; // i++
+    i += countOfBlocksInLine;
+    lastHeight = blockHeight;
   }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  window.onresize = function (event) {
+    blocksReformat();
+  };
+
   activeHREFtags = hrefTOtags(); // console.log (activeHREFtags)
 
   document.querySelectorAll('.tag').forEach(function (element) {
@@ -224,28 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   refreshTags();
-  blocksReformat();
-}); // let itBlock = blocks[i].getAttribute('imgType')
-// let secondBlock = (i < blocks.length - 1) ? blocks[i + 1].getAttribute('imgType') : false
-// let thirdBlock = (i < blocks.length - 2) ? blocks[i + 2].getAttribute('imgType') : false
-// let forthBlock = (i < blocks.length - 2) ? blocks[i + 3].getAttribute('imgType') : false
-// console.log(itBlock)
-// console.log(secondBlock)
-// //PANO
-// if (itBlock.getAttribute('imgType') == 'pano' && secondBlock.getAttribute('imgType') == 'pano') {
-//     // PANO + PANO
-// } else { 
-//     // PANO + ANY
-// }
-// //VERT || SQUARE
-// if (itBlock.getAttribute('imgType') == 'pano') {
-// }
-// //VERT || SQUARE
-// if (itBlock.getAttribute('imgType') == 'pano') {
-// }
-// //LAND
-// if (itBlock.getAttribute('imgType') == 'pano') {
-// }
+});
 
 /***/ }),
 

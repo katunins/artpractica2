@@ -7,11 +7,43 @@ use App\Http\Requests\ProjectValidateRequest;
 use Illuminate\Support\Str;
 use App\Portfolio;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class UploadController extends Controller
 {
+    function resize($original_file, $folder)
+    {
+        $newImage = Image::make($original_file);
+
+        $height = $newImage->height();
+        $width = $newImage->width();
+
+        if ($height > $width) {
+            // резайз по width
+            if ($width > 1200) {
+                $newImage->resize(1200, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
+        } else {
+            // резайз по high
+            if ($height > 1200) {
+                $newImage->resize(null, 1200, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
+        }
+
+        $newImage->sharpen(3);
+        Storage::disk('local')->makeDirectory('public/uploads/'.$folder);            
+        $newImage->save('storage/uploads/' . $folder . '/' . $original_file->getClientOriginalName());
+        
+        return ('uploads/' . $folder . '/' . $original_file->getClientOriginalName());
+    }
+
     public function newprojectupload(ProjectValidateRequest $request)
     {
+        
 
         $files =  $request->file('image');
         $title_file = $request->file('title-image');
@@ -19,10 +51,11 @@ class UploadController extends Controller
         $folder = Str::random(10);
 
         foreach ($files as $file) {
-            $path[] = $file->store('uploads/' . $folder, 'public');
+            $path[] = $this->resize($file, $folder);
+            // $path[] = $file->store('uploads/' . $folder, 'public');
         }
-
-        $path_title = $title_file->store('uploads/' . $folder, 'public');
+        $path_title = $this->resize($title_file, $folder);
+        // $path_title = $title_file->store('uploads/' . $folder, 'public');
 
 
         $portfolio = new Portfolio();
@@ -47,12 +80,13 @@ class UploadController extends Controller
 
         $files =  $request->file('image');
         if (isset($files)) {
-            
+
             foreach ($files as $file) {
-                $path[] = $file->store('uploads/' . $folder, 'public');
+                $path[] = $this->resize($file, $folder);
+                // $path[] = $file->store('uploads/' . $folder, 'public');
             }
             $old_paths = json_decode($portfolio->images);
-            if (count($old_paths)>0) array_push($path, $old_paths);
+            if (count($old_paths) > 0) array_push($path, $old_paths);
             // dd ($path);
             $portfolio->images = json_encode($path);
         }
@@ -60,9 +94,9 @@ class UploadController extends Controller
         $title_file = $request->file('title-image');
         if (isset($title_file)) {
             // dd ($title_file);
-            $path_title = $title_file->store('uploads/' . $folder, 'public');
+            // $path_title = $title_file->store('uploads/' . $folder, 'public');
+            $path_title = $this->resize($title_file, $folder);
             $portfolio->title_image = $path_title;
-            
         }
 
 
@@ -70,7 +104,7 @@ class UploadController extends Controller
         $portfolio->description = $request->input('description');
         $portfolio->tags = $request->input('tags');
         $portfolio->sort = $request->input('sort');
-        
+
         $portfolio->save();
         return redirect()->route('editportfolio');
         // return redirect()->route('admin-portfolios', ['id'=>$portfolio->id]);

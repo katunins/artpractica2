@@ -14,7 +14,9 @@
 <body>
     <div class="head">
         <div class="headlogo">
+
             <img class="wow animate__animated animate__fadeIn animate__slow" src="/images/sec_vers/logo.png" alt="">
+
         </div>
         <div class="headinst">
             <a href="https://www.instagram.com/art_practica/" target="_blank">
@@ -173,7 +175,8 @@
             </figure>
 
             <figure class="team-item-2">
-                <div  data-wow-delay="0.2s" class="wow animate__animated animate__fadeIn" style="background-image: url(/images/sec_vers/image_6.jpg)">
+                <div data-wow-delay="0.2s" class="wow animate__animated animate__fadeIn"
+                    style="background-image: url(/images/sec_vers/image_6.jpg)">
 
                 </div>
             </figure>
@@ -181,7 +184,7 @@
             <figure class="team-item-3" href="/images/sec_vers/oil.mp4">
                 {{-- <div style="background-image: url(/images/sec_vers/image_9.jpg)">
                 </div> --}}
-                <div  data-wow-delay="0.3s" class="wow animate__animated animate__fadeIn">
+                <div data-wow-delay="0.3s" class="wow animate__animated animate__fadeIn">
                     <video width="100%" height="100%" preload="auto" autoplay="true" loop="true" muted="muted">
                         <source src="/images/sec_vers/factory.mp4" type="video/mp4">
                     </video>
@@ -189,12 +192,14 @@
             </figure>
 
             <figure class="team-item-4">
-                <div  data-wow-delay="0.4s" class="wow animate__animated animate__fadeIn" style="background-image: url(/images/sec_vers/image_7.jpg)">
+                <div data-wow-delay="0.4s" class="wow animate__animated animate__fadeIn"
+                    style="background-image: url(/images/sec_vers/image_7.jpg)">
                 </div>
             </figure>
 
             <figure class="team-item-5 myBtn" href="/images/sec_vers/factory.mp4">
-                <div  data-wow-delay="0.5s" class="wow animate__animated animate__fadeIn" style="background-image: url(/images/sec_vers/image_8.jpg)">
+                <div data-wow-delay="0.5s" class="wow animate__animated animate__fadeIn"
+                    style="background-image: url(/images/sec_vers/image_8.jpg)">
                 </div>
             </figure>
         </div>
@@ -205,18 +210,18 @@
                 </path>
             </svg>
         </div>
-        
+
         <div class="team-text">
             <h3>За 17 лет мы сформировали надежную бригаду профессионалов:</h3>
             {{-- <p>За 17 лет своей плодотворной работы мы сформировали надежную бригаду профессионалов: --}}
-                <li>6 дизайнеров-архитекторов,</li>
-                <li>3 менеджера по продажам и закупкам,</li>
-                 <li>3 конструктора мебели,</li>
-                 <li>бригада работников мебельного производства и многочисленная строительная бригада.</li>
-                 
+            <li>6 дизайнеров-архитекторов,</li>
+            <li>3 менеджера по продажам и закупкам,</li>
+            <li>3 конструктора мебели,</li>
+            <li>бригада работников мебельного производства и многочисленная строительная бригада.</li>
+
             </p>
         </div>
-        
+
         <div class="form">
             {{-- <h3>Расскажите нам про вашу задачу, оставьте контакты. Мы свяжемся с вами в ближайшее время</h3> --}}
             <h3>Остались вопросы?</h3>
@@ -232,7 +237,7 @@
         {{-- <button id="myBtn">Open Modal</button> --}}
 
 
-        
+
 
         {{-- <div id="myModal" class="modal">
             <div class="modal-content">

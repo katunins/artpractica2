@@ -1,7 +1,9 @@
-<link rel="stylesheet" href="css/alt-header.css">
+<link rel="stylesheet" href="{{asset ('css/alt-header.css')}}">
 <div class="header">
     <div class="logo">
-        <img src="images/sec_vers/logo.png" alt="">
+        <a href="{{route ('home')}}">
+            <img src={{ asset('/images/sec_vers/logo.png') }} alt="">
+        </a>
     </div>
     <div class="contact">
         <div>
@@ -14,8 +16,8 @@
             </div>
         </div>
         <div class="inst">
-            <a href="https://www.instagram.com/art_practica/">
-                <img src="/images/sec_vers/inst.png" alt="" target="_blank">
+            <a href="https://www.instagram.com/art_practica/" target="_blank">
+                <img src="/images/sec_vers/inst.png" alt="">
             </a>
         </div>
     </div>

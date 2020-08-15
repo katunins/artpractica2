@@ -39,25 +39,34 @@
 }
 
 a.button-del {
-  padding: 3px 12px;
+  padding: 2px 10px;
   border-radius: 3px;
   background-color: red;
   color: white;
+  font-size: 0.7em;
 }
 
 a.button-edit {
-  padding: 3px 12px;
+  padding: 2px 10px;
   border-radius: 3px;
   background-color: grey;
   color: white;
+  font-size: 0.7em;
 }
 
 .plus {
+  width: 30vw;
   border: 1px solid grey;
   font-size: 140;
   line-height: 250px;
   font-weight: 100;
   color: grey;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .content {
+    width: 100%;
+  }
 }
 
