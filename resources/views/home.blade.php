@@ -249,3 +249,7 @@
 </body>
 
 </html>
+<script src={{asset ('wow-animation/wow.min.js')}}></script>
+<script>
+    new WOW().init();
+</script>

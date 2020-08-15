@@ -1,4 +1,5 @@
 function refreshTags() {
+
     let activeTags = []
     document.querySelectorAll('.tag').forEach(el => {
         if (el.classList.contains('active')) { activeTags.push(el.getAttribute('value')) }
@@ -11,7 +12,6 @@ function refreshTags() {
     } else {
         document.querySelectorAll('.portfolio-block').forEach(block => {
             // let general_hide = true
-
             block_tags = block.getAttribute('tags').split("||")
             let general_result = 1
             activeTags.forEach(acttag => {
@@ -27,7 +27,6 @@ function refreshTags() {
         })
     }
     blocksReformat()
-
 }
 
 function hrefTOtags() {
@@ -57,16 +56,15 @@ function blocksReformat() {
 
     let i = 0
     let screenWidth = document.querySelector('.portfolio-block-group').offsetWidth-4 //ширина экрана
-
+    var margin = 2 // расстояние между кадрами px
     if (screenWidth > 768) {
-        var margin = 2 // расстояние между кадрами px
+        
         var maxOfBlocksInLine = 3
     } else {
-        var margin = 1 // расстояние между кадрами px
+        
         var maxOfBlocksInLine = 2
     }
 
-    // console.log('screenWidth', screenWidth)
     let lastHeight = 0
 
     while (i < blocks.length) {
@@ -87,8 +85,6 @@ function blocksReformat() {
 
         let scale = pixelSumm / countOfBlocksInLine
 
-
-
         for (let index = 0; index < countOfBlocksInLine; index++) {
 
 
@@ -105,8 +101,9 @@ function blocksReformat() {
                 blockWidth = Math.round(blocks[i + index].getAttribute('landWidth') / scale * screenWidth / countOfBlocksInLine) - margin * 2
                 
             }
-            // console.log('Width', blockWidth)
-            blocks[i + index].setAttribute("style", "width: " + blockWidth + "px; height: " + blockHeight + "px; margin: " + margin + "px "+ margin+ "px");
+            
+            blocks[i + index].setAttribute("style", "width: " + blockWidth + "px; height: " + blockHeight + "px; margin: " + margin + "px ");
+            
         }
 
         i += countOfBlocksInLine
@@ -116,6 +113,8 @@ function blocksReformat() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    let portfolioBlock = document.querySelector('.portfolio-block-group')
+    portfolioBlock.setAttribute('style', 'opacity: 0')
     window.onresize = function (event) {
         blocksReformat()
     };
@@ -129,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         element.addEventListener('click', function (event) {
-
+            portfolioBlock.setAttribute('style', 'opacity: 0')
             if (event.target.classList.contains('active')) {
                 event.target.classList.remove('active')
             } else {
@@ -143,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
     refreshTags()
+    portfolioBlock.setAttribute('style', 'opacity: 1')
 
 
 })

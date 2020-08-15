@@ -1,4 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic);* {
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic);a:visited,
+a:link,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+* {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
 }
@@ -200,6 +207,7 @@ figure > div {
   font-size: 16px;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 .hide {
@@ -394,20 +402,6 @@ label {
   font-size: 16px;
 }
 
-.footer {
-  width: 100%;
-  height: 10vw;
-  background-color: #3b3b3b;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-}
-
-.logo > img {
-  height: 4.5vw;
-}
-
 .inst {
   display: flex;
   align-items: center;
@@ -421,18 +415,6 @@ label {
 .inst > p {
   margin-left: 15px;
   font-size: 14px;
-}
-
-.contacts {
-  text-align: end;
-  max-width: 250px;
-  line-height: 0;
-  transform: scale(1.1);
-}
-
-.contacts a {
-  text-decoration: none;
-  color: white;
 }
 
 .modal {
@@ -695,14 +677,6 @@ label {
     margin-bottom: 5vh;
   }
 
-  .footer {
-    height: 10vh;
-  }
-
-  .logo > img {
-    height: 7.5vw;
-  }
-
   .inst {
     display: none;
   }
@@ -714,19 +688,6 @@ label {
   .inst > p {
     display: none;
     font-size: 9px;
-  }
-
-  .contacts {
-    max-width: none;
-    width: 35%;
-  }
-
-  .contacts > h5 {
-    font-size: 8px;
-  }
-
-  .contacts > h3 {
-    font-size: 13px;
   }
 }
 

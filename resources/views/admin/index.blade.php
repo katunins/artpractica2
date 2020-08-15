@@ -13,14 +13,9 @@
   <div class="head">
     <h1>Админ панель</h1>
     <ul>
-      {{-- <li><a href="{{ route('newtag') }}">Создать новый тег</a></li> --}}
-      {{-- <li><a href="{{ route('taglist') }}">Редактировать теги</a></li> --}}
       <li><a href="{{ route('taglist') }}">Теги</a></li>
-      {{-- </ul>
-<ul> --}}
-      {{-- <li><a href="{{ route('newproject') }}">Добавить новый проект</a></li> --}}
-      {{-- <li><a href="{{ route('editportfolio') }}">Редактировать проекты</a></li> --}}
       <li><a href="{{ route('editportfolio') }}">Проекты</a></li>
+      <li><a href="{{ route('portfolio') }}">Выйти</a></li>
     </ul>
   </div>
 

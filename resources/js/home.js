@@ -21,26 +21,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     })
-
-    // // история с модальным окном 
-    // var modal = document.getElementById("myModal");
-    // var btn = document.getElementById("myBtn");
-    // document.querySelectorAll('.myBtn').forEach((elem) => {
-    //     elem.onclick = function(data) {
-    //         document.getElementById('modalFrame').src = this.getAttribute('href')
-    //         modal.style.display = "block";
-    //     }
-    // })
-
-    // document.getElementsByClassName("close")[0].onclick = function() {
-    //     modal.style.display = "none";
-    //     document.getElementsByTagName('video')[0].pause()
-    // }
-
-    // window.onclick = function(event) {
-    //     if (event.target == modal) {
-    //         modal.style.display = "none";
-    //         document.getElementsByTagName('video')[0].pause()
-    //     }
-    // }
 });

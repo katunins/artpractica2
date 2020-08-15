@@ -159,16 +159,13 @@ function blocksReformat() {
   var i = 0;
   var screenWidth = document.querySelector('.portfolio-block-group').offsetWidth - 4; //ширина экрана
 
-  if (screenWidth > 768) {
-    var margin = 2; // расстояние между кадрами px
+  var margin = 2; // расстояние между кадрами px
 
+  if (screenWidth > 768) {
     var maxOfBlocksInLine = 3;
   } else {
-    var margin = 1; // расстояние между кадрами px
-
     var maxOfBlocksInLine = 2;
-  } // console.log('screenWidth', screenWidth)
-
+  }
 
   var lastHeight = 0;
 
@@ -196,10 +193,9 @@ function blocksReformat() {
         // break
       } else {
         blockWidth = Math.round(blocks[i + index].getAttribute('landWidth') / scale * screenWidth / countOfBlocksInLine) - margin * 2;
-      } // console.log('Width', blockWidth)
+      }
 
-
-      blocks[i + index].setAttribute("style", "width: " + blockWidth + "px; height: " + blockHeight + "px; margin: " + margin + "px " + margin + "px");
+      blocks[i + index].setAttribute("style", "width: " + blockWidth + "px; height: " + blockHeight + "px; margin: " + margin + "px ");
     }
 
     i += countOfBlocksInLine;
@@ -208,6 +204,9 @@ function blocksReformat() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  var portfolioBlock = document.querySelector('.portfolio-block-group');
+  portfolioBlock.setAttribute('style', 'opacity: 0');
+
   window.onresize = function (event) {
     blocksReformat();
   };
@@ -221,6 +220,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     element.addEventListener('click', function (event) {
+      portfolioBlock.setAttribute('style', 'opacity: 0');
+
       if (event.target.classList.contains('active')) {
         event.target.classList.remove('active');
       } else {
@@ -232,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   refreshTags();
+  portfolioBlock.setAttribute('style', 'opacity: 1');
 });
 
 /***/ }),

@@ -1,3 +1,80 @@
+// a:hover{ 
+//     text-decoration: none;
+// }
+$background-color: #3b3b3b;
+a:visited, a:link, a:hover, a:active { 
+    text-decoration: none;
+   }
+
+.content {
+    max-width: 1200px;
+    width: 80%;
+    margin: 30px auto;
+}
+
+.tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.tag, .tag-clear {
+    margin: 10px 20px;
+    cursor: pointer;
+}
+
+.tag-clear {
+    padding: 2px 5px;
+    color: white;
+    background-color: rgba($color: $background-color, $alpha: 0.3);
+}
+
+.hide {
+    display: none;
+}
+
+.active {
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.3);
+}
+
+.img-block {
+    width: 100%;
+    height: 270px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+a.button-del {
+    padding: 2px 10px;
+    border-radius: 3px;
+    background-color: red;
+    color: white;
+    font-size: 0.7em;
+}
+
+a.button-edit {
+    padding: 2px 10px;
+    border-radius: 3px;
+    background-color: grey;
+    color: white;
+    font-size: 0.7em;
+}
+
+.plus {
+    width: 30vw;
+    border: 1px solid grey;
+    font-size: 140;
+    line-height: 250px;
+    font-weight: 100;
+    color: grey;
+    text-align: center;
+}
+
+$background-color: #3b3b3b;
+
 .portfolio-block-group {
     display: flex;
     flex-wrap: wrap;
@@ -5,11 +82,10 @@
     justify-content: space-between;
 }
 
-.portfolio-block {
-    // width: 400px;
-}
-
 .portfolio-img-block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
     width: 100%;
     height: 100%;
     background-blend-mode: color;
@@ -19,8 +95,46 @@
 }
 
 .edit-block {
-    // margin: 10px auto;
     text-align: end;
-    // transform: translateY(-2.5em);
-    transform: translate(-10px, -30px);
+    transform: translate(-10px, -75px);
+}
+
+.label {
+    margin-bottom:  20px;
+    color: white;
+    text-align: end;
+background-color: rgba($color: $background-color, $alpha: 0.8);
+padding: 5px 10px;
+
+}
+
+.label > p {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.black-button {
+    text-decoration: none;
+    // color: white;
+    // background-color: $background-color;
+    padding: 6px 10px;
+    width: 200px;
+    text-align: center;
+    // font-size: 14px;
+    margin: 30px auto 0
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .portfolio-block-group {
+        
+        justify-content: start;
+    }
+    .content {
+        width: 90%;
+    }
+
+    .tag, .tag-clear{
+        margin: 5px 10px
+    }
+
 }
