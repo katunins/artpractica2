@@ -35,26 +35,46 @@
   opacity: 0.5;
 }
 
+.web-mobile-katunin {
+  display: none;
+}
+
 @media screen and (max-width: 768px) and (orientation: portrait) {
   .footer {
     height: 10vh;
   }
 
-  .logo img {
-    height: 7.5vw;
+  .footer-logo img {
+    width: 120px;
+    height: auto;
+  }
+
+  .footer-logo {
+    display: none;
   }
 
   .contacts {
     max-width: none;
     width: 35%;
+    text-align: left;
   }
 
-  .contacts > h5 {
+  .contacts h5 {
     font-size: 8px;
   }
 
-  .contacts > h3 {
+  .contacts h3 {
     font-size: 13px;
+  }
+
+  .web-katunin {
+    display: none;
+  }
+
+  .web-mobile-katunin {
+    display: block;
+    font-size: 10px;
+    opacity: 0.3;
   }
 }
 

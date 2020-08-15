@@ -103,7 +103,7 @@ $background-color: #3b3b3b;
     margin-bottom:  20px;
     color: white;
     text-align: end;
-background-color: rgba($color: $background-color, $alpha: 0.8);
+background-color: rgba($color: $background-color, $alpha: 0.6);
 padding: 5px 10px;
 
 }
@@ -134,7 +134,19 @@ padding: 5px 10px;
     }
 
     .tag, .tag-clear{
-        margin: 5px 10px
+        margin: 5px
     }
 
+    .tag-group {
+        font-size: 12px;
+    }
+.label {
+    margin-bottom: 7px;
+    padding: 3px 6px;
+}
+
+.label > p {
+    font-size: 11px;
+    
+}
 }
