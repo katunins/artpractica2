@@ -37,7 +37,7 @@ class UploadController extends Controller
         $newImage->sharpen(3);
         Storage::disk('local')->makeDirectory('public/uploads/'.$folder);
         
-        $filename = preg_replace('/\s+/', ' ', $original_file->getClientOriginalName());
+        $filename = preg_replace('/\s+/', '_', $original_file->getClientOriginalName());
         $newImage->save('storage/uploads/' . $folder . '/' . $filename);
         
         return ('uploads/' . $folder . '/' . $filename);
