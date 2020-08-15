@@ -127,10 +127,10 @@ padding: 5px 10px;
 @media screen and (max-width: 768px) and (orientation: portrait) {
     .portfolio-block-group {
         
-        justify-content: start;
+        justify-content: center;
     }
     .content {
-        width: 90%;
+        width: 100%;
     }
 
     .tag, .tag-clear{
@@ -147,6 +147,9 @@ padding: 5px 10px;
 
 .label > p {
     font-size: 11px;
-    
+    line-height: 1;
+}
+.tag-clear {
+    display: none;
 }
 }

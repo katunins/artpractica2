@@ -119,11 +119,11 @@ a.button-edit {
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
   .portfolio-block-group {
-    justify-content: start;
+    justify-content: center;
   }
 
   .content {
-    width: 90%;
+    width: 100%;
   }
 
   .tag,
@@ -142,6 +142,11 @@ a.button-edit {
 
   .label > p {
     font-size: 11px;
+    line-height: 1;
+  }
+
+  .tag-clear {
+    display: none;
   }
 }
 

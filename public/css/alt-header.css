@@ -58,7 +58,7 @@
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
   .logo img {
-    width: 160px;
+    width: 180px;
   }
 
   .logo {
@@ -71,7 +71,7 @@
   }
 
   .inst img {
-    width: 25px;
+    width: 35px;
   }
 
   .inst {

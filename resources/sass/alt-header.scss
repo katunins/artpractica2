@@ -59,7 +59,7 @@ $background-color: #3b3b3b;
         }
 @media screen and (max-width: 768px) and (orientation: portrait) {
     .logo img {
-        width: 160px;
+        width: 180px;
     }
 
     .logo {
@@ -71,16 +71,10 @@ $background-color: #3b3b3b;
     }
 
     .inst img{
-        width: 25px;
+        width: 35px;
     }
 
     .inst {
         margin-left: 10px;
     }
-
-    // .tel-mobile {
-    //     display: block;
-    //     margin-top: 10px;
-    //     font-size: 14px;
-    // }
 }
