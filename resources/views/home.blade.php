@@ -138,18 +138,25 @@
                 <h3>Балашова Людмила</h3>
                 <h5>руководитель студии</h5>
                 <p class="ceo-quote">"Сколько себя помню, я - дизайнер интерьера!"</p>
-                {{-- <p>По-началу это было вольное плавание, потом появились
-                    единомышленники и наша "ARTPRACTICA". Ответственный подход ,
-                    неравнодушие и целеустремленность двигали нас вперед.
-                    И теперь ARTPRACTCICA - большая команда профессионалов, э
-                    то целый комплекс услуг по созданию интерьеров, это огромный
-                    опыт работы с объектами разной величины и направленности.
-                </p> --}}
                 <p class="ceo-about">Я Арт-директор, дизайнер, автор инсталляций в Парке Горького, Саду им. Баумана,
                     саду «Эрмитаж». В
                     основном наша команда проектирует классические интерьеры. В 2019 году мы спроектирвоали 25
                     объектов в стиле Loft. У нас собственные ресурсы и опыт - это позволяет выполнять практически любые
                     задачи</p>
+            </div>
+            <div class="ceo-portrait wow animate__animated animate__fadeIn">
+            </div>
+        </div>
+
+        <div class="ceo">
+            <div class="ceo-text">
+                <h3>Балашова Людмила</h3>
+                <h5>руководитель студии</h5>
+                <p class="ceo-about-2">
+                    
+                        &quot; Арт практика сегодня - это надежная и успешная команда профессионалов. Мы идем в ногу со временем и
+                        всегда открыты для новых задач в проектировании и реализации вашей среды обитания &quot;
+                    </p>
             </div>
             <div class="ceo-portrait wow animate__animated animate__fadeIn">
             </div>
@@ -203,6 +210,28 @@
                 </div>
             </figure>
         </div>
+
+
+        <div class="team-grid">
+
+            <figure class="team-item-a1">
+                <div data-wow-delay="0.2s" class="wow animate__animated animate__fadeIn"
+                    style="background-image: url(/images/sec_vers/image_6.jpg)">
+
+                </div>
+            </figure>
+
+            <figure class="team-item-a2" href="/images/sec_vers/oil.mp4">
+                <div data-wow-delay="0.3s" class="wow animate__animated animate__fadeIn">
+                    <video width="100%" height="100%" preload="auto" autoplay="true" loop="true" muted="muted">
+                        <source src="/images/sec_vers/factory.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </figure>
+        </div>
+
+
+
         <div class="arrow">
             <svg style="fill: grey;" width="38.417px" height="18.592px">
                 <path
@@ -212,13 +241,9 @@
         </div>
 
         <div class="team-text">
-            <h3>За 17 лет мы сформировали надежную бригаду профессионалов:</h3>
-            {{-- <p>За 17 лет своей плодотворной работы мы сформировали надежную бригаду профессионалов: --}}
-            <li>6 дизайнеров-архитекторов,</li>
-            <li>3 менеджера по продажам и закупкам,</li>
-            <li>3 конструктора мебели,</li>
-            <li>бригада работников мебельного производства и многочисленная строительная бригада.</li>
-
+            <p>
+                &quot; Арт практика сегодня - это надежная и успешная команда профессионалов. Мы идем в ногу со временем и
+                всегда открыты для новых задач в проектировании и реализации вашей среды обитания &quot;
             </p>
         </div>
 
@@ -234,18 +259,8 @@
                 <input class="submit" type="submit" name="submit" value="Отправить">
             </form>
         </div>
-        {{-- <button id="myBtn">Open Modal</button> --}}
-
-
-
-
-        {{-- <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <video src="" id='modalFrame' controls="controls" autoplay></video>
-            </div>
-        </div> --}}
-        @include('footer')
+    </div>
+    @include('footer')
 </body>
 
 </html>

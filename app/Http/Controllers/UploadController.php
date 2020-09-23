@@ -39,7 +39,7 @@ class UploadController extends Controller
         
         // $filename = preg_replace('/\s+/', '_', $original_file->getClientOriginalName());
         $filename = Str::random(10).'jpg';
-        $newImage->save('storage/uploads/' . $folder . '/' . $filename);
+        $newImage->save('storage/uploads/' . $folder . '/' . $filename, 80);
         
         return ('uploads/' . $folder . '/' . $filename);
     }
