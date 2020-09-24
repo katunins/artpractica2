@@ -49,7 +49,7 @@
     <div class="container">
         <div class="block">
             <div class="title-text">
-                491 завершенный проект с 2003 года
+                491 завершенный проект с 2010 года
             </div>
 
             <div class="arrow">
@@ -133,7 +133,7 @@
             </div>
         </div>
 
-        <div class="ceo">
+        {{-- <div class="ceo">
             <div class="ceo-text">
                 <h3>Балашова Людмила</h3>
                 <h5>руководитель студии</h5>
@@ -146,7 +146,7 @@
             </div>
             <div class="ceo-portrait wow animate__animated animate__fadeIn">
             </div>
-        </div>
+        </div> --}}
 
         <div class="ceo">
             <div class="ceo-text">
