@@ -138,7 +138,7 @@ class UploadController extends Controller
 
         $portfolio_data = Portfolio::find($id);
         // dd ($id);
-        return view('project', ['data' => $portfolio_data]);
+        if ($portfolio_data) return view('project', ['data' => $portfolio_data]); else return view('portfolio');
         // return redirect()->route('oneportfolio', ['data'=>$portfolio_data]);
     }
 
