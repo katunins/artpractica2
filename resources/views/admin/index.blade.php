@@ -13,6 +13,7 @@
   <div class="head">
     <h1>Админ панель</h1>
     <ul>
+      <li><a href="{{ route('mainpicture') }}">Фотографии на главной</a></li>
       <li><a href="{{ route('taglist') }}">Теги</a></li>
       <li><a href="{{ route('editportfolio') }}">Проекты</a></li>
       <li><a href="{{ route('portfolio') }}">Перейти на сайт</a></li>

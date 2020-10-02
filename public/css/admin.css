@@ -161,12 +161,12 @@ td > a {
 }
 
 .my_modal {
+  position: fixed;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1050;
   display: none;
   width: 100vw;
   height: 100vh;
-  position: absolute;
   top: 0;
   justify-content: center;
   align-items: center;
@@ -176,6 +176,7 @@ td > a {
   position: relative;
   width: auto;
   margin: 10px;
+  top: 35%;
 }
 
 .my_modal-content {
@@ -316,5 +317,19 @@ li {
   line-height: 30px;
   margin: 0 auto;
   border-radius: 30px;
+}
+
+.main-picture-block {
+  margin-top: 50px;
+}
+
+.main-picture-block input {
+  width: 200px;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.main-picture-block img {
+  height: 300px;
 }
 

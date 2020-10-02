@@ -44,7 +44,7 @@
     <div class="portfolio-block-group">
         @for ($i = 0; $i < $portfolios->count(); $i++)
             <div data-wow-delay="<?=$i/10?>s"
-                class="portfolio-block wow animate__animated animate__fadeIn animate__slower"
+                class="portfolio-block wow animate__animated animate__fadeIn animate__faster"
                 tags=<?=$portfolios[$i]->tags?> landWidth=<?=GetImgType ($portfolios[$i]->title_image)?>>
                 <a href="{{ route('get-portfolio', $portfolios[$i]->id) }}">
                     <div class="portfolio-img-block"
@@ -85,6 +85,7 @@
     </a>
 </div>
 @include('footer')
+
 <script src={{asset ('js/portfolio-block.js')}}></script>
 <script src={{asset ('wow-animation/wow.min.js')}}></script>
 <script>

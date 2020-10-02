@@ -169,7 +169,7 @@ td>a {
 // -----
 
 .my_modal {
-    // position: fixed;
+    position: fixed;
     // top: 0;
     // right: 0;
     // bottom: 0;
@@ -182,7 +182,7 @@ td>a {
     // display: flex;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    // position: absolute;
     top: 0;
     justify-content: center;
     align-items: center;
@@ -192,6 +192,7 @@ td>a {
     position: relative;
     width: auto;
     margin: 10px;
+    top: 35%;
 }
 
 .my_modal-content {
@@ -356,4 +357,22 @@ li {
     margin: 0 auto;
     border-radius: 30px;
 
+}
+
+.main-picture-form {
+        // display: flex;
+        // flex-direction: row;
+    
+}
+
+.main-picture-block {
+    margin-top: 50px;
+    input {
+        width: 200px;
+        margin: 10px;
+        padding: 5px 10px;
+    }
+    img {
+        height: 300px;
+    }
 }

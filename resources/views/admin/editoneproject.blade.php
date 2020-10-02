@@ -39,6 +39,9 @@
             </div>
         </div>
         <hr>
+
+
+
         <div class="editproject-img">
 
             <?php
@@ -101,6 +104,19 @@
                 <input id="sort" type="number" min="0" max="1000" name="sort" value="<?=$projectData->sort?>">
             </div>
         </div>
+
+
+        {{-- <div class="form-group">
+            <br>
+            <p>Разместить на главной странице?</p>
+            <select id="mainscreen" name="mainscreen">
+                <option value="">Не размещать на главной</option>
+                <option value=2>Поставить первой</option>
+                <option value=3>Поставить второй</option>
+                <option value=4>Поставить 3й</option>
+                <option value=5>Поставить 4й</option>
+            </select>
+        </div> --}}
 
     </div>
 

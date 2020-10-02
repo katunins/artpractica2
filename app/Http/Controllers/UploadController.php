@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Portfolio;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\DB;
 
 class UploadController extends Controller
 {
@@ -74,8 +75,6 @@ class UploadController extends Controller
         })->sharpen(5)->save();
         $path_title = $title_file->store('uploads/' . $folder, 'public');
 
-
-
         $portfolio = new Portfolio();
         $portfolio->title = $request->input('title');
         $portfolio->description = $request->input('description');
@@ -90,6 +89,46 @@ class UploadController extends Controller
 
         return redirect()->route('editportfolio');
         // return redirect()->route('admin-portfolios', ['id'=>$portfolio->id]);
+    }
+
+    public function updateMainScreenPictures(Request $request)
+    {
+
+        for ($i = 1; $i <= 4; $i++) {
+            $rules['main-img-' . $i] = 'image|mimes:jpeg, jpg';
+            // $messages['main-img-' . $i . '.required'] = 'Загрузите фотографию ' . $i;
+            $messages['main-img-' . $i . '.image'] = 'Файл для фотографии ' . $i . ' не является изображением';
+            $messages['main-img-' . $i . '.mimes'] = 'Фотография ' . $i . ' не является форматом .jpg';
+        }
+
+        $request->validate($rules, $messages);
+        for ($i = 1; $i <= 4; $i++) {
+            $file = $request->file('main-img-' . $i);
+            $link = $request->input('main-link-' . $i);
+            if ($file) {
+                // $ext = pathinfo($file->getClientOriginalName())['extension'];
+                $ext = 'jpg';
+                $image = Image::make($file);
+                $image->resize(1800, 1800, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })->sharpen(5)->save();
+                $file->storeAs(
+                    'public/uploads/mainscreenimages',
+                    $i . '.' . $ext
+                );
+            }
+
+            if ($link !='') {
+
+                DB::table('mainscreen')
+                ->where('id',$i)
+                ->update(['link' => $link]);
+            }
+
+            
+        }
+        return redirect()->back();
     }
 
     public function updateproject(Request $request)
@@ -108,7 +147,6 @@ class UploadController extends Controller
                     $constraint->upsize();
                 })->sharpen(5)->save();
                 $path[] = $file->store('uploads/' . $folder, 'public');
-
             }
             $portfolio->images = json_encode($path);
         }

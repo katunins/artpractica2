@@ -20,7 +20,6 @@ class CreatePortfoliosTable extends Migration
             $table->text('description')->nullable();
             $table->string('code');
             $table->string('tags');
-            $table->string('mainscreen')->nullable();
             $table->text('title_image');
             $table->smallInteger('sort');
             $table->text('images');

@@ -2,9 +2,13 @@
 //     text-decoration: none;
 // }
 $background-color: #3b3b3b;
-a:visited, a:link, a:hover, a:active { 
+
+a:visited,
+a:link,
+a:hover,
+a:active {
     text-decoration: none;
-   }
+}
 
 .content {
     max-width: 1200px;
@@ -19,7 +23,8 @@ a:visited, a:link, a:hover, a:active {
     justify-content: center;
 }
 
-.tag, .tag-clear {
+.tag,
+.tag-clear {
     margin: 10px 20px;
     cursor: pointer;
 }
@@ -100,15 +105,15 @@ $background-color: #3b3b3b;
 }
 
 .label {
-    margin-bottom:  20px;
+    margin-bottom: 20px;
     color: white;
     text-align: end;
-background-color: rgba($color: $background-color, $alpha: 0.6);
-padding: 5px 10px;
+    background-color: rgba($color: $background-color, $alpha: 0.6);
+    padding: 5px 10px;
 
 }
 
-.label > p {
+.label>p {
     font-size: 14px;
     margin-right: 10px;
 }
@@ -126,30 +131,34 @@ padding: 5px 10px;
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
     .portfolio-block-group {
-        
+
         justify-content: center;
     }
+
     .content {
         width: 100%;
     }
 
-    .tag, .tag-clear{
+    .tag,
+    .tag-clear {
         margin: 5px
     }
 
     .tag-group {
         font-size: 12px;
     }
-.label {
-    margin-bottom: 7px;
-    padding: 3px 6px;
-}
 
-.label > p {
-    font-size: 11px;
-    line-height: 1;
-}
-.tag-clear {
-    display: none;
-}
+    .label {
+        margin-bottom: 7px;
+        padding: 3px 6px;
+    }
+
+    .label>p {
+        font-size: 11px;
+        line-height: 1;
+    }
+
+    .tag-clear {
+        display: none;
+    }
 }

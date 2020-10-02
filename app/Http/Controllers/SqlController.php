@@ -56,4 +56,5 @@ class SqlController extends Controller
         $tag = Tags::find($id);
         return view('admin/updatetag', ['data'=>$tag]);
     }
+
 }
