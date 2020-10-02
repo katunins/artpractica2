@@ -35,18 +35,18 @@ class UploadController extends Controller
         }
 
         $newImage->sharpen(3);
-        Storage::disk('local')->makeDirectory('public/uploads/'.$folder);
-        
+        Storage::disk('local')->makeDirectory('public/uploads/' . $folder);
+
         // $filename = preg_replace('/\s+/', '_', $original_file->getClientOriginalName());
-        $filename = Str::random(10).'jpg';
+        $filename = Str::random(10) . 'jpg';
         $newImage->save('storage/uploads/' . $folder . '/' . $filename, 80);
-        
+
         return ('uploads/' . $folder . '/' . $filename);
     }
 
     public function newprojectupload(ProjectValidateRequest $request)
     {
-        
+
 
         $files =  $request->file('image');
         $title_file = $request->file('title-image');
@@ -54,11 +54,26 @@ class UploadController extends Controller
         $folder = Str::random(10);
 
         foreach ($files as $file) {
-            $path[] = $this->resize($file, $folder);
+
+            // $path[] = $this->resize($file, $folder);
             // $path[] = $file->store('uploads/' . $folder, 'public');
+
+            $image = Image::make($file);
+            $image->resize(1800, 1800, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->sharpen(5)->save();
+            $path[] = $file->store('uploads/' . $folder, 'public');
         }
-        $path_title = $this->resize($title_file, $folder);
-        // $path_title = $title_file->store('uploads/' . $folder, 'public');
+
+
+        $image_title = Image::make($title_file);
+        $image_title->resize(1800, 1800, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        })->sharpen(5)->save();
+        $path_title = $title_file->store('uploads/' . $folder, 'public');
+
 
 
         $portfolio = new Portfolio();
@@ -70,7 +85,9 @@ class UploadController extends Controller
         $portfolio->sort = $request->input('sort');
         $portfolio->images = json_encode($path);
 
+
         $portfolio->save();
+
         return redirect()->route('editportfolio');
         // return redirect()->route('admin-portfolios', ['id'=>$portfolio->id]);
     }
@@ -83,22 +100,29 @@ class UploadController extends Controller
 
         $files =  $request->file('image');
         if (isset($files)) {
-
+            $path = json_decode($portfolio->images); //путь старых картинок
             foreach ($files as $file) {
-                $path[] = $this->resize($file, $folder);
-                // $path[] = $file->store('uploads/' . $folder, 'public');
+                $image = Image::make($file);
+                $image->resize(1800, 1800, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })->sharpen(5)->save();
+                $path[] = $file->store('uploads/' . $folder, 'public');
+
             }
-            $old_paths = json_decode($portfolio->images);
-            if (count($old_paths) > 0) array_push($path, $old_paths);
-            // dd ($path);
             $portfolio->images = json_encode($path);
         }
 
         $title_file = $request->file('title-image');
         if (isset($title_file)) {
-            // dd ($title_file);
-            // $path_title = $title_file->store('uploads/' . $folder, 'public');
-            $path_title = $this->resize($title_file, $folder);
+
+            $image = Image::make($title_file);
+            $image->resize(1800, 1800, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->sharpen(5)->save();
+            $path_title = $title_file->store('uploads/' . $folder, 'public');
+
             $portfolio->title_image = $path_title;
         }
 
@@ -138,7 +162,8 @@ class UploadController extends Controller
 
         $portfolio_data = Portfolio::find($id);
         // dd ($id);
-        if ($portfolio_data) return view('project', ['data' => $portfolio_data]); else return view('portfolio');
+        if ($portfolio_data) return view('project', ['data' => $portfolio_data]);
+        else return view('portfolio');
         // return redirect()->route('oneportfolio', ['data'=>$portfolio_data]);
     }
 

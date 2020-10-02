@@ -14,10 +14,16 @@
 
 <?php
     use App\Http\Controllers\SqlController; 
-    $tags = SqlController::gettag();            
+    use App\Http\Controllers\UploadController; 
+    $tags = SqlController::gettag();
+    $portfolios = UploadController::getPortfolios();
+
+    $lastSort = 0;
+    if (count($portfolios)>0) $lastSort = $portfolios->last()->sort;
+    $lastSort +=20;
 ?>
 
-<form class="post-form" action="{{ route('newprojectupload') }}" method="post" enctype="multipart/form-data">
+<form class="post-form" id="formLoader" action="{{ route('newprojectupload') }}" method="post" enctype="multipart/form-data">
     <div>
 
         @csrf
@@ -32,11 +38,11 @@
 
             <div class="img-loader-block">
                 <span>Выберете главную картинку</span>
-                <input id="title-img" type="file" name="title-image">
+                <input id="title-img" type="file" name="title-image" value="">
             </div>
             <div class="img-loader-block">
                 <span>Загрузите остальные изображения</span>
-                <input id="img" type="file" multiple name="image[]">
+                <input id="img" type="file" multiple name="image[]" value="">
             </div>
         </div>
         <input class="submit" type="submit" name="submit" value="Сохранить">
@@ -57,16 +63,11 @@
             @endif
         </ul>
 
-        {{-- <div class="form-group newproject">
-            <label for="code">Символьный код<br></label>
-            <input type="text" id="code" name="code" placeholder="Moscow-City 44sq">
-        </div> --}}
-
 
         <div class="form-group newproject">
             <label for="sort">Сортировка</label>
             <div class="form-group">
-                <input id="sort" type="number" min="0" max="1000" name="sort" placeholder="250">
+                <input id="sort" type="number" min="0" max="1000" name="sort" value="{{ $lastSort }}">
             </div>
         </div>
 
@@ -77,7 +78,14 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function(){
+        document.querySelector ('.preloader-block').classList.add ('hide')
+        document.getElementById ('formLoader').onsubmit = function () {
+            document.querySelector ('.preloader-block').classList.remove ('hide')
+        }
+
+        let tags = 0
         document.querySelectorAll('.tags-checkbox').forEach(elem=>{
+            tags ++
             elem.addEventListener('change', ()=>{
                 var result = ''
                 document.querySelectorAll('.tags-checkbox').forEach(e=>{
@@ -88,23 +96,20 @@
             })
         })
 
-        // document.querySelector('.submit').addEventListener('click', function(event){
-        //     console.log ('aa',event)
+        if (tags == 0) {
+            alert ('Для загрузки проекта необходимо выбрать хотябы один тег. Сейчас не задано ни одного тега. Создайте теги')
+            window.location.replace ('/admin/newtag')
+        }
+
+        // document.querySelector('form').addEventListener('submit', function(event){
+            
+        //     // console.log ('aa',event)
         //     file = new FileReader();
+        //     console.log (file)
+        //     // alert()
         //     file.process = function (ev){
-        //         console.log (file.result)
+        //         console.log ('f',file.result)
         //     }
         // })
-
-        document.querySelector('form').addEventListener('submit', function(event){
-            
-            // console.log ('aa',event)
-            file = new FileReader();
-            console.log (file)
-            // alert()
-            file.process = function (ev){
-                console.log ('f',file.result)
-            }
-        })
     })
 </script>

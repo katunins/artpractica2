@@ -1,19 +1,21 @@
 <link rel="stylesheet" href="{{asset ('css/portfolio-block.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 <?php
-
     use App\Http\Controllers\UploadController; 
     use App\Http\Controllers\SqlController; 
+    use Intervention\Image\ImageManagerStatic as Image;
     // use Illuminate\Support\Facades\Storage;
 
 
     $portfolios = UploadController::getPortfolios();
     $tags = SqlController::gettag();   
-
+    
     // определяет тип загруженной титульной фотографии
     function GetImgType ($url) {
         $metadata = getimagesize('storage/'.$url);
+        
         $result = $metadata[0]/$metadata[1];
+        
 
     $result = $metadata[0]/$metadata[1];
     // $result = round($metadata[0]/$metadata[1], 2);
@@ -37,12 +39,13 @@
             <?=$item->name?>
         </div>
         @endforeach
-        
+
     </div>
     <div class="portfolio-block-group">
         @for ($i = 0; $i < $portfolios->count(); $i++)
-            <div data-wow-delay="<?=$i/10?>s" class="portfolio-block wow animate__animated animate__fadeIn animate__slower" tags=<?=$portfolios[$i]->tags?>
-                landWidth=<?=GetImgType ($portfolios[$i]->title_image)?>>
+            <div data-wow-delay="<?=$i/10?>s"
+                class="portfolio-block wow animate__animated animate__fadeIn animate__slower"
+                tags=<?=$portfolios[$i]->tags?> landWidth=<?=GetImgType ($portfolios[$i]->title_image)?>>
                 <a href="{{ route('get-portfolio', $portfolios[$i]->id) }}">
                     <div class="portfolio-img-block"
                         style="background-image: url({{asset('storage/'.$portfolios[$i]->title_image)}})">

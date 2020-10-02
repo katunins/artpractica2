@@ -11,14 +11,14 @@
 |
 */
 
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/artadmin', function () {
-    return view('admin/index');
-})->name('admin');
 
 Route::get('/admin/newtag', function () {
     return view('admin/newtag');
@@ -44,13 +44,6 @@ Route::post('/admin/newtag/submit', 'SqlController@newtag')->name('newtag-submit
 
 Route::post('admin/newprojectupload', 'UploadController@newprojectupload')->name('newprojectupload');
 Route::post('admin/updateprojectupload', 'UploadController@updateproject')->name('updateproject');
-Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('/admin/portfolios/{id}', function (){
-//     return view('admin/portfolios');
-// })->name('admin-portfolios');
 
 Route::get('/portfolio', function () {
     return view('portfolio');
@@ -68,3 +61,35 @@ Route::get('/admin/editoneproject/{id}', function ($id) {
 })->name('editoneproject');
 
 Route::get('admin/changepicture', 'UploadController@changepicture')->name('changepicture');
+
+
+Route::get('admin', function () {
+    $adminpass = DB::table('adminpass')->get();
+    if (count($adminpass) > 0) {      
+        
+        if (Hash::check(Session::get('auth'), $adminpass[0]->password)) return view('admin/index');
+        else return view('admin/checkadminpass');        
+    } else {
+        return view('admin/newadminpass', ['update'=>false]);        
+    }
+
+});//->name('admin');
+
+Route::post('adminSetNewPass', 'AdminpassController@setNewAdminPass')->name('setNewAdminPass');
+Route::post('adminCheckPass', 'AdminpassController@checkAdminPass')->name('checkAdminPass');
+
+Route::get('admincheckpass', function () {
+
+    return view('admin/checkadminpass');   
+})->name('checkadminpass');
+
+Route::get('updateadminpass', function () {
+    $adminpass = DB::table('adminpass')->get();
+    if (Hash::check(Session::get('auth'), $adminpass[0]->password)) return view('admin/newadminpass', ['update'=>true]); else return redirect('admin');
+});
+
+Route::get('/logout', function () {
+
+    Session::flush('auth');
+    return redirect('admin');
+});

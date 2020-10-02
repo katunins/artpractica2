@@ -8,12 +8,63 @@ a {
   cursor: pointer;
 }
 
+.hide {
+  display: none;
+}
+
+.preloader-block {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+.preloader-background {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preloader {
+  background: white;
+  width: 500px;
+  height: 300px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-250px, -150px);
+}
+
 .head {
   font-family: roboto;
   font-weight: 100;
   line-height: 1.5;
   padding: 20px 50px;
-  background-color: antiquewhite;
+  background-color: grey;
+  color: white;
+}
+
+.head a,
+.head a:active,
+.head a:visited,
+.head a:hover {
+  background-color: white;
+  padding: 3px 20px;
+  color: black;
+  border-radius: 5px;
 }
 
 .form {
@@ -37,8 +88,9 @@ a {
 
 .submit {
   padding: 10px 20px;
-  border-radius: 20px;
-  background-color: aquamarine;
+  background-color: grey;
+  border: none;
+  color: white;
 }
 
 .errors {
@@ -109,16 +161,15 @@ td > a {
 }
 
 .my_modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1050;
   display: none;
-  margin: 0;
-  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .my_modal-dialog {
@@ -172,6 +223,28 @@ td > a {
   width: 90%;
 }
 
+::-webkit-input-placeholder {
+  /* Chrome */
+  color: #cacaca;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #cacaca;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #cacaca;
+  opacity: 1;
+}
+
+:-moz-placeholder {
+  /* Firefox 4 - 18 */
+  color: #cacaca;
+  opacity: 1;
+}
+
 textarea {
   font-size: 16px;
   width: 90%;
@@ -193,6 +266,7 @@ ul {
 
 li {
   list-style-type: none;
+  margin-top: 5px;
 }
 
 .img-loader {

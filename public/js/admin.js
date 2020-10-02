@@ -81,53 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/home.js":
-/*!******************************!*\
-  !*** ./resources/js/home.js ***!
-  \******************************/
+/***/ "./resources/js/admin.js":
+/*!*******************************!*\
+  !*** ./resources/js/admin.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-document.addEventListener("DOMContentLoaded", function () {
-  // переназначим последовательность эффектов wow для картинок в сетке
-  if (window.matchMedia('(max-width: 768px)').matches) {
-    document.querySelector('.gallery-item-2').children[0].setAttribute("data-wow-delay", "0.0s");
-    document.querySelector('.gallery-item-1').children[0].setAttribute("data-wow-delay", "0.1s");
-    document.querySelector('.gallery-item-4').children[0].setAttribute("data-wow-delay", "0.3s");
-    document.querySelector('.gallery-item-3').children[0].setAttribute("data-wow-delay", "0.5s");
-  } // кнопки подбробнее в направляниях деятельности
-
-
-  document.querySelectorAll('.direction button').forEach(function (butt) {
-    butt.onclick = function () {
-      var details = this.nextSibling.nextSibling;
-
-      if (details) {
-        if (details.classList.contains('hide')) {
-          details.classList.remove('hide');
-        } else {
-          details.classList.add('hide');
-        }
-      }
-    };
-  });
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/pavelkatunin/Documents/artpractica3/resources/js/admin.js'");
 
 /***/ }),
 
-/***/ 1:
-/*!************************************!*\
-  !*** multi ./resources/js/home.js ***!
-  \************************************/
+/***/ 2:
+/*!*************************************!*\
+  !*** multi ./resources/js/admin.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/js/home.js */"./resources/js/home.js");
+module.exports = __webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/js/admin.js */"./resources/js/admin.js");
 
 
 /***/ })

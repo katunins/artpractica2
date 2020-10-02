@@ -29,7 +29,7 @@ class ProjectValidateRequest extends FormRequest
             'tags' => 'required',
             'title-image' => 'required|image|mimes:jpeg, jpg',
             'sort' => 'required',
-            'image' => 'required|mimes:jpeg, jpg',
+            // 'image' => 'required|mimes:jpeg, jpg',
             'image.*' => "image|mimes:jpeg, jpg"
         ];
     }
@@ -44,8 +44,8 @@ class ProjectValidateRequest extends FormRequest
         'title-image.image' => 'Файл для титульной фотографии не является изображением',
         'title-image.mimes' => 'Главная фотография должна быть только .jpg',
         'sort.required' => 'Укажите сортировку',
-        'image.required' => 'Загрузите фотографии',
-        'image.mimes' => 'Изображение должно быть только .jpg',
+        // 'image.required' => 'Загрузите фотографии',
+        // 'image.mimes' => 'Изображение должно быть только .jpg',
         'image.*.image' => 'Файл для портфолио не является изображением',
         'image.*.mimes' => 'Изображения должны быть только .jpg',
         'code.alpha_dash' => 'Поле Код должен состоять из английских букв, цифр и знака тире',

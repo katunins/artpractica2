@@ -17,10 +17,9 @@
     use App\Http\Controllers\UploadController; 
     $tags = SqlController::gettag();    
     $projectData = UploadController::getOneProject($id);
-    // dd ($portfolio_data);
 ?>
-{{-- {{ route('updateproject') }} --}}
-<form class="post-form" action="{{ route('updateproject') }}" method="post" enctype="multipart/form-data">
+<form class="post-form" id="formLoader" action="{{ route('updateproject') }}" method="post"
+    enctype="multipart/form-data">
     <div>
 
         @csrf
@@ -65,7 +64,7 @@
             @endforeach
             @endif
 
-<hr style="margin-top: 30px">
+            <hr style="margin-top: 30px">
             <div class="img-loader-block">
                 <span>Добавьте изображения в проект</span>
                 <input id="img" type="file" multiple name="image[]">
@@ -120,6 +119,13 @@
     }
     document.addEventListener('DOMContentLoaded', function(){
         updateTags()
+
+        // document.querySelector ('.preloader-block').classList.add ('hide')
+        document.getElementById ('formLoader').addEventListener('submit', function () {
+            // console.log (document.querySelector ('.preloader-block').classList)
+            document.querySelector ('.preloader-block').classList.remove ('hide')
+        })
+
         document.querySelectorAll('.tags-checkbox').forEach(elem=>{
             elem.addEventListener('change', ()=>{
                 updateTags()
@@ -134,15 +140,15 @@
         //     }
         // })
 
-        document.querySelector('form').addEventListener('submit', function(event){
+        // document.querySelector('form').addEventListener('submit', function(event){
             
-            // console.log ('aa',event)
-            file = new FileReader();
-            console.log (file)
-            // alert()
-            file.process = function (ev){
-                console.log ('f',file.result)
-            }
-        })
+        //     // console.log ('aa',event)
+        //     file = new FileReader();
+        //     console.log (file)
+        //     // alert()
+        //     file.process = function (ev){
+        //         console.log ('f',file.result)
+        //     }
+        // })
     })
 </script>

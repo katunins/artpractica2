@@ -40,8 +40,9 @@
             event.preventDefault();
             document.querySelector('.my_modal-title').innerHTML = 'Удаление тега'
             document.querySelector('.my_modal-body').innerHTML = '<p>'+message+'?</p>'
-            document.getElementById('modal_open').style.display = 'block'
+            document.getElementById('modal_open').style.display = 'flex'
             document.getElementById('delete-button').setAttribute('onclick',"location.href = '"+href+"'")
+            
         })
         })   
     })

@@ -1,11 +1,51 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic");
+
 * {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
+    ;
 }
-a{
+
+a {
     text-decoration: none;
     cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+.preloader-block {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+.preloader-background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preloader {
+    background: white;
+    width: 500px;
+    height: 300px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-250px, -150px);
 }
 
 .head {
@@ -13,7 +53,18 @@ a{
     font-weight: 100;
     line-height: 1.5;
     padding: 20px 50px;
-    background-color: antiquewhite;
+    background-color: grey;
+    color: white;
+
+    a,
+    a:active,
+    a:visited,
+    a:hover {
+        background-color: white;
+        padding: 3px 20px;
+        color: black;
+        border-radius: 5px;
+    }
 }
 
 .form {
@@ -29,22 +80,21 @@ a{
     min-width: 500px;
 }
 
-.form-group > input {
+.form-group>input {
     padding: 5px 20px;
     // margin-left: 20px;
     font-size: 16px;
     outline: none;
 }
 
-// .form-group > span{
-//     margin: 10px 30px 20px;
-// }
 
 .submit {
     padding: 10px 20px;
-    border-radius: 20px;
-    background-color: aquamarine;
+    // border-radius: 20px;
+    background-color: grey;
     // margin-top: 30px;
+    border: none;
+    color: white;
 }
 
 .errors {
@@ -61,7 +111,7 @@ a{
     display: none;
 }
 
-.tags > li {
+.tags>li {
     border: 1px solid grey;
     padding: 10px 20px;
     border-radius: 20px;
@@ -77,6 +127,7 @@ table {
     color: #686461;
     margin: 40px auto;
 }
+
 caption {
     padding: 10px;
     color: white;
@@ -85,22 +136,26 @@ caption {
     text-align: left;
     font-weight: bold;
 }
+
 th {
     border-bottom: 1px solid #b9b29f;
     padding: 10px;
     text-align: left;
 }
+
 td {
     padding: 10px;
 }
+
 tr:nth-child(odd) {
     background: white;
 }
+
 tr:nth-child(even) {
     background: #e8e6d1;
 }
 
-td > a {
+td>a {
     font-size: 18px;
     width: 30px;
     height: 30px;
@@ -114,22 +169,31 @@ td > a {
 // -----
 
 .my_modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    // position: fixed;
+    // top: 0;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1050;
     display: none;
-    margin: 0;
-    padding: 0;
+    // margin: 0;
+    // padding: 0;
+    // display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    align-items: center;
 }
+
 .my_modal-dialog {
     position: relative;
     width: auto;
     margin: 10px;
 }
+
 .my_modal-content {
     width: 400px;
     margin: 0 auto;
@@ -150,10 +214,12 @@ td > a {
     border-radius: 6px;
     outline: 0;
 }
+
 .my_modal-header {
     display: block;
     padding: 14px 14px 4px;
 }
+
 .my_modal-title {
     margin-top: 0;
     margin-bottom: 0;
@@ -163,6 +229,7 @@ td > a {
     border-bottom: 1px solid #d4d4d4;
     text-align: center;
 }
+
 .my_modal-body {
     position: relative;
     -webkit-box-flex: 1;
@@ -182,7 +249,28 @@ td > a {
     width: 90%;
 }
 
-.modal-buttons > button {
+.modal-buttons>button {}
+
+::-webkit-input-placeholder {
+    /* Chrome */
+    color: rgb(202, 202, 202);
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: rgb(202, 202, 202);
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgb(202, 202, 202);
+    opacity: 1;
+}
+
+:-moz-placeholder {
+    /* Firefox 4 - 18 */
+    color: rgb(202, 202, 202);
+    opacity: 1;
 }
 
 textarea {
@@ -204,7 +292,7 @@ textarea {
     display: flex;
 }
 
-.post-form > div {
+.post-form>div {
     margin: 20px;
 }
 
@@ -215,6 +303,7 @@ ul {
 
 li {
     list-style-type: none;
+    margin-top: 5px;
 }
 
 .img-loader {
@@ -227,7 +316,7 @@ li {
     font-size: 14px;
 }
 
-.img-loader-block > input {
+.img-loader-block>input {
     margin-top: 10px;
 }
 
@@ -236,7 +325,7 @@ li {
     // flex-direction: row;
     // flex-wrap: wrap;
     margin-bottom: 40px;
-    
+
 }
 
 .editproject-img img {
@@ -244,7 +333,7 @@ li {
     margin: 45px 0 10px;
 }
 
-.edit_picture  a {
+.edit_picture a {
     font-size: 14px;
     border: 1px solid grey;
     padding: 3px 10px;

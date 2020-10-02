@@ -1,6 +1,5 @@
 @extends('admin/index')
 {{-- <link rel="stylesheet" href="/css/portfolio.css"> --}}
-
 @section('content')
 @include('portfolio-block')
 @endsection
@@ -11,7 +10,6 @@
         document.querySelectorAll('.button-del').forEach(elem=>{
             elem.addEventListener('click', (event)=>{
 
-            console.log ('1 ')  
             var href = event.target.href
             var message = event.target.getAttribute('message')
             event.preventDefault();

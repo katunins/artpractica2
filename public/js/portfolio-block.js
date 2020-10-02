@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica2/resources/js/portfolio-block.js */"./resources/js/portfolio-block.js");
+module.exports = __webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/js/portfolio-block.js */"./resources/js/portfolio-block.js");
 
 
 /***/ })

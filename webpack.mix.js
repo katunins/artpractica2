@@ -17,6 +17,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/portfolio-block.scss', 'public/css')
     .sass('resources/sass/footer.scss', 'public/css')
     .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/adminpass.scss', 'public/css')
     .sass('resources/sass/alt-header.scss', 'public/css')
     .sass('resources/sass/one-portfolio.scss', 'public/css')
     .sass('resources/sass/admin.scss', 'public/css');

@@ -15,7 +15,10 @@
     <ul>
       <li><a href="{{ route('taglist') }}">Теги</a></li>
       <li><a href="{{ route('editportfolio') }}">Проекты</a></li>
-      <li><a href="{{ route('portfolio') }}">Выйти</a></li>
+      <li><a href="{{ route('portfolio') }}">Перейти на сайт</a></li>
+      <br>
+      <li><a href="updateadminpass">Изменить пароль администратора</a></li>
+      <li><a href="logout">Выйти из аккаунта</a></li>
     </ul>
   </div>
 
@@ -52,6 +55,19 @@
       </div>
     </div>
   </div>
+
+
+  <div class="preloader-block hide">
+    <div class="preloader-background">    
+    </div>
+  
+    <div class="preloader">
+      <img src="{{ asset('images/preloader.gif') }}" alt="Loading ...">
+      <p>Загрузка, не закрывайте окно!</p>
+    </div>
+  </div>
+
+
 </body>
 
 </body>
