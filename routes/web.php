@@ -112,4 +112,4 @@ Route::get('/logout', function () {
     return redirect('admin');
 });
 
-Route::post('adminCheckPass', 'UploadController@updateMainScreenPictures')->name('updateMainScreenPictures');
+Route::post('updateMainScreenPictures', 'UploadController@updateMainScreenPictures')->name('updateMainScreenPictures');
