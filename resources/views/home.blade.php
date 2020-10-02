@@ -12,6 +12,11 @@
 </head>
 
 <body>
+    <?php
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+?>
+
     <div class="head">
         <div class="headlogo">
 
@@ -67,34 +72,55 @@
 
 
         <div class="gallery-grid">
-            <figure class="gallery-item-1">
-                <div data-wow-delay="0.0s" class="wow animate__animated animate__fadeIn"
-                    style="background-image: url(/images/sec_vers/image_1.jpg)">
-                    <a href="" class="black-mini-button">Подробнее</a>
-                </div>
 
-            </figure>
-
-            <figure class="gallery-item-2">
-                <div data-wow-delay="0.1s" class="wow animate__animated animate__fadeIn"
-                    style="background-image: url(/images/sec_vers/image_2.jpg)">
-                    <a href="" class="black-mini-button">Подробнее</a>
+            @for ($i = 1; $i <= 4; $i++) 
+            
+            <?php $link = DB::table('mainscreen')->where('id', $i)->get()[0]->link ?>
+            
+            @if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg')) 
+            <?php $url = Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg') ?>
+            @else
+            <?php $url = asset('/images/empty.png') ?>
+            @endif
+            
+            <figure class="gallery-item-{{ $i }}">
+                <div data-wow-delay="0.{{ $i }}s" class="wow animate__animated animate__fadeIn"
+                    style="background-image: url({{ $url }})">
+                    <a href="{{ $link }}" class="black-mini-button">Подробнее</a>
                 </div>
-            </figure>
+                
+                </figure>
+            
+                @endfor
 
-            <figure class="gallery-item-3">
-                <div data-wow-delay="0.3s" class="wow animate__animated animate__fadeIn"
-                    style="background-image: url(/images/sec_vers/image_4.jpg)">
-                    <a href="" class="black-mini-button">Подробнее</a>
-                </div>
-            </figure>
+                {{-- <figure class="gallery-item-1">
+                    <div data-wow-delay="0.0s" class="wow animate__animated animate__fadeIn"
+                        style="background-image: url(/images/sec_vers/image_1.jpg)">
+                        <a href="" class="black-mini-button">Подробнее</a>
+                    </div>
 
-            <figure class="gallery-item-4">
-                <div data-wow-delay="0.5s" class="wow animate__animated animate__fadeIn"
-                    style="background-image: url(/images/sec_vers/image_3.jpg)">
-                    <a href="" class="black-mini-button">Подробнее</a>
-                </div>
-            </figure>
+                </figure>
+
+                <figure class="gallery-item-2">
+                    <div data-wow-delay="0.1s" class="wow animate__animated animate__fadeIn"
+                        style="background-image: url(/images/sec_vers/image_2.jpg)">
+                        <a href="" class="black-mini-button">Подробнее</a>
+                    </div>
+                </figure>
+
+                <figure class="gallery-item-3">
+                    <div data-wow-delay="0.3s" class="wow animate__animated animate__fadeIn"
+                        style="background-image: url(/images/sec_vers/image_4.jpg)">
+                        <a href="" class="black-mini-button">Подробнее</a>
+                    </div>
+                </figure>
+
+                <figure class="gallery-item-4">
+                    <div data-wow-delay="0.5s" class="wow animate__animated animate__fadeIn"
+                        style="background-image: url(/images/sec_vers/image_3.jpg)">
+                        <a href="" class="black-mini-button">Подробнее</a>
+                    </div>
+                </figure> --}}
         </div>
 
         <div class="title-text mobile-space">
@@ -153,10 +179,11 @@
                 <h3>Балашова Людмила</h3>
                 <h5>руководитель студии</h5>
                 <p class="ceo-about-2">
-                    
-                        &quot; Арт практика сегодня - это надежная и успешная команда профессионалов. Мы идем в ногу со временем и
-                        всегда открыты для новых задач в проектировании и реализации вашей среды обитания &quot;
-                    </p>
+
+                    &quot; Арт практика сегодня - это надежная и успешная команда профессионалов. Мы идем в ногу со
+                    временем и
+                    всегда открыты для новых задач в проектировании и реализации вашей среды обитания &quot;
+                </p>
             </div>
             <div class="ceo-portrait wow animate__animated animate__fadeIn">
             </div>
@@ -242,7 +269,8 @@
 
         <div class="team-text">
             <p>
-                &quot; Арт практика сегодня - это надежная и успешная команда профессионалов. Мы идем в ногу со временем и
+                &quot; Арт практика сегодня - это надежная и успешная команда профессионалов. Мы идем в ногу со временем
+                и
                 всегда открыты для новых задач в проектировании и реализации вашей среды обитания &quot;
             </p>
         </div>

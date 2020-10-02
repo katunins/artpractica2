@@ -32,7 +32,7 @@ if (count ($mainScreenPictures) == 0) {
 
 @endif
 
-<form id="formLoader" action="{{ route('updateMainScreenPictures') }}" method="post" enctype="multipart/form-data">
+<form id="git " action="{{ route('updateMainScreenPictures') }}" method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="main-picture-form">

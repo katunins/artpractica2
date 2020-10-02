@@ -16,9 +16,10 @@
       <li><a href="{{ route('mainpicture') }}">Фотографии на главной</a></li>
       <li><a href="{{ route('taglist') }}">Теги</a></li>
       <li><a href="{{ route('editportfolio') }}">Проекты</a></li>
-      <li><a href="{{ route('portfolio') }}">Перейти на сайт</a></li>
-      <br>
       <li><a href="updateadminpass">Изменить пароль администратора</a></li>
+      
+      <br>
+      <li><a href="{{ route('home') }}">Перейти на сайт</a></li>
       <li><a href="logout">Выйти из аккаунта</a></li>
     </ul>
   </div>
