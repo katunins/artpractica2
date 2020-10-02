@@ -15,6 +15,18 @@
     <?php
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+
+$mainScreenPictures = DB::table('mainscreen')->get();
+if (count ($mainScreenPictures) == 0) {
+    // создадим начальные 4 картинки в таблице
+    for ($i=1; $i <=4; $i++) { 
+        DB::table('mainscreen')->insert([
+            'id'=>$i,
+            'link' => 'http://artpractica.ru'
+        ]);
+    }
+};
+
 ?>
 
     <div class="head">
@@ -75,7 +87,9 @@ use Illuminate\Support\Facades\Storage;
 
             @for ($i = 1; $i <= 4; $i++) 
             
-            <?php $link = DB::table('mainscreen')->where('id', $i)->get()[0]->link ?>
+            <?php 
+            $link = DB::table('mainscreen')->where('id', $i)->get()[0]->link 
+            ?>
             
             @if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg')) 
             <?php $url = Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg') ?>
