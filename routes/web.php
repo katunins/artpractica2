@@ -112,4 +112,9 @@ Route::get('/logout', function () {
     return redirect('admin');
 });
 
+Route::get('/tutorial', function () {
+    // checkAuth(); 
+    return view('admin/tutorial');
+});
+
 Route::post('updateMainScreenPictures', 'UploadController@updateMainScreenPictures')->name('updateMainScreenPictures');

@@ -17,6 +17,7 @@
       <li><a href="{{ route('taglist') }}">Теги</a></li>
       <li><a href="{{ route('editportfolio') }}">Проекты</a></li>
       <li><a href="updateadminpass">Изменить пароль администратора</a></li>
+      <li><a href="tutorial" target="blank">Обучающее видео</a></li>
       
       <br>
       <li><a href="{{ route('home') }}">Перейти на сайт</a></li>

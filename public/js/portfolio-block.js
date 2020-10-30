@@ -204,6 +204,7 @@ function blocksReformat() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  blocksReformat();
   var portfolioBlock = document.querySelector('.portfolio-block-group');
   portfolioBlock.setAttribute('style', 'opacity: 0');
 

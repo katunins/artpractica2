@@ -42,8 +42,10 @@
 
     </div>
     <div class="portfolio-block-group">
+        <?php $delay = 0;?>
         @for ($i = 0; $i < $portfolios->count(); $i++)
-            <div data-wow-delay="<?=$i/10?>s"
+            <div data-wow-delay="{{ $delay }}s" <?php $delay += 0.1;
+                if ($delay >1) $delay = 0;?>
                 class="portfolio-block wow animate__animated animate__fadeIn animate__faster"
                 tags=<?=$portfolios[$i]->tags?> landWidth=<?=GetImgType ($portfolios[$i]->title_image)?>>
                 <a href="{{ route('get-portfolio', $portfolios[$i]->id) }}">

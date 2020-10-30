@@ -113,6 +113,7 @@ function blocksReformat() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    blocksReformat()
     let portfolioBlock = document.querySelector('.portfolio-block-group')
     portfolioBlock.setAttribute('style', 'opacity: 0')
     window.onresize = function (event) {

@@ -234,6 +234,11 @@ figure > div {
   margin: 20px;
 }
 
+.details > p {
+  font-size: 15px;
+  opacity: 0.7;
+}
+
 .ceo {
   height: 33vw;
   background-color: #3b3b3b;

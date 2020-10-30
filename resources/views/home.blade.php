@@ -146,29 +146,24 @@ if (count ($mainScreenPictures) == 0) {
                 <h3>Реализация проекта под ключ</h3>
                 <button>подробнее</button>
                 <div class="details hide">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deserunt similique, excepturi in
-                        vero
-                        harum quis perspiciatis, sit soluta quasi numquam laboriosam autem libero at. Dicta praesentium
-                        perferendis ullam amet?</p>
-                    <img src="/images/team.jpg" alt="">
+                    <p>От дизайн-проекта до момента заселения мы спланируем и произведем все необходимые строительные и ремонтные работы на Вашем объекте. Вам останется только перевести вещи</p>
+                    <img src="/images/utp-full.jpg" alt="">
                 </div>
             </div>
             <div data-wow-delay="0.2s" class="wow animate__animated animate__fadeInRight">
-                <h3>Полная комплектация проекта</h3>
+                <h3>Комплектация</h3>
                 <button>подробнее</button>
                 <div class="details hide">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deserunt similique, excepturi in vero
-                    harum quis perspiciatis, sit soluta quasi numquam laboriosam autem libero at. Dicta praesentium
-                    perferendis ullam amet?
+                    <p>Мы грамотно подберем, быстро привезем и бережно установим все необходимые строительные  и  отделочные материалы - от штукатурки до текстиля - на Ваш объект</p>
+                    <img src="/images/utp-compl.jpg" alt="">
                 </div>
             </div>
             <div data-wow-delay="0.4s" class="wow animate__animated animate__fadeInLeft">
                 <h3>Собственное мебельное производтсво</h3>
                 <button>подробнее</button>
                 <div class="details hide">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deserunt similique, excepturi in vero
-                    harum quis perspiciatis, sit soluta quasi numquam laboriosam autem libero at. Dicta praesentium
-                    perferendis ullam amet?
+                    <p>На нашем производстве мы готовы решить любую "мебельную" задачу - создать вашу мебель по авторскому дизайну, индивидуальным размерам, с использованием последних технологий и всё это при условии высочайшего качества европейского стандарта.</p>
+                    <img src="/images/utp-furniture.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -188,7 +183,11 @@ if (count ($mainScreenPictures) == 0) {
             </div>
         </div> --}}
 
-        <div class="ceo">
+
+
+
+
+        {{-- <div class="ceo">
             <div class="ceo-text">
                 <h3>Балашова Людмила</h3>
                 <h5>руководитель студии</h5>
@@ -201,7 +200,7 @@ if (count ($mainScreenPictures) == 0) {
             </div>
             <div class="ceo-portrait wow animate__animated animate__fadeIn">
             </div>
-        </div>
+        </div> --}}
 
         <div class="arrow arrow-anim">
             <svg style="fill: grey;" width="38.417px" height="18.592px">
@@ -253,7 +252,7 @@ if (count ($mainScreenPictures) == 0) {
         </div>
 
 
-        <div class="team-grid">
+        {{-- <div class="team-grid">
 
             <figure class="team-item-a1">
                 <div data-wow-delay="0.2s" class="wow animate__animated animate__fadeIn"
@@ -269,7 +268,7 @@ if (count ($mainScreenPictures) == 0) {
                     </video>
                 </div>
             </figure>
-        </div>
+        </div> --}}
 
 
 
@@ -285,7 +284,7 @@ if (count ($mainScreenPictures) == 0) {
             <p>
                 &quot; Арт практика сегодня - это надежная и успешная команда профессионалов. Мы идем в ногу со временем
                 и
-                всегда открыты для новых задач в проектировании и реализации вашей среды обитания &quot;
+                всегда открыты для новых задач в проектировании и реализации вашей мечты &quot;
             </p>
         </div>
 
