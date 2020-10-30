@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-{{-- {{ phpinfo() }} --}}
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Студия дизайна Artpractica</title>
+    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <script src="js/home.js"></script>
@@ -151,9 +151,10 @@ if (count ($mainScreenPictures) == 0) {
                 <h5>руководитель студии</h5>
                 <p class="ceo-about-2">
 
-                    &quot; Арт практика сегодня - это надежная и успешная команда профессионалов. Мы идем в ногу со
-                    временем и
-                    всегда открыты для новых задач в проектировании и реализации вашей среды обитания &quot;
+                    &quot; Студия дизайна Арт Практика - дело всей моей жизни! Это моё хобби и мой бизнес одновременно.
+                    Моя главная мотивация (мой главный стимул/успех) - видеть счастливые глаза заказчиков, довольных
+                    результатом нашей работы! Именно это помогает двигаться вперед, расширять свои возможности и
+                    осваивать новые направления &quot;
                 </p>
             </div>
             <div class="ceo-portrait wow animate__animated animate__fadeIn">
