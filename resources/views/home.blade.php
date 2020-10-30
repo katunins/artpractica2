@@ -301,7 +301,7 @@ if (count ($mainScreenPictures) == 0) {
             <h3>Остались вопросы?</h3>
             <form action="{{ route('form') }}" method="POST">
                 @csrf
-                {{-- @honeypot --}}
+                <x-honeypot />
                 <input type="text" name="name" placeholder="Ваше имя">
                 <input type="tel" name="tel" placeholder="+7(999)999 99 99">
                 <textarea name="message" id="" cols="30" rows="7" placeholder="Ваше сообщение"></textarea>
