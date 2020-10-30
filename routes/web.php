@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
+use App\Http\Controllers\ContactFormSubmissionController;
+use Spatie\Honeypot\ProtectAgainstSpam;
+
 function checkAuth()
 {
     if (count(DB::table('adminpass')->get()) == 0 ) die();
@@ -52,7 +55,7 @@ Route::get('/admin/tagremove/{id}', 'SqlController@tagremove')->name('tagremove'
 
 Route::post('/admin/newtag/submit', 'SqlController@newtag')->name('newtag-submit');
 
-Route::post('/submit', 'AdminpassController@sendMessage')->name('form');
+Route::post('/submit', 'AdminpassController@sendMessage')->name('form')->middleware(ProtectAgainstSpam::class);
 
 // Route::get('send-mail', function () {
    
