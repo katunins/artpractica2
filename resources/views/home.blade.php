@@ -108,34 +108,6 @@ if (count ($mainScreenPictures) == 0) {
 
             @endfor
 
-            {{-- <figure class="gallery-item-1">
-                    <div data-wow-delay="0.0s" class="wow animate__animated animate__fadeIn"
-                        style="background-image: url(/images/sec_vers/image_1.jpg)">
-                        <a href="" class="black-mini-button">Подробнее</a>
-                    </div>
-
-                </figure>
-
-                <figure class="gallery-item-2">
-                    <div data-wow-delay="0.1s" class="wow animate__animated animate__fadeIn"
-                        style="background-image: url(/images/sec_vers/image_2.jpg)">
-                        <a href="" class="black-mini-button">Подробнее</a>
-                    </div>
-                </figure>
-
-                <figure class="gallery-item-3">
-                    <div data-wow-delay="0.3s" class="wow animate__animated animate__fadeIn"
-                        style="background-image: url(/images/sec_vers/image_4.jpg)">
-                        <a href="" class="black-mini-button">Подробнее</a>
-                    </div>
-                </figure>
-
-                <figure class="gallery-item-4">
-                    <div data-wow-delay="0.5s" class="wow animate__animated animate__fadeIn"
-                        style="background-image: url(/images/sec_vers/image_3.jpg)">
-                        <a href="" class="black-mini-button">Подробнее</a>
-                    </div>
-                </figure> --}}
         </div>
 
         <div class="title-text mobile-space">
@@ -145,7 +117,7 @@ if (count ($mainScreenPictures) == 0) {
         <div class="direction">
             <div data-wow-delay="0.0s" class="wow animate__animated animate__fadeInLeft">
                 <h3>Реализация проекта под ключ</h3>
-                <button>подробнее</button>
+                {{-- <button>подробнее</button> --}}
                 <div class="details hide">
                     <p>От дизайн-проекта до момента заселения мы спланируем и произведем все необходимые строительные и
                         ремонтные работы на Вашем объекте. Вам останется только перевести вещи</p>
@@ -154,7 +126,7 @@ if (count ($mainScreenPictures) == 0) {
             </div>
             <div data-wow-delay="0.2s" class="wow animate__animated animate__fadeInRight">
                 <h3>Комплектация</h3>
-                <button>подробнее</button>
+                {{-- <button>подробнее</button> --}}
                 <div class="details hide">
                     <p>Мы грамотно подберем, быстро привезем и бережно установим все необходимые строительные и
                         отделочные материалы - от штукатурки до текстиля - на Ваш объект</p>
@@ -163,7 +135,7 @@ if (count ($mainScreenPictures) == 0) {
             </div>
             <div data-wow-delay="0.4s" class="wow animate__animated animate__fadeInLeft">
                 <h3>Собственное мебельное производтсво</h3>
-                <button>подробнее</button>
+                {{-- <button>подробнее</button> --}}
                 <div class="details hide">
                     <p>На нашем производстве мы готовы решить любую "мебельную" задачу - создать вашу мебель по
                         авторскому дизайну, индивидуальным размерам, с использованием последних технологий и всё это при
@@ -173,26 +145,7 @@ if (count ($mainScreenPictures) == 0) {
             </div>
         </div>
 
-        {{-- <div class="ceo">
-            <div class="ceo-text">
-                <h3>Балашова Людмила</h3>
-                <h5>руководитель студии</h5>
-                <p class="ceo-quote">"Сколько себя помню, я - дизайнер интерьера!"</p>
-                <p class="ceo-about">Я Арт-директор, дизайнер, автор инсталляций в Парке Горького, Саду им. Баумана,
-                    саду «Эрмитаж». В
-                    основном наша команда проектирует классические интерьеры. В 2019 году мы спроектирвоали 25
-                    объектов в стиле Loft. У нас собственные ресурсы и опыт - это позволяет выполнять практически любые
-                    задачи</p>
-            </div>
-            <div class="ceo-portrait wow animate__animated animate__fadeIn">
-            </div>
-        </div> --}}
-
-
-
-
-
-        {{-- <div class="ceo">
+        <div class="ceo">
             <div class="ceo-text">
                 <h3>Балашова Людмила</h3>
                 <h5>руководитель студии</h5>
@@ -205,7 +158,7 @@ if (count ($mainScreenPictures) == 0) {
             </div>
             <div class="ceo-portrait wow animate__animated animate__fadeIn">
             </div>
-        </div> --}}
+        </div>
 
         <div class="arrow arrow-anim">
             <svg style="fill: grey;" width="38.417px" height="18.592px">
