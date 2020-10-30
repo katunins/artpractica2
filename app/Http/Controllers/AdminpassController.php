@@ -52,19 +52,9 @@ class AdminpassController extends Controller
 
         $details = [
             'title' => 'На сайте оставлена заявка',
-            'body' => 'This is for testing email using smtp'
+            'body' => 'Имя: '.$request->name.'<br>'.'Телефон: '.$request->tel.'<br>'.'Сообщение: '.$request->message.'<br>'
         ];
        
         \Mail::to('katunin.pavel@gmail.com')->send(new \App\Mail\AdminMail($details));
-
-
-        // $data = array('name' => "Virat Gandhi");
-
-        // Mail::send(['text' => 'mail'], $data, function ($message) {
-        //     $message->to('katunin.pavel@gmail.com', 'Tutorials Point')->subject('Laravel Basic Testing Mail');
-        //     $message->from('admin@artpractica.ru', 'Virat Gandhi');
-        // });
-
-        // dd($request->all());
     }
 }
