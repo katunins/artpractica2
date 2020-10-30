@@ -52,7 +52,9 @@ class AdminpassController extends Controller
 
         $details = [
             'title' => 'На сайте оставлена заявка',
-            'body' => 'Имя: '.$request->name."<br>".'Телефон: '.$request->tel."<br>".'Сообщение: '.$request->message.'<br>'
+            'name' => 'Имя: '.$request->name,
+            'tel' => 'Телефон: '.$request->tel,
+            'message' => 'Сообщение: '.$request->message
         ];
        
         \Mail::to('katunin.pavel@gmail.com')->send(new \App\Mail\AdminMail($details));
