@@ -52,7 +52,19 @@ Route::get('/admin/tagremove/{id}', 'SqlController@tagremove')->name('tagremove'
 
 Route::post('/admin/newtag/submit', 'SqlController@newtag')->name('newtag-submit');
 
-// Route::post('/submit', 'FormController@submit')->name('form');
+Route::post('/submit', 'AdminpassController@sendMessage')->name('form');
+
+// Route::get('send-mail', function () {
+   
+//     $details = [
+//         'title' => 'На сайте оставлена заявка',
+//         'body' => 'This is for testing email using smtp'
+//     ];
+   
+//     \Mail::to('katunin.pavel@gmail.com')->send(new \App\Mail\AdminMail($details));
+   
+//     dd("Email is Sent.");
+// });
 
 Route::post('admin/newprojectupload', 'UploadController@newprojectupload')->name('newprojectupload');
 Route::post('admin/updateprojectupload', 'UploadController@updateproject')->name('updateproject');

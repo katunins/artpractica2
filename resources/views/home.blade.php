@@ -291,7 +291,7 @@ if (count ($mainScreenPictures) == 0) {
         <div class="form">
             {{-- <h3>Расскажите нам про вашу задачу, оставьте контакты. Мы свяжемся с вами в ближайшее время</h3> --}}
             <h3>Остались вопросы?</h3>
-            <form {{--action="{{ route('form') }}"--}} method="POST">
+            <form action="{{ route('form') }}" method="POST">
                 @csrf
                 <input type="text" name="name" placeholder="Ваше имя">
                 <input type="tel" name="tel" placeholder="+7(999)999 99 99">

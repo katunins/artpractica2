@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Mail;
 
 class AdminpassController extends Controller
 {
@@ -40,5 +41,30 @@ class AdminpassController extends Controller
         } else {
             return view('admin/checkadminpass')->withErrors(['password' => 'Не верный пароль!']);
         }
+    }
+
+    public function sendMessage(Request $request)
+    {
+        // отправляет письмо менеджеру
+        //         "name" => "wef"
+        //   "tel" => "wefewf"
+        //   "message" => null
+
+        $details = [
+            'title' => 'На сайте оставлена заявка',
+            'body' => 'This is for testing email using smtp'
+        ];
+       
+        \Mail::to('katunin.pavel@gmail.com')->send(new \App\Mail\AdminMail($details));
+
+
+        // $data = array('name' => "Virat Gandhi");
+
+        // Mail::send(['text' => 'mail'], $data, function ($message) {
+        //     $message->to('katunin.pavel@gmail.com', 'Tutorials Point')->subject('Laravel Basic Testing Mail');
+        //     $message->from('admin@artpractica.ru', 'Virat Gandhi');
+        // });
+
+        // dd($request->all());
     }
 }
