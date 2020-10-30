@@ -57,7 +57,7 @@ class AdminpassController extends Controller
             'message' => 'Сообщение: '.$request->message
         ];
        
-        \Mail::to('katunin.pavel@gmail.com')->send(new \App\Mail\AdminMail($details));
-        return redirect()->back()->with('modal', "Спасибо за заявку! Мы с вами свяжемся в ближайшее время!");
+        \Mail::to('artpractica@mail.ru')->send(new \App\Mail\AdminMail($details));
+        return redirect()->to(url('/').'#feedback')->with('modal', "Спасибо за заявку! Мы с вами свяжемся в ближайшее время!");
     }
 }

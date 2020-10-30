@@ -85,29 +85,29 @@ if (count ($mainScreenPictures) == 0) {
 
         <div class="gallery-grid">
 
-            @for ($i = 1; $i <= 4; $i++) 
-            
-            <?php 
+            @for($i = 1; $i <= 4; $i++)
+
+                <?php 
             $link = DB::table('mainscreen')->where('id', $i)->get()[0]->link 
             ?>
-            
-            @if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg')) 
-            <?php $url = Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg') ?>
-            @else
-            <?php $url = asset('/images/empty.png') ?>
-            @endif
-            
-            <figure class="gallery-item-{{ $i }}">
-                <div data-wow-delay="0.{{ $i }}s" class="wow animate__animated animate__fadeIn"
-                    style="background-image: url({{ $url }})">
-                    <a href="{{ $link }}" class="black-mini-button">Подробнее</a>
-                </div>
-                
-                </figure>
-            
-                @endfor
 
-                {{-- <figure class="gallery-item-1">
+                <?php if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg')) {
+                    $url = Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg');
+                } else {
+                    $url = asset('/images/empty.png');
+                } ?>
+
+                <figure class="gallery-item-{{ $i }}">
+                    <div data-wow-delay="0.{{ $i }}s" class="wow animate__animated animate__fadeIn"
+                        style="background-image: url({{ $url }})">
+                        <a href="{{ $link }}" class="black-mini-button">Подробнее</a>
+                    </div>
+
+                </figure>
+
+            @endfor
+
+            {{-- <figure class="gallery-item-1">
                     <div data-wow-delay="0.0s" class="wow animate__animated animate__fadeIn"
                         style="background-image: url(/images/sec_vers/image_1.jpg)">
                         <a href="" class="black-mini-button">Подробнее</a>
@@ -146,7 +146,8 @@ if (count ($mainScreenPictures) == 0) {
                 <h3>Реализация проекта под ключ</h3>
                 <button>подробнее</button>
                 <div class="details hide">
-                    <p>От дизайн-проекта до момента заселения мы спланируем и произведем все необходимые строительные и ремонтные работы на Вашем объекте. Вам останется только перевести вещи</p>
+                    <p>От дизайн-проекта до момента заселения мы спланируем и произведем все необходимые строительные и
+                        ремонтные работы на Вашем объекте. Вам останется только перевести вещи</p>
                     <img src="/images/utp-full.jpg" alt="">
                 </div>
             </div>
@@ -154,7 +155,8 @@ if (count ($mainScreenPictures) == 0) {
                 <h3>Комплектация</h3>
                 <button>подробнее</button>
                 <div class="details hide">
-                    <p>Мы грамотно подберем, быстро привезем и бережно установим все необходимые строительные  и  отделочные материалы - от штукатурки до текстиля - на Ваш объект</p>
+                    <p>Мы грамотно подберем, быстро привезем и бережно установим все необходимые строительные и
+                        отделочные материалы - от штукатурки до текстиля - на Ваш объект</p>
                     <img src="/images/utp-compl.jpg" alt="">
                 </div>
             </div>
@@ -162,7 +164,9 @@ if (count ($mainScreenPictures) == 0) {
                 <h3>Собственное мебельное производтсво</h3>
                 <button>подробнее</button>
                 <div class="details hide">
-                    <p>На нашем производстве мы готовы решить любую "мебельную" задачу - создать вашу мебель по авторскому дизайну, индивидуальным размерам, с использованием последних технологий и всё это при условии высочайшего качества европейского стандарта.</p>
+                    <p>На нашем производстве мы готовы решить любую "мебельную" задачу - создать вашу мебель по
+                        авторскому дизайну, индивидуальным размерам, с использованием последних технологий и всё это при
+                        условии высочайшего качества европейского стандарта.</p>
                     <img src="/images/utp-furniture.jpg" alt="">
                 </div>
             </div>
@@ -289,6 +293,9 @@ if (count ($mainScreenPictures) == 0) {
         </div>
 
         <div class="form">
+            <div id="feedback" @if (!Session::has('modal')) class="hide" @endif>
+                Спасибо! <br>Мы свяжемся с вами в ближайшее время.
+            </div>
             {{-- <h3>Расскажите нам про вашу задачу, оставьте контакты. Мы свяжемся с вами в ближайшее время</h3> --}}
             <h3>Остались вопросы?</h3>
             <form action="{{ route('form') }}" method="POST">
@@ -305,7 +312,8 @@ if (count ($mainScreenPictures) == 0) {
 </body>
 
 </html>
-<script src={{asset ('wow-animation/wow.min.js')}}></script>
+<script src={{ asset ('wow-animation/wow.min.js') }}></script>
 <script>
     new WOW().init();
+
 </script>

@@ -14,7 +14,6 @@ body {
     margin: 0;
 }
 
-
 * {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
@@ -56,13 +55,11 @@ body {
 
 .headinst {
     margin: 5% auto;
-
 }
 
 .headinst img {
     width: 40px;
     margin: 0 5px;
-
 }
 
 .head-arrow-block {
@@ -75,7 +72,6 @@ body {
 }
 
 @keyframes spin {
-
     0%,
     100% {
         transform: translateY(0);
@@ -86,8 +82,37 @@ body {
     }
 }
 
-.ceo-about-2 {
+#feedback {
+    border: 1px solid grey;
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 70px;
+    
+    animation-name: open;
+    animation-duration: 1s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
 
+@keyframes open {
+    0% {
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+.ceo-about-2 {
     font-size: 16px;
     text-align: end;
     opacity: 0.8;
@@ -137,8 +162,6 @@ body {
     color: white;
     background-color: $background-color;
     padding: 15px 30px;
-
-
 }
 
 .gallery-grid {
@@ -156,7 +179,7 @@ figure {
     margin: 0;
 }
 
-figure>div {
+figure > div {
     height: 100%;
     background-blend-mode: color;
     background-position: center center;
@@ -169,7 +192,6 @@ figure>div {
 }
 
 .black-mini-button {
-
     margin-bottom: 30px;
     color: white;
     text-align: end;
@@ -178,7 +200,6 @@ figure>div {
     text-decoration: none;
     font-size: 14px;
     margin-right: 20px;
-
 
     // color: white;
     // background-color: $background-color;
@@ -202,7 +223,7 @@ figure>div {
     grid-row-end: 2;
 }
 
-.direction>div {
+.direction > div {
     text-align: center;
     background-color: $background-color;
     color: white;
@@ -212,13 +233,13 @@ figure>div {
     margin: 28px auto;
 }
 
-.direction>div>h3 {
+.direction > div > h3 {
     font-size: 23px;
     font-weight: 400;
     line-height: 0;
 }
 
-.direction>div>a {
+.direction > div > a {
     color: grey;
 }
 
@@ -241,12 +262,12 @@ figure>div {
     // display: none;
 }
 
-.details>img {
+.details > img {
     width: 80%;
     margin: 20px;
 }
 
-.details>p {
+.details > p {
     font-size: 15px;
     opacity: 0.7;
     // text-align: left;
@@ -279,12 +300,12 @@ figure>div {
     margin-right: 6vw;
 }
 
-.ceo-text>h3 {
+.ceo-text > h3 {
     font-size: 23px;
     line-height: 0;
 }
 
-.ceo-text>h5 {
+.ceo-text > h5 {
     // font-style: italic;
     font-size: 14px;
     line-height: 0;
@@ -316,7 +337,7 @@ figure>div {
 //     font-size: 29px;
 // }
 
-.team-text>p {
+.team-text > p {
     font-size: 20px;
 }
 
@@ -334,16 +355,13 @@ figure>div {
 }
 
 .team-item-a2 {
-
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 5;
 }
 
-
 .team-item-a1 {
-
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 1;
@@ -455,24 +473,20 @@ label {
     font-size: 16px;
 }
 
-
-
 .inst {
     display: flex;
     align-items: center;
 }
 
-.inst>img {
+.inst > img {
     width: 2vw;
     height: auto;
 }
 
-.inst>p {
+.inst > p {
     margin-left: 15px;
     font-size: 14px;
 }
-
-
 
 // ------------------
 .modal {
@@ -517,26 +531,24 @@ label {
     background-color: $background-color;
 }
 
-.header>img {
+.header > img {
     width: 20vw;
     max-width: 300px;
 }
 
-@media screen and (min-width: 768px) and ( max-width: 950px) {
+@media screen and (min-width: 768px) and (max-width: 950px) {
     .gallery-grid {
         background-color: black !important;
         grid-template-rows: repeat(2, 300px);
     }
 }
 
-@media screen and (min-width: 950px) and ( max-width: 1150px) {
+@media screen and (min-width: 950px) and (max-width: 1150px) {
     .gallery-grid {
         background-color: black !important;
         grid-template-rows: repeat(2, 350px);
     }
 }
-
-
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
     body {
@@ -646,13 +658,13 @@ label {
         margin: 13vw auto;
     }
 
-    .direction>div {
+    .direction > div {
         padding: 1em;
         margin: 10px auto;
         width: 80vw;
     }
 
-    .direction>div>h3 {
+    .direction > div > h3 {
         font-size: 15px;
     }
 
@@ -664,7 +676,7 @@ label {
         margin: 0;
     }
 
-    .details>p {
+    .details > p {
         font-size: 14px;
     }
 
@@ -680,7 +692,7 @@ label {
         margin: 5% auto;
     }
 
-    .ceo-text>h5 {
+    .ceo-text > h5 {
         margin-bottom: 45px;
     }
 
@@ -689,9 +701,6 @@ label {
         text-align: end;
         opacity: 0.8;
     }
-
-
-
 
     .ceo-quote {
         display: none;
@@ -712,7 +721,7 @@ label {
         padding: 20px 40px;
     }
 
-    .team-text>h3 {
+    .team-text > h3 {
         font-size: 19px;
     }
 
@@ -769,14 +778,13 @@ label {
         display: none;
     }
 
-    .inst>img {
+    .inst > img {
         width: 3vw;
     }
 
-    .inst>p {
+    .inst > p {
         // margin-left: 15px;
         display: none;
         font-size: 9px;
     }
-
 }
