@@ -55,7 +55,7 @@ Route::get('/admin/tagremove/{id}', 'SqlController@tagremove')->name('tagremove'
 
 Route::post('/admin/newtag/submit', 'SqlController@newtag')->name('newtag-submit');
 
-Route::post('/submit', 'AdminpassController@sendMessage')->name('form')->middleware(ProtectAgainstSpam::class);
+Route::post('/submit', 'AdminpassController@sendMessage');//->name('form')->middleware(ProtectAgainstSpam::class);
 
 // Route::get('send-mail', function () {
    
