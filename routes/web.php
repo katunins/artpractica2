@@ -135,27 +135,27 @@ Route::get('/tutorial', function () {
 Route::post('updateMainScreenPictures', 'UploadController@updateMainScreenPictures')->name('updateMainScreenPictures');
 
 // старые редиректы
-Route::get('/public/{old}', function () {
+Route::get('/ceny', function () {
     return redirect()->to('/');
 });
-// Route::get('/public/map', function () {
-//     return redirect()->to('/');
-// });
-// Route::get('/public/kontakty', function () {
-//     return redirect()->to('/');
-// });
-// Route::get('/otzyvy', function () {
-//     return redirect()->to('/');
-// });
-// Route::get('/akcii', function () {
-//     return redirect()->to('/');
-// });
-// Route::get('/services', function () {
-//     return redirect()->to('/');
-// });
-// Route::get('/index', function () {
-//     return redirect()->to('/');
-// });
+Route::get('/map', function () {
+    return redirect()->to('/');
+});
+Route::get('/kontakty', function () {
+    return redirect()->to('/');
+});
+Route::get('/otzyvy', function () {
+    return redirect()->to('/');
+});
+Route::get('/akcii', function () {
+    return redirect()->to('/');
+});
+Route::get('/services', function () {
+    return redirect()->to('/');
+});
+Route::get('/index', function () {
+    return redirect()->to('/');
+});
 
 
 
