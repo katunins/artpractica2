@@ -150,7 +150,7 @@ Route::get('/public/otzyvy', function () {
 Route::get('/public/akcii', function () {
     return view('home');
 });
-Route::get('/public/services', function () {
+Route::get('public/services', function () {
     return view('home');
 });
 Route::get('/public/index/index', function () {
