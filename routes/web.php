@@ -20,7 +20,7 @@ use Spatie\Honeypot\ProtectAgainstSpam;
 
 function checkAuth()
 {
-    if (count(DB::table('adminpass')->get()) == 0 ) die();
+    if (count(DB::table('adminpass')->get()) == 0) die();
     if (!Hash::check(Session::get('auth'), DB::table('adminpass')->get()[0]->password)) {
         echo 'нет авторизации!';
         die();
@@ -33,7 +33,7 @@ Route::get('/', function () {
 
 
 Route::get('/admin/newtag', function () {
-    checkAuth(); 
+    checkAuth();
     return view('admin/newtag');
 })->name('newtag');
 
@@ -42,12 +42,12 @@ Route::get('/admin/updatetag/{id}', 'SqlController@updatetag')->name('updatetag'
 Route::post('/admin/updatetag-submit/{id}', 'SqlController@updatetagsubmit')->name('unpdatetag-submit');
 
 Route::get('/admin/taglist', function () {
-    checkAuth(); 
+    checkAuth();
     return view('admin/taglist');
 })->name('taglist');
 
 Route::get('/admin/newproject', function () {
-    checkAuth(); 
+    checkAuth();
     return view('admin/newproject');
 })->name('newproject');
 
@@ -58,14 +58,14 @@ Route::post('/admin/newtag/submit', 'SqlController@newtag')->name('newtag-submit
 Route::post('/submit', 'AdminpassController@sendMessage')->name('form')->middleware(ProtectAgainstSpam::class);
 
 // Route::get('send-mail', function () {
-   
+
 //     $details = [
 //         'title' => 'На сайте оставлена заявка',
 //         'body' => 'This is for testing email using smtp'
 //     ];
-   
+
 //     \Mail::to('katunin.pavel@gmail.com')->send(new \App\Mail\AdminMail($details));
-   
+
 //     dd("Email is Sent.");
 // });
 
@@ -77,7 +77,7 @@ Route::get('/portfolio', function () {
 })->name('portfolio');
 
 Route::get('/admin/editportfolio', function () {
-    checkAuth(); 
+    checkAuth();
     return view('admin/editportfolio');
 })->name('editportfolio');
 
@@ -86,7 +86,7 @@ Route::get('portfolio/{id}', 'UploadController@getonePortfolio')->name('get-port
 Route::get('/admin/removeportfolio/{id}', 'UploadController@deleteportfolio')->name('deteteportfolio');
 
 Route::get('/admin/editoneproject/{id}', function ($id) {
-    checkAuth(); 
+    checkAuth();
     return view('admin/editoneproject', ['id' => $id]);
 })->name('editoneproject');
 
@@ -111,14 +111,14 @@ Route::get('admincheckpass', function () {
 })->name('checkadminpass');
 
 Route::get('updateadminpass', function () {
-    checkAuth(); 
+    checkAuth();
     $adminpass = DB::table('adminpass')->get();
     if (Hash::check(Session::get('auth'), $adminpass[0]->password)) return view('admin/newadminpass', ['update' => true]);
     else return redirect('admin');
 });
 
 Route::get('/mainpicture', function () {
-    checkAuth(); 
+    checkAuth();
     return view('admin/mainpicture');
 })->name('mainpicture');
 
@@ -133,3 +133,29 @@ Route::get('/tutorial', function () {
 });
 
 Route::post('updateMainScreenPictures', 'UploadController@updateMainScreenPictures')->name('updateMainScreenPictures');
+
+// старые редиректы
+Route::get('/public/ceny', function () {
+    return view('home');
+});
+Route::get('/public/map', function () {
+    return view('home');
+});
+Route::get('/public/kontakty', function () {
+    return view('home');
+});
+Route::get('/public/otzyvy', function () {
+    return view('home');
+});
+Route::get('/public/akcii', function () {
+    return view('home');
+});
+Route::get('/public/services', function () {
+    return view('home');
+});
+Route::get('/public/index/index', function () {
+    return view('home');
+});
+
+
+
