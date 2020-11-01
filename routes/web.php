@@ -147,7 +147,7 @@ Route::get('/public/kontakty', function () {
 Route::get('/public/otzyvy', function () {
     return redirect()->to('/');
 });
-Route::get('/public/akcii', function () {
+Route::get('/akcii', function () {
     return redirect()->to('/');
 });
 Route::get('public/services', function () {
