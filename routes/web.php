@@ -136,25 +136,25 @@ Route::post('updateMainScreenPictures', 'UploadController@updateMainScreenPictur
 
 // старые редиректы
 Route::get('/public/ceny', function () {
-    return view('home');
+    return redirect()->to('/');
 });
 Route::get('/public/map', function () {
-    return view('home');
+    return redirect()->to('/');
 });
 Route::get('/public/kontakty', function () {
-    return view('home');
+    return redirect()->to('/');
 });
 Route::get('/public/otzyvy', function () {
-    return view('home');
+    return redirect()->to('/');
 });
 Route::get('/public/akcii', function () {
-    return view('home');
+    return redirect()->to('/');
 });
 Route::get('public/services', function () {
-    return view('home');
+    return redirect()->to('/');
 });
 Route::get('/public/index/index', function () {
-    return view('home');
+    return redirect()->to('/');
 });
 
 
