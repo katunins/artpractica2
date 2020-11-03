@@ -16,6 +16,7 @@ class CreateMainscreenTable extends Migration
         Schema::create('mainscreen', function (Blueprint $table) {
             $table->integer('id');
             $table->string('link');
+            $table->string('button')->default('Подробнее');
             $table->timestamps();
         });
     }

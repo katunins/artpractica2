@@ -105,6 +105,7 @@ class UploadController extends Controller
         for ($i = 1; $i <= 4; $i++) {
             $file = $request->file('main-img-' . $i);
             $link = $request->input('main-link-' . $i);
+            $button = $request->input('main-button-' . $i);
             if ($file) {
                 // $ext = pathinfo($file->getClientOriginalName())['extension'];
                 $ext = 'jpg';
@@ -126,6 +127,12 @@ class UploadController extends Controller
                 ->update(['link' => $link]);
             }
 
+            if ($button !='') {
+
+                DB::table('mainscreen')
+                ->where('id',$i)
+                ->update(['button' => $button]);
+            }
             
         }
         return view('admin/mainpicture');//redirect('mainpicture');//->back();

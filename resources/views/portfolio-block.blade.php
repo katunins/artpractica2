@@ -29,11 +29,15 @@
 
 <div class="content">
     <div class="tag-group">
-        <a href="{{Route('portfolio')}}">
+        {{-- правка Артпрактика один выбранный тег--}}
+        {{-- <a href="{{Route('portfolio')}}">
             <div class="tag-clear">
                 Сбросить фильтр
             </div>
-        </a>
+        </a> --}}
+        <div class="tag active" value='all'>Все проекты</div>
+        {{--  --}}
+        
         @foreach ($tags as $item)
         <div class="tag" value=<?=$item->code?>>
             <?=$item->name?>

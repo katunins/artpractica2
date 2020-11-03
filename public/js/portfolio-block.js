@@ -94,37 +94,52 @@
 /***/ (function(module, exports) {
 
 function refreshTags() {
-  var activeTags = [];
-  document.querySelectorAll('.tag').forEach(function (el) {
-    if (el.classList.contains('active')) {
-      activeTags.push(el.getAttribute('value'));
-    }
-  });
+  // Правка Артпрактика - выбор только одного тега
+  var activeTag = document.querySelector('.tag.active').getAttribute('value');
+  console.log(activeTag);
+  document.querySelectorAll('.portfolio-block').forEach(function (block) {
+    block_tags = block.getAttribute('tags').split("||");
+    var result = 0;
+    block_tags.forEach(function (tag) {
+      if (tag == activeTag) result = 1;
+    }); // 
 
-  if (activeTags.length == 0) {
-    document.querySelectorAll('.portfolio-block').forEach(function (block) {
+    if (activeTag == 'all') result = 1; // 
+
+    if (result == 0) {
+      block.classList.add('hide');
+    } else {
       block.classList.remove('hide');
-    });
-  } else {
-    document.querySelectorAll('.portfolio-block').forEach(function (block) {
-      // let general_hide = true
-      block_tags = block.getAttribute('tags').split("||");
-      var general_result = 1;
-      activeTags.forEach(function (acttag) {
-        var result = 0;
-        block_tags.forEach(function (tag) {
-          if (tag == acttag) result = 1;
-        });
-        general_result *= result;
-      });
+      console.log('ok');
+    }
 
-      if (general_result == 0) {
-        block.classList.add('hide');
-      } else {
-        block.classList.remove('hide');
-      }
-    });
-  }
+    document.querySelector('.portfolio-block-group').setAttribute('style', 'opacity: 1');
+  }); // Правка Артпрактика - выбор только одного тега
+  // let activeTags = []
+  // document.querySelectorAll('.tag').forEach(el => {
+  //     if (el.classList.contains('active')) { activeTags.push(el.getAttribute('value')) }
+  // })
+  // if (activeTags.length == 0) {
+  //     document.querySelectorAll('.portfolio-block').forEach(block => {
+  //         block.classList.remove('hide')
+  //     })
+  // } else {
+  //     document.querySelectorAll('.portfolio-block').forEach(block => {
+  //         // let general_hide = true
+  //         block_tags = block.getAttribute('tags').split("||")
+  //         let general_result = 1
+  //         activeTags.forEach(acttag => {
+  //             let result = 0
+  //             block_tags.forEach(tag => {
+  //                 if (tag == acttag) result = 1
+  //             })
+  //             general_result *= result
+  //         })
+  //         if (general_result == 0) {
+  //             block.classList.add('hide')
+  //         } else { block.classList.remove('hide') }
+  //     })
+  // }
 
   blocksReformat();
 }
@@ -201,6 +216,13 @@ function blocksReformat() {
     i += countOfBlocksInLine;
     lastHeight = blockHeight;
   }
+} // Правка Артпрактика - выбор только одного тега
+
+
+function turnOffAllTags() {
+  document.querySelectorAll('.tag').forEach(function (tag) {
+    return tag.classList.remove('active');
+  });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -212,25 +234,23 @@ document.addEventListener('DOMContentLoaded', function () {
     blocksReformat();
   };
 
-  activeHREFtags = hrefTOtags(); // console.log (activeHREFtags)
-
+  activeHREFtags = hrefTOtags();
   document.querySelectorAll('.tag').forEach(function (element) {
-    // console.log (element.getAttribute('value'), activeHREFtags.indexOf(element.getAttribute('value'))>=0)
     if (activeHREFtags.indexOf(element.getAttribute('value')) >= 0) {
       element.classList.add('active');
     }
 
     element.addEventListener('click', function (event) {
-      portfolioBlock.setAttribute('style', 'opacity: 0');
+      portfolioBlock.setAttribute('style', 'opacity: 0'); // Правка Артпрактика - выбор только одного тега
 
-      if (event.target.classList.contains('active')) {
-        event.target.classList.remove('active');
-      } else {
-        event.target.classList.add('active');
-      }
+      turnOffAllTags();
+      event.target.classList.add('active'); // if (event.target.classList.contains('active')) {
+      //     event.target.classList.remove('active')
+      // } else {
+      //     event.target.classList.add('active')
+      // }
 
-      refreshTags();
-      tagsTOhref();
+      refreshTags(); // tagsTOhref()
     });
   });
   refreshTags();
@@ -246,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/katunin/Documents/artpractica2/resources/js/portfolio-block.js */"./resources/js/portfolio-block.js");
+module.exports = __webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/js/portfolio-block.js */"./resources/js/portfolio-block.js");
 
 
 /***/ })

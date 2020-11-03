@@ -49905,14 +49905,14 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/katunin/Documents/artpractica2/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/katunin/Documents/artpractica2/resources/sass/portfolio-block.scss */"./resources/sass/portfolio-block.scss");
-__webpack_require__(/*! /Users/katunin/Documents/artpractica2/resources/sass/footer.scss */"./resources/sass/footer.scss");
-__webpack_require__(/*! /Users/katunin/Documents/artpractica2/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /Users/katunin/Documents/artpractica2/resources/sass/adminpass.scss */"./resources/sass/adminpass.scss");
-__webpack_require__(/*! /Users/katunin/Documents/artpractica2/resources/sass/alt-header.scss */"./resources/sass/alt-header.scss");
-__webpack_require__(/*! /Users/katunin/Documents/artpractica2/resources/sass/one-portfolio.scss */"./resources/sass/one-portfolio.scss");
-module.exports = __webpack_require__(/*! /Users/katunin/Documents/artpractica2/resources/sass/admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/sass/portfolio-block.scss */"./resources/sass/portfolio-block.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/sass/footer.scss */"./resources/sass/footer.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/sass/adminpass.scss */"./resources/sass/adminpass.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/sass/alt-header.scss */"./resources/sass/alt-header.scss");
+__webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/sass/one-portfolio.scss */"./resources/sass/one-portfolio.scss");
+module.exports = __webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/sass/admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

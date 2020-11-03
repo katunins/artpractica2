@@ -90,7 +90,9 @@ if (count ($mainScreenPictures) == 0) {
             @for($i = 1; $i <= 4; $i++)
 
                 <?php 
-            $link = DB::table('mainscreen')->where('id', $i)->get()[0]->link 
+            $data = DB::table('mainscreen')->where('id', $i)->get()[0]
+            // $link = $data->link 
+            // $button = $data
             ?>
 
                 <?php if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg')) {
@@ -102,7 +104,7 @@ if (count ($mainScreenPictures) == 0) {
                 <figure class="gallery-item-{{ $i }}">
                     <div data-wow-delay="0.{{ $i }}s" class="wow animate__animated animate__fadeIn"
                         style="background-image: url({{ $url }})">
-                        <a href="{{ $link }}" class="black-mini-button">Подробнее</a>
+                        <a href="{{ $data->link }}" class="black-mini-button">{{ $data->button }}</a>
                     </div>
 
                 </figure>

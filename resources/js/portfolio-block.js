@@ -1,31 +1,53 @@
 function refreshTags() {
+    // Правка Артпрактика - выбор только одного тега
+    let activeTag = document.querySelector('.tag.active').getAttribute('value')
+    console.log (activeTag)
+    document.querySelectorAll('.portfolio-block').forEach(block => {
+        block_tags = block.getAttribute('tags').split("||")
+        let result = 0
+        block_tags.forEach(tag => {
+            if (tag == activeTag) result = 1
+        })
 
-    let activeTags = []
-    document.querySelectorAll('.tag').forEach(el => {
-        if (el.classList.contains('active')) { activeTags.push(el.getAttribute('value')) }
+        // 
+        if (activeTag == 'all') result = 1
+        // 
+        if (result == 0) {
+            block.classList.add('hide')
+        } else { 
+            block.classList.remove('hide') 
+            console.log ('ok')
+        }
+        document.querySelector('.portfolio-block-group').setAttribute('style', 'opacity: 1')
     })
+    // Правка Артпрактика - выбор только одного тега
 
-    if (activeTags.length == 0) {
-        document.querySelectorAll('.portfolio-block').forEach(block => {
-            block.classList.remove('hide')
-        })
-    } else {
-        document.querySelectorAll('.portfolio-block').forEach(block => {
-            // let general_hide = true
-            block_tags = block.getAttribute('tags').split("||")
-            let general_result = 1
-            activeTags.forEach(acttag => {
-                let result = 0
-                block_tags.forEach(tag => {
-                    if (tag == acttag) result = 1
-                })
-                general_result *= result
-            })
-            if (general_result == 0) {
-                block.classList.add('hide')
-            } else { block.classList.remove('hide') }
-        })
-    }
+    // let activeTags = []
+    // document.querySelectorAll('.tag').forEach(el => {
+    //     if (el.classList.contains('active')) { activeTags.push(el.getAttribute('value')) }
+    // })
+
+    // if (activeTags.length == 0) {
+    //     document.querySelectorAll('.portfolio-block').forEach(block => {
+    //         block.classList.remove('hide')
+    //     })
+    // } else {
+    //     document.querySelectorAll('.portfolio-block').forEach(block => {
+    //         // let general_hide = true
+    //         block_tags = block.getAttribute('tags').split("||")
+    //         let general_result = 1
+    //         activeTags.forEach(acttag => {
+    //             let result = 0
+    //             block_tags.forEach(tag => {
+    //                 if (tag == acttag) result = 1
+    //             })
+    //             general_result *= result
+    //         })
+    //         if (general_result == 0) {
+    //             block.classList.add('hide')
+    //         } else { block.classList.remove('hide') }
+    //     })
+    // }
     blocksReformat()
 }
 
@@ -55,13 +77,13 @@ function blocksReformat() {
     let blocks = document.querySelectorAll('.portfolio-block:not(.hide)');
 
     let i = 0
-    let screenWidth = document.querySelector('.portfolio-block-group').offsetWidth-4 //ширина экрана
+    let screenWidth = document.querySelector('.portfolio-block-group').offsetWidth - 4 //ширина экрана
     var margin = 2 // расстояние между кадрами px
     if (screenWidth > 768) {
-        
+
         var maxOfBlocksInLine = 3
     } else {
-        
+
         var maxOfBlocksInLine = 2
     }
 
@@ -99,16 +121,21 @@ function blocksReformat() {
                 // break
             } else {
                 blockWidth = Math.round(blocks[i + index].getAttribute('landWidth') / scale * screenWidth / countOfBlocksInLine) - margin * 2
-                
+
             }
-            
+
             blocks[i + index].setAttribute("style", "width: " + blockWidth + "px; height: " + blockHeight + "px; margin: " + margin + "px ");
-            
+
         }
 
         i += countOfBlocksInLine
         lastHeight = blockHeight
     }
+}
+
+// Правка Артпрактика - выбор только одного тега
+function turnOffAllTags() {
+    document.querySelectorAll('.tag').forEach(tag => tag.classList.remove('active'))
 }
 
 
@@ -120,25 +147,25 @@ document.addEventListener('DOMContentLoaded', function () {
         blocksReformat()
     };
     activeHREFtags = hrefTOtags()
-    // console.log (activeHREFtags)
 
     document.querySelectorAll('.tag').forEach(element => {
-        // console.log (element.getAttribute('value'), activeHREFtags.indexOf(element.getAttribute('value'))>=0)
         if (activeHREFtags.indexOf(element.getAttribute('value')) >= 0) {
             element.classList.add('active')
         }
 
         element.addEventListener('click', function (event) {
             portfolioBlock.setAttribute('style', 'opacity: 0')
-            if (event.target.classList.contains('active')) {
-                event.target.classList.remove('active')
-            } else {
-                event.target.classList.add('active')
 
-            }
-
+            // Правка Артпрактика - выбор только одного тега
+            turnOffAllTags()
+            event.target.classList.add('active')
+            // if (event.target.classList.contains('active')) {
+            //     event.target.classList.remove('active')
+            // } else {
+            //     event.target.classList.add('active')
+            // }
             refreshTags()
-            tagsTOhref()
+            // tagsTOhref()
 
         })
     })

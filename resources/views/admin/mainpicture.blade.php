@@ -50,7 +50,10 @@ if (count ($mainScreenPictures) == 0) {
             <br>
             <label for="main-img-{{ $i }}">Загрузите фотографию</label>
             <input id="main-img-{{ $i }}" type="file" name="main-img-{{ $i }}" value="">
-            <input type="text" name="main-link-{{ $i }}" placeholder="{{ $data->link }}">
+            <br>
+            Кнопка<input type="text" name="main-button-{{ $i }}" value="{{ $data->button }}">
+            Ссылка<input type="text" name="main-link-{{ $i }}" value="{{ $data->link }}">
+            
     </div>
     <hr>
     @endfor
