@@ -47,19 +47,27 @@ a:active {
 }
 
 a.button-del {
-  padding: 2px 10px;
+  padding: 6px 15px;
   border-radius: 3px;
   background-color: red;
   color: white;
-  font-size: 0.7em;
+  font-size: 13px;
 }
 
 a.button-edit {
-  padding: 2px 10px;
+  padding: 6px 15px;
   border-radius: 3px;
   background-color: grey;
   color: white;
-  font-size: 0.7em;
+  font-size: 13px;
+}
+
+span.sort {
+  padding: 6px;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+  font-size: 13px;
 }
 
 .plus {
@@ -92,8 +100,8 @@ a.button-edit {
 }
 
 .edit-block {
-  text-align: end;
-  transform: translate(-10px, -75px);
+  text-align: start;
+  transform: translate(20px, -35px);
 }
 
 .label {

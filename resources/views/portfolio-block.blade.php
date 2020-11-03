@@ -13,14 +13,11 @@
     // определяет тип загруженной титульной фотографии
     function GetImgType ($url) {
         $metadata = getimagesize('storage/'.$url);
-        
         $result = $metadata[0]/$metadata[1];
-        
-
-    $result = $metadata[0]/$metadata[1];
-    // $result = round($metadata[0]/$metadata[1], 2);
-    if ($result >2) $result = 2;//защита от слишком длинных изображений
-    if ($result <1) $result = 1;//сделаем вертикальную фотографию квадратной
+        $result = $metadata[0]/$metadata[1];
+        // $result = round($metadata[0]/$metadata[1], 2);
+        if ($result >2) $result = 2;//защита от слишком длинных изображений
+        if ($result <1) $result = 1;//сделаем вертикальную фотографию квадратной
             return $result; 
         }
 ?>
@@ -31,13 +28,13 @@
     <div class="tag-group">
         {{-- правка Артпрактика один выбранный тег--}}
         {{-- <a href="{{Route('portfolio')}}">
-            <div class="tag-clear">
-                Сбросить фильтр
-            </div>
+        <div class="tag-clear">
+            Сбросить фильтр
+        </div>
         </a> --}}
         <div class="tag active" value='all'>Все проекты</div>
         {{--  --}}
-        
+
         @foreach ($tags as $item)
         <div class="tag" value=<?=$item->code?>>
             <?=$item->name?>
@@ -47,42 +44,47 @@
     </div>
     <div class="portfolio-block-group">
         <?php $delay = 0;?>
-        @for ($i = 0; $i < $portfolios->count(); $i++)
-            <div data-wow-delay="{{ $delay }}s" <?php $delay += 0.1;
-                if ($delay >1) $delay = 0;?>
-                class="portfolio-block wow animate__animated animate__fadeIn animate__faster"
-                tags=<?=$portfolios[$i]->tags?> landWidth=<?=GetImgType ($portfolios[$i]->title_image)?>>
-                <a href="{{ route('get-portfolio', $portfolios[$i]->id) }}">
-                    <div class="portfolio-img-block"
-                        style="background-image: url({{asset('storage/'.$portfolios[$i]->title_image)}})">
-                        {{-- style="background-image: url({{Storage::url($portfolios[$i]->title_image)}})"> --}}
-                        <div class="label">
-                            <p>{{$portfolios[$i]->title }}</p>
-                        </div>
+
+
+        @foreach ($portfolios as $item)
+        <div data-wow-delay="{{ $delay }}s"
+            class="portfolio-block wow animate__animated animate__fadeIn animate__faster" tags=<?=$item->tags?>
+            landWidth=<?=GetImgType ($item->title_image)?>>
+            <?php $delay += 0.1; if ($delay >1) $delay = 0;?>
+
+            <a href="{{ route('get-portfolio', $item->id) }}">
+                <div class="portfolio-img-block"
+                    style="background-image: url({{asset('storage/'.$item->title_image)}})">
+                    {{-- style="background-image: url({{Storage::url($portfolios[$i]->title_image)}})"> --}}
+                    <div class="label">
+                        <p>{{$item->title }}</p>
                     </div>
-
-                </a>
-                @if ($_SERVER['REQUEST_URI'] == "/admin/editportfolio")
-                <div class="edit-block">
-                    <a href="{{ route('editoneproject', $portfolios[$i]->id) }}" class="button-edit">Редактировать</a>
-                    <a href="{{ route('deteteportfolio', $portfolios[$i]->id) }}" class="button-del"
-                        message="<?=$portfolios[$i]->title ?>">Удалить</a>
                 </div>
-                @endif
-            </div>
 
-            @endfor
-
-
-
+            </a>
             @if ($_SERVER['REQUEST_URI'] == "/admin/editportfolio")
-            <div class="block" tags="">
-                <a href="{{ route('newproject') }}">
-                    <div class="img-block plus">+</div>
-                </a>
-
+            <div class="edit-block">
+                <a href="{{ route('editoneproject', $item->id) }}" class="button-edit">Редактировать</a>
+                <a href="{{ route('deteteportfolio', $item->id) }}" class="button-del"
+                    message="<?=$item->title ?>">Удалить</a>
+                <span class="sort">{{ $item->sort }}</span>
             </div>
+
             @endif
+        </div>
+        @endforeach
+
+
+
+
+        @if ($_SERVER['REQUEST_URI'] == "/admin/editportfolio")
+        <div class="block" tags="">
+            <a href="{{ route('newproject') }}">
+                <div class="img-block plus">+</div>
+            </a>
+
+        </div>
+        @endif
     </div>
     <a href="{{Route('home')}}">
         <div class="black-button">
@@ -97,19 +99,3 @@
 <script>
     new WOW().init();
 </script>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
-    ym(68999611, "init", {
-         clickmap:true,
-         trackLinks:true,
-         accurateTrackBounce:true,
-         webvisor:true
-    });
- </script>
- <noscript><div><img src="https://mc.yandex.ru/watch/68999611" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
- <!-- /Yandex.Metrika counter -->

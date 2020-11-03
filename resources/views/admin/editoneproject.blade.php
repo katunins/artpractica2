@@ -18,6 +18,7 @@
     $tags = SqlController::gettag();    
     $projectData = UploadController::getOneProject($id);
 ?>
+
 <form class="post-form" id="formLoader" action="{{ route('updateproject') }}" method="post"
     enctype="multipart/form-data">
     <div>
@@ -50,20 +51,35 @@
             ?>
 
             @if (count ($images) > 0)
+            <?php $line = 1; ?>
             @foreach ($images as $item)
             <div class="">
                 <img src="{{ Storage::url($item) }}" alt="">
                 <div class="edit_picture">
-                    <a
-                        href="{{ Route('changepicture', ['id'=>$projectData->id, 'file'=>$item, 'direction'=>-1]) }}">Вверх</a>
-                    <a
-                        href="{{ Route('changepicture', ['id'=>$projectData->id, 'file'=>$item, 'direction'=>1]) }}">Вниз</a>
+                    <a href="{{ Route('changepicture', ['id'=>$projectData->id, 'file'=>$item, 'direction'=>-1]) }}">Вверх
+                        ↑</a>
+                    <a href="{{ Route('changepicture', ['id'=>$projectData->id, 'file'=>$item, 'direction'=>1]) }}">Вниз
+                        ↓</a>
                     <a class="remove_picture"
-                        href="{{ Route('changepicture', ['id'=>$projectData->id, 'file'=>$item, 'direction'=>0]) }}">Удалить</a>
+                        href="{{ Route('changepicture', ['id'=>$projectData->id, 'file'=>$item, 'direction'=>0]) }}">Удалить
+                        x</a>
+
+                    <?php
+                    $shiftDown = count ($images)-$line;
+                    $shiftUp = -(count ($images)-$shiftDown-1);
+                    ?>
+                    
+                    <a  class="{{ $shiftUp == 0?'anactive':'' }}" 
+                        href="{{ Route('changepicture', ['id'=>$projectData->id, 'file'=>$item, 'direction'=>$shiftUp]) }}">В
+                        начало ↑↑↑</a>
+                    <a class="{{ $shiftDown == 0?'anactive':'' }}" 
+                        href="{{ Route('changepicture', ['id'=>$projectData->id, 'file'=>$item, 'direction'=> $shiftDown]) }}">В
+                        конец ↓↓↓</a>
+
 
                 </div>
             </div>
-
+            <?php $line ++; ?>
             @endforeach
             @endif
 

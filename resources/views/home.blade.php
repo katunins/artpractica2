@@ -161,8 +161,11 @@ function getData($code) {
 
         <div class="team-grid">
             <figure class="team-item-1">
-                <div data-wow-delay="0.0s" class="wow animate__animated animate__fadeIn"
+                {{-- <div data-wow-delay="0.0s" class="wow animate__animated animate__fadeIn"
                     style="background-image: url(/images/sec_vers/image_5.jpg)">
+                </div> --}}
+                <div data-wow-delay="0.0s" class="wow animate__animated animate__fadeIn"
+                    style="background-image: url(/images/utp-furniture.jpg)">
                 </div>
 
             </figure>

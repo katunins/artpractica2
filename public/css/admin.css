@@ -338,3 +338,8 @@ li {
   margin: 30px;
 }
 
+.anactive {
+  opacity: 0.2;
+  pointer-events: none;
+}
+

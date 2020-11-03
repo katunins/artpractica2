@@ -184,10 +184,12 @@ class UploadController extends Controller
 
     public static function getPortfolios()
     {
-        $tags = Portfolio::all();
-        $sort = $tags->sort(function ($a, $b) {
+        $portfolios = Portfolio::all();
+        $sort = $portfolios->sort(function ($a, $b) {
+            
             $a = $a->sort;
             $b = $b->sort;
+            // dump($a.'-'.$b);
             if ($a == $b) {
                 return 0;
             }
