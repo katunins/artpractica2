@@ -14,16 +14,18 @@
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
-
-use App\Http\Controllers\ContactFormSubmissionController;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
-function checkAuth()
-{
-    if (count(DB::table('adminpass')->get()) == 0) die();
-    if (!Hash::check(Session::get('auth'), DB::table('adminpass')->get()[0]->password)) {
-        echo 'нет авторизации!';
-        die();
+// use App\Http\Controllers\ContactFormSubmissionController;
+
+if (!function_exists('checkAuth')) {
+    function checkAuth()
+    {
+        if (count(DB::table('adminpass')->get()) == 0) die();
+        if (!Hash::check(Session::get('auth'), DB::table('adminpass')->get()[0]->password)) {
+            echo 'нет авторизации!';
+            die();
+        }
     }
 }
 
@@ -90,6 +92,11 @@ Route::get('/admin/editoneproject/{id}', function ($id) {
     return view('admin/editoneproject', ['id' => $id]);
 })->name('editoneproject');
 
+Route::get('/admin/texts', function () {
+    checkAuth();
+    return view('admin/texts');
+})->name('texts');
+
 Route::get('admin/changepicture', 'UploadController@changepicture')->name('changepicture');
 
 
@@ -105,6 +112,8 @@ Route::get('admin', function () {
 
 Route::post('adminSetNewPass', 'AdminpassController@setNewAdminPass')->name('setNewAdminPass');
 Route::post('adminCheckPass', 'AdminpassController@checkAdminPass')->name('checkAdminPass');
+Route::post('setSiteText', 'SqlController@setSiteText')->name('setSiteText');
+
 
 Route::get('admincheckpass', function () {
     return view('admin/checkadminpass');
@@ -124,7 +133,7 @@ Route::get('/mainpicture', function () {
 
 Route::get('/logout', function () {
     Session::flush('auth');
-    return redirect('admin');
+    return redirect('/');
 });
 
 Route::get('/tutorial', function () {
@@ -156,6 +165,3 @@ Route::get('/services', function () {
 Route::get('/index', function () {
     return redirect()->to('/');
 });
-
-
-

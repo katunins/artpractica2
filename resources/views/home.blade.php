@@ -29,6 +29,12 @@ if (count ($mainScreenPictures) == 0) {
     }
 };
 
+
+function getData($code) {
+    $result = DB::table('textdata')->get()->where('code', $code)->first()->text;
+    return $result;
+}
+
 ?>
 
     <div class="head">
@@ -56,20 +62,13 @@ if (count ($mainScreenPictures) == 0) {
             </div>
 
         </div>
-        <div class="utp">
-            Студия дизайна интерьера полного цикла в Воронеже:<br>
-            разрабатываем дизайн-проекты и воплощаем их в жизнь
-        </div>
+            <div class="utp">{!! getData('utp') !!}</div>
 
-        <div class="utp-mobile">
-            Студия дизайна интерьера полного цикла в Воронеже: разрабатываем дизайн-проекты и воплощаем их в жизнь
-        </div>
+        <div class="utp-mobile">{!! getData('utp-mobile') !!}</div>
     </div>
     <div class="container">
         <div class="block">
-            <div class="title-text">
-                491 завершенный проект с 2010 года
-            </div>
+            <div class="title-text">{!! getData ('how-long') !!}</div>
 
             <div class="arrow">
                 <svg style="fill: grey;" width="38.417px" height="18.592px">
@@ -87,62 +86,51 @@ if (count ($mainScreenPictures) == 0) {
 
         <div class="gallery-grid">
 
-            @for($i = 1; $i <= 4; $i++)
-
-                <?php 
+            @for($i = 1; $i <= 4; $i++) <?php 
             $data = DB::table('mainscreen')->where('id', $i)->get()[0]
             // $link = $data->link 
             // $button = $data
-            ?>
-
-                <?php if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg')) {
+            ?> <?php if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg')) {
                     $url = Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg');
                 } else {
                     $url = asset('/images/empty.png');
-                } ?>
-
-                <figure class="gallery-item-{{ $i }}">
-                    <div data-wow-delay="0.{{ $i }}s" class="wow animate__animated animate__fadeIn"
-                        style="background-image: url({{ $url }})">
-                        <a href="{{ $data->link }}" class="black-mini-button">{{ $data->button }}</a>
-                    </div>
+                } ?> <figure class="gallery-item-{{ $i }}">
+                <div data-wow-delay="0.{{ $i }}s" class="wow animate__animated animate__fadeIn"
+                    style="background-image: url({{ $url }})">
+                    <a href="{{ $data->link }}" class="black-mini-button">{{ $data->button }}</a>
+                </div>
 
                 </figure>
 
-            @endfor
+                @endfor
 
         </div>
 
-        <div class="title-text mobile-space">
-            Проектируем и воплощаем в жизнь
+        <div class="title-text mobile-space">{!! getData('direction-header') !!}
         </div>
 
         <div class="direction">
             <div data-wow-delay="0.0s" class="wow animate__animated animate__fadeInLeft">
-                <h3>Реализация проекта под ключ</h3>
+                <h3>{!! getData('direction1-h3') !!}</h3>
                 {{-- <button>подробнее</button> --}}
                 <div class="details hide">
-                    <p>От дизайн-проекта до момента заселения мы спланируем и произведем все необходимые строительные и
-                        ремонтные работы на Вашем объекте. Вам останется только перевести вещи</p>
+                    <p>{!! getData('direction1-p') !!}</p>
                     <img src="/images/utp-full.jpg" alt="">
                 </div>
             </div>
             <div data-wow-delay="0.2s" class="wow animate__animated animate__fadeInRight">
-                <h3>Комплектация</h3>
+                <h3>{!! getData('direction2-h3') !!}</h3>
                 {{-- <button>подробнее</button> --}}
                 <div class="details hide">
-                    <p>Мы грамотно подберем, быстро привезем и бережно установим все необходимые строительные и
-                        отделочные материалы - от штукатурки до текстиля - на Ваш объект</p>
+                    <p>{!! getData('direction2-p') !!}</p>
                     <img src="/images/utp-compl.jpg" alt="">
                 </div>
             </div>
             <div data-wow-delay="0.4s" class="wow animate__animated animate__fadeInLeft">
-                <h3>Собственное мебельное производтсво</h3>
+                <h3>{!! getData('direction3-h3') !!}</h3>
                 {{-- <button>подробнее</button> --}}
                 <div class="details hide">
-                    <p>На нашем производстве мы готовы решить любую "мебельную" задачу - создать вашу мебель по
-                        авторскому дизайну, индивидуальным размерам, с использованием последних технологий и всё это при
-                        условии высочайшего качества европейского стандарта.</p>
+                    <p>{!! getData('direction3-p') !!}</p>
                     <img src="/images/utp-furniture.jpg" alt="">
                 </div>
             </div>
@@ -150,14 +138,10 @@ if (count ($mainScreenPictures) == 0) {
 
         <div class="ceo">
             <div class="ceo-text">
-                <h3>Балашова Людмила</h3>
-                <h5>руководитель студии</h5>
+                {!! getData('ceo-header') !!}
                 <p class="ceo-about-2">
 
-                    &quot; Студия дизайна Арт Практика - дело всей моей жизни! Это моё хобби и мой бизнес одновременно.
-                    Моя главная мотивация (мой главный стимул/успех) - видеть счастливые глаза заказчиков, довольных
-                    результатом нашей работы! Именно это помогает двигаться вперед, расширять свои возможности и
-                    осваивать новые направления &quot;
+                    &quot;{!! getData('ceo-text') !!}&quot;
                 </p>
             </div>
             <div class="ceo-portrait wow animate__animated animate__fadeIn">
@@ -244,26 +228,28 @@ if (count ($mainScreenPictures) == 0) {
 
         <div class="team-text">
             <p>
-                &quot; Арт практика сегодня - это надежная и успешная команда профессионалов. Мы идем в ногу со временем
-                и
-                всегда открыты для новых задач в проектировании и реализации вашей мечты &quot;
+                &quot;{!! getData('finish-text') !!}&quot;
             </p>
         </div>
 
         <div class="form">
             <div id="feedback" @if (!Session::has('modal')) class="hide" @endif>
-                Спасибо! <br>Мы свяжемся с вами в ближайшее время.
+            {{ Session::get('modal') }}
             </div>
-            {{-- <h3>Расскажите нам про вашу задачу, оставьте контакты. Мы свяжемся с вами в ближайшее время</h3> --}}
             <h3>Остались вопросы?</h3>
             <form action="{{ route('form') }}" method="POST">
                 @csrf
                 @honeypot
-                    <input type="text" name="name" placeholder="Ваше имя">
-                    <input type="tel" name="tel" placeholder="+7(999)999 99 99">
-                    <textarea name="message" id="" cols="30" rows="7" placeholder="Ваше сообщение"></textarea>
-                    {{-- <input type="text" placeholder="Ваше сообщение"> --}}
-                    <input class="submit" type="submit" name="submit" value="Отправить">
+                <input type="text" name="name" placeholder="Ваше имя">
+
+                @error('tel')
+                <label class="alert">{{ $message }}</label>
+                @enderror
+                <input type="tel" name="tel" placeholder="+7 (___) ___-____" id="tel">
+
+                <textarea name="message" id="" cols="30" rows="7" placeholder="Ваше сообщение"></textarea>
+                {{-- <input type="text" placeholder="Ваше сообщение"> --}}
+                <input class="submit" type="submit" name="submit" value="Отправить">
             </form>
         </div>
     </div>
@@ -299,5 +285,30 @@ if (count ($mainScreenPictures) == 0) {
 <script src={{ asset ('wow-animation/wow.min.js') }}></script>
 <script>
     new WOW().init();
+
+</script>
+<script>
+    function mask (event) {
+    var matrix = '+7 (___) ___-____',
+        i = 0,
+        def = matrix.replace (/\D/g, ''),
+        val = this.value.replace (/\D/g, '');
+    if (def.length >= val.length) val = def;
+    this.value = matrix.replace (/./g, function (a) {
+        return /[_\d]/.test (a) && i < val.length
+        ? val.charAt (i++)
+        : i >= val.length ? '' : a;
+    });
+    if (event.type == 'blur') {
+        if (this.value.length == 2) this.value = '';
+    } else setCursorPosition (this.value.length, this);
+    }
+
+    document.addEventListener ('DOMContentLoaded', function () {
+    const elems = document.getElementById ('tel');
+    elems.addEventListener ('input', mask);
+    elems.addEventListener ('focus', mask);
+    elems.addEventListener ('blur', mask);
+    });
 
 </script>

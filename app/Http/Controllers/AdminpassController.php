@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
-use Mail;
+// use Mail;
 
 class AdminpassController extends Controller
 {
@@ -45,10 +45,8 @@ class AdminpassController extends Controller
 
     public function sendMessage(Request $request)
     {
-        // отправляет письмо менеджеру
-        //         "name" => "wef"
-        //   "tel" => "wefewf"
-        //   "message" => null
+        
+        if ($request->tel == '') return redirect()->to(url('/').'#feedback')->with('modal', 'Оставьте контактный номер телефона для связи');
 
         $details = [
             'title' => 'На сайте оставлена заявка',
@@ -59,5 +57,14 @@ class AdminpassController extends Controller
        
         \Mail::to('artpractica@mail.ru')->cc('katunin.pavel@gmail.com')->send(new \App\Mail\AdminMail($details));
         return redirect()->to(url('/').'#feedback')->with('modal', "Спасибо за заявку! Мы с вами свяжемся в ближайшее время!");
+    }
+
+    public function checkAuth()
+    {
+        if (count(DB::table('adminpass')->get()) == 0) die();
+        if (!Hash::check(Session::get('auth'), DB::table('adminpass')->get()[0]->password)) {
+            echo 'нет авторизации!';
+            die();
+        }
     }
 }
