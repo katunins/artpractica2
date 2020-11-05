@@ -9,6 +9,10 @@ body {
   margin: 0;
 }
 
+.video {
+  text-align: center;
+}
+
 * {
   font-family: "Roboto", sans-serif;
   font-weight: 100;

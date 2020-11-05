@@ -136,6 +136,10 @@ function getData($code) {
             </div>
         </div>
 
+        {{-- <div class="video">
+            <iframe width="1025" height="800" src="https://www.youtube.com/embed/2WLB4maj8Dg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div> --}}
+        
         <div class="ceo">
             <div class="ceo-text">
                 {!! getData('ceo-header') !!}

@@ -93,21 +93,23 @@ class UploadController extends Controller
 
     public function updateMainScreenPictures(Request $request)
     {
+        
 
-        for ($i = 1; $i <= 4; $i++) {
-            $rules['main-img-' . $i] = 'image|mimes:jpeg, jpg';
+        // for ($i = 1; $i <= 4; $i++) {
+            $rules['main-img'] = 'image|mimes:jpeg, jpg';
             // $messages['main-img-' . $i . '.required'] = 'Загрузите фотографию ' . $i;
-            $messages['main-img-' . $i . '.image'] = 'Файл для фотографии ' . $i . ' не является изображением';
-            $messages['main-img-' . $i . '.mimes'] = 'Фотография ' . $i . ' не является форматом .jpg';
-        }
+            $messages['main-img.image'] = 'Файл для фотографии ' . $request->id . ' не является изображением';
+            $messages['main-img.mimes'] = 'Фотография ' . $request->id . ' не является форматом .jpg';
+        // }
 
         $request->validate($rules, $messages);
-        for ($i = 1; $i <= 4; $i++) {
-            $file = $request->file('main-img-' . $i);
-            $link = $request->input('main-link-' . $i);
-            $button = $request->input('main-button-' . $i);
+        // for ($i = 1; $i <= 4; $i++) {
+            $file = $request->file('main-img');
+            $link = $request->input('main-link');
+            $button = $request->input('main-button');
             if ($file) {
-                // $ext = pathinfo($file->getClientOriginalName())['extension'];
+                // dd ('ok');
+                $ext = pathinfo($file->getClientOriginalName())['extension'];
                 $ext = 'jpg';
                 $image = Image::make($file);
                 $image->resize(1800, 1800, function ($constraint) {
@@ -116,25 +118,25 @@ class UploadController extends Controller
                 })->sharpen(5)->save();
                 $file->storeAs(
                     'public/uploads/mainscreenimages',
-                    $i . '.' . $ext
+                    $request->id . '.' . $ext
                 );
             }
 
             if ($link !='') {
 
                 DB::table('mainscreen')
-                ->where('id',$i)
+                ->where('id',$request->id)
                 ->update(['link' => $link]);
             }
 
             if ($button !='') {
 
                 DB::table('mainscreen')
-                ->where('id',$i)
+                ->where('id',$request->id)
                 ->update(['button' => $button]);
             }
             
-        }
+        // }
         return view('admin/mainpicture');//redirect('mainpicture');//->back();
     }
 
