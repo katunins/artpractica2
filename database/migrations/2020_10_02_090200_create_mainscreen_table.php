@@ -17,6 +17,7 @@ class CreateMainscreenTable extends Migration
             $table->integer('id');
             $table->string('link');
             $table->string('button')->default('Подробнее');
+            $table->timestamps('last-modify');
             $table->timestamps();
         });
     }

@@ -37,7 +37,7 @@ if (count ($mainScreenPictures) == 0) {
         <input type="hidden" name="id" value="{{ $i }}">
         <div class="main-picture-form">
             <?php
-            $data = DB::table('mainscreen')->where('id', $i)->get()[0];
+            $data = DB::table('mainscreen')->where('id', $i)->first();
             ?>
             <h3>Фотография {{ $i }}
                 @if ($i == 1 || $i == 3)
@@ -45,7 +45,7 @@ if (count ($mainScreenPictures) == 0) {
                 @endif
             </h3>
             @if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg'))
-            <img src="{{ Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg') }}" alt="">
+            <img src="{{ Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg?'.time()) }}" alt="">
             @else
             <img src="{{ asset('images/empty.png') }}" alt="">
             @endif
