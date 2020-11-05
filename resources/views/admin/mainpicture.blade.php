@@ -32,14 +32,18 @@ if (count ($mainScreenPictures) == 0) {
 
 @endif
 @for ($i = 1; $i <=4; $i++) <div class="main-picture-block">
-    <form id="formLoader" action="{{ route('updateMainScreenPictures') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('updateMainScreenPictures') }}" method="post" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="id" value="{{ $i }}">
         <div class="main-picture-form">
             <?php
             $data = DB::table('mainscreen')->where('id', $i)->get()[0];
             ?>
-            <h3>Фотография {{ $i }}</h3>
+            <h3>Фотография {{ $i }}
+                @if ($i == 1 || $i == 3)
+                (квадратная)
+                @endif
+            </h3>
             @if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg'))
             <img src="{{ Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg') }}" alt="">
             @else
@@ -64,8 +68,11 @@ if (count ($mainScreenPictures) == 0) {
     <script>
         document.addEventListener('DOMContentLoaded', function(){
         document.querySelector ('.preloader-block').classList.add ('hide')
-        document.getElementById ('formLoader').onsubmit = function () {
+        document.querySelectorAll('form').forEach (el =>{
+            el.onsubmit = function () {
             document.querySelector ('.preloader-block').classList.remove ('hide')
         }
+        })
+
     })
     </script>

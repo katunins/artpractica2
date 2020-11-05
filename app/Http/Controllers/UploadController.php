@@ -93,51 +93,53 @@ class UploadController extends Controller
 
     public function updateMainScreenPictures(Request $request)
     {
-        
+
 
         // for ($i = 1; $i <= 4; $i++) {
-            $rules['main-img'] = 'image|mimes:jpeg, jpg';
-            // $messages['main-img-' . $i . '.required'] = 'Загрузите фотографию ' . $i;
-            $messages['main-img.image'] = 'Файл для фотографии ' . $request->id . ' не является изображением';
-            $messages['main-img.mimes'] = 'Фотография ' . $request->id . ' не является форматом .jpg';
+        $rules['main-img'] = 'image|mimes:jpeg, jpg';
+        // $messages['main-img-' . $i . '.required'] = 'Загрузите фотографию ' . $i;
+        $messages['main-img.image'] = 'Файл для фотографии ' . $request->id . ' не является изображением';
+        $messages['main-img.mimes'] = 'Фотография ' . $request->id . ' не является форматом .jpg';
         // }
 
         $request->validate($rules, $messages);
         // for ($i = 1; $i <= 4; $i++) {
-            $file = $request->file('main-img');
-            $link = $request->input('main-link');
-            $button = $request->input('main-button');
-            if ($file) {
-                // dd ('ok');
-                $ext = pathinfo($file->getClientOriginalName())['extension'];
-                $ext = 'jpg';
-                $image = Image::make($file);
-                $image->resize(1800, 1800, function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();
-                })->sharpen(5)->save();
-                $file->storeAs(
-                    'public/uploads/mainscreenimages',
-                    $request->id . '.' . $ext
-                );
-            }
-
-            if ($link !='') {
-
-                DB::table('mainscreen')
-                ->where('id',$request->id)
-                ->update(['link' => $link]);
-            }
-
-            if ($button !='') {
-
-                DB::table('mainscreen')
-                ->where('id',$request->id)
-                ->update(['button' => $button]);
-            }
+        $file = $request->file('main-img');
+        $link = $request->input('main-link');
+        $button = $request->input('main-button');
+        if ($file) {
+            // dd ('ok');
+            $ext = pathinfo($file->getClientOriginalName())['extension'];
+            // dd ($ext);
+            // $ext = 'jpg';
+            $image = Image::make($file);
+            $image->resize(1800, 1800, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->sharpen(5)->save();
+            $file->storeAs(
+                'public/uploads/mainscreenimages',
+                $request->id . '.' . $ext
+            );
             
+        }
+
+        if ($link != '') {
+
+            DB::table('mainscreen')
+                ->where('id', $request->id)
+                ->update(['link' => $link]);
+        }
+
+        if ($button != '') {
+
+            DB::table('mainscreen')
+                ->where('id', $request->id)
+                ->update(['button' => $button]);
+        }
+
         // }
-        return redirect()->route('pdateMainScreenPictures');//view('admin/mainpicture');//redirect('mainpicture');//->back();
+        return redirect()->route('mainpicture'); //view('admin/mainpicture');//redirect('mainpicture');//->back();
     }
 
     public function updateproject(Request $request)
@@ -188,7 +190,7 @@ class UploadController extends Controller
     {
         $portfolios = Portfolio::all();
         $sort = $portfolios->sort(function ($a, $b) {
-            
+
             $a = $a->sort;
             $b = $b->sort;
             // dump($a.'-'.$b);
