@@ -137,7 +137,7 @@ class UploadController extends Controller
             }
             
         // }
-        return redirect()->back();//view('admin/mainpicture');//redirect('mainpicture');//->back();
+        return redirect()->route('pdateMainScreenPictures');//view('admin/mainpicture');//redirect('mainpicture');//->back();
     }
 
     public function updateproject(Request $request)
