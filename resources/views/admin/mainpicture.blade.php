@@ -39,18 +39,15 @@ if (count ($mainScreenPictures) == 0) {
             <?php
             $data = DB::table('mainscreen')->where('id', $i)->first();
             ?>
-            <h3>Фотография {{ $i }}
-                @if ($i == 1 || $i == 3)
-                (квадратная)
-                @endif
-            </h3>
+            <h3>Фотография {{ $i }}</h3>
             @if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg'))
             <img src="{{ Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg?'.time()) }}" alt="">
             @else
             <img src="{{ asset('images/empty.png') }}" alt="">
             @endif
             <br>
-            <label for="main-img">Загрузите фотографию</label>
+            <label for="main-img">Загрузите <b> @if ($i == 1 || $i == 3) квадратную @else горизонтальную @endif
+            </b>фотографию</label>
             <input id="main-img-{{ $i }}" type="file" name="main-img" value="">
             <br>
 

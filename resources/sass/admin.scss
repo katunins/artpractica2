@@ -6,6 +6,10 @@
     ;
 }
 
+b {
+font-weight: 500;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -367,11 +371,17 @@ li {
 
 .main-picture-block {
     margin-top: 50px;
-    input {
-        width: 200px;
+    
+
+    input[name='main-link'] {
+        width: 300px;
+    }
+
+    input {    
         margin: 10px;
         padding: 5px 10px;
     }
+
     img {
         height: 300px;
     }
