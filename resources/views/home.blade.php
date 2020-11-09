@@ -24,7 +24,8 @@ if (count ($mainScreenPictures) == 0) {
     for ($i=1; $i <=4; $i++) { 
         DB::table('mainscreen')->insert([
             'id'=>$i,
-            'link' => 'http://artpractica.ru'
+            'imgUrl'=>'public/uploads/mainscreenimages/empty.jpg',
+            'link' => '/portfolio'
         ]);
     }
 };
@@ -82,27 +83,25 @@ function getData($code) {
             </div>
         </div>
 
-
-
         <div class="gallery-grid">
-
-            @for($i = 1; $i <= 4; $i++) <?php 
-            $data = DB::table('mainscreen')->where('id', $i)->get()[0]
-            // $link = $data->link 
-            // $button = $data
-            ?> <?php if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg')) {
-                    $url = Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg');
+<?php
+$mainscreens = DB::table('mainscreen')->get();
+            for($i = 1; $i <= 4; $i++) {
+                $data = $mainscreens->where('id', $i)->first();
+                if (Storage::has($data->imgUrl)) {
+                    $url = Storage::url($data->imgUrl);
                 } else {
-                    $url = asset('/images/empty.png');
-                } ?> <figure class="gallery-item-{{ $i }}">
+                    $url = Storage::url ('public/uploads/mainscreenimages/empty.jpg');
+                } ?> 
+                
+                <figure class="gallery-item-{{ $i }}">
                 <div data-wow-delay="0.{{ $i }}s" class="wow animate__animated animate__fadeIn"
                     style="background-image: url({{ $url }})">
                     <a href="{{ $data->link }}" class="black-mini-button">{{ $data->button }}</a>
                 </div>
+            </figure>
 
-                </figure>
-
-                @endfor
+            <?php } ?>
 
         </div>
 

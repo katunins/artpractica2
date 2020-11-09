@@ -9,6 +9,7 @@ use App\Portfolio;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class UploadController extends Controller
 {
@@ -93,8 +94,7 @@ class UploadController extends Controller
 
     public function updateMainScreenPictures(Request $request)
     {
-
-
+        
         // for ($i = 1; $i <= 4; $i++) {
         $rules['main-img'] = 'image|mimes:jpeg, jpg';
         // $messages['main-img-' . $i . '.required'] = 'Загрузите фотографию ' . $i;
@@ -103,23 +103,31 @@ class UploadController extends Controller
         // }
 
         $request->validate($rules, $messages);
-        // for ($i = 1; $i <= 4; $i++) {
+        
+        
+
         $file = $request->file('main-img');
         $link = $request->input('main-link');
         $button = $request->input('main-button');
         if ($file) {
-            // dd ('ok');
+
             $ext = pathinfo($file->getClientOriginalName())['extension'];
-            // dd ($ext);
-            // $ext = 'jpg';
             $image = Image::make($file);
             $image->resize(1800, 1800, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->sharpen(5)->save();
+
+            $newName = (string)Carbon::now()->timestamp;
+            $oldPath = Db::table('mainscreen')->where('id', $request->id)->get()->first();
+            if ($oldPath) {
+                if (Storage::has($oldPath->imgUrl) && $oldPath->imgUrl !='public/uploads/mainscreenimages/empty.jpg') Storage::delete($oldPath->imgUrl);
+            };
+            $newPath = 'public/uploads/mainscreenimages/'.$newName.'.'.$ext;
+            Db::table('mainscreen')->where('id', $request->id)->update(['imgUrl'=>$newPath]);
             $file->storeAs(
                 'public/uploads/mainscreenimages',
-                $request->id . '.' . $ext
+                $newName . '.' . $ext
             );
             
         }

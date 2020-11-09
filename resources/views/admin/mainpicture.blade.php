@@ -40,10 +40,10 @@ if (count ($mainScreenPictures) == 0) {
             $data = DB::table('mainscreen')->where('id', $i)->first();
             ?>
             <h3>Фотография {{ $i }}</h3>
-            @if (Storage::has('public/uploads/mainscreenimages/'.$i.'.jpg'))
-            <img src="{{ Storage::url('public/uploads/mainscreenimages/'.$i.'.jpg?'.time()) }}" alt="">
+            @if (Storage::has($data->imgUrl))
+            <img src="{{ Storage::url($data->imgUrl) }}" alt="">
             @else
-            <img src="{{ asset('images/empty.png') }}" alt="">
+            <img src="{{ Storage::url ('public/uploads/mainscreenimages/empty.jpg') }}" alt="">
             @endif
             <br>
             <label for="main-img">Загрузите <b> @if ($i == 1 || $i == 3) квадратную @else горизонтальную @endif
