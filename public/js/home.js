@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/pavelkatunin/Documents/artpractica3/resources/js/home.js */"./resources/js/home.js");
+module.exports = __webpack_require__(/*! /Users/katunin/Documents/artpractica2/resources/js/home.js */"./resources/js/home.js");
 
 
 /***/ })
